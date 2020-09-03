@@ -1,0 +1,45 @@
+/* components/agora-pusher.wxss */
+
+.pusher-container{
+  background: black;
+  display: block;
+  position: relative;
+}
+.pusher_enabled__image {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  text-align: center;
+  background: #333;
+}
+.pusher_enabled__img {
+  display: inline-block;
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+  top: 50%;
+  margin-left: -40rpx;
+  margin-top: -40rpx;
+}
+.sud{
+  background-color: #1B2A38;
+  opacity:0.65; 
+}
+.touchView {
+  z-index: 10
+}
+.localView {
+  z-index: 0
+}
+.video_status {
+  position: absolute;
+  top: 40%;
+  font-size: 40rpx;
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+.localView .video_status {
+  font-size: 22rpx;
+}

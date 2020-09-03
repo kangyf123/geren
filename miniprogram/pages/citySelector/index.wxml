@@ -1,0 +1,40 @@
+<navBar page-name="选择城市" showNavBut='{{true}}' backUrl="{{backUrl}}" navBack="{{true}}" navBackQuery="{{navBackQuery}}"></navBar>
+<scroll-view style="{{'margin-top:'+ navHeight+'px'}}" class="city__selector_scrollbar" scroll-y='true' scroll-into-view="{{selector}}" scroll-with-animation="true">
+<view class="city__selector">
+  <block wx:if="{{localData}}">
+     <view class="city__selector_title" id="local">定位城市</view>
+     <view class="city__selector_content">
+       <view class="city__selector_module {{selected == 'local_' + localData ? 'selected' : ''}}" bindtap="selectorClick" data-type="local" data-city="{{localData}}" >{{localData}}</view>
+     </view>
+  </block>
+  <block wx:for="{{cityData}}" wx:key="index">
+   <view  id="{{item.Id}}">
+    <view class="city__selector_title mt-30">{{item.Text}}</view>
+     <view class="city__selector_content" >
+       <view class="city__selector_module {{item.Id == 'hot' ? 'hot_' + cities.CityName == selected ? 'selected' : '' : cities.CityName == selected ? 'selected' : ''}}" 
+       wx:for="{{item.Cities}}" 
+       wx:for-item="cities"
+       wx:key="CityName"
+       data-type="{{item.Id}}"
+       bindtap="selectorClick"
+       data-city="{{cities.CityName}}"
+       >{{cities.CityName}}</view>
+     </view>
+   </view>
+  </block>
+</view>
+</scroll-view>
+
+<view class="city__chooser" bindtouchmove="chooseMover" bindtouchend="chooseMoverEnd">
+  <view hidden="{{item.Id == 'hot'}}" 
+  wx:for="{{cityData}}" 
+  class="city__chooser_item {{selector == item.Text ? 'city__chooser_selected' : ''}}" 
+  data-id="1" 
+  data-pos="{{item.Id}}" 
+  wx:key="Id" 
+  bindtap="choosertap" >{{item.Text}}</view>
+</view>
+
+<!-- <view class="backTop" bindtap="toUp">
+顶
+</view> -->

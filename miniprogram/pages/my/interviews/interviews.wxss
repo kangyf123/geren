@@ -1,0 +1,84 @@
+page {
+  min-height: 100%;
+  height: 100%;
+  max-height: fit-content;
+}
+.page {
+  min-height: 100%;
+  background-color: #F5F5F5;
+}
+.page.white {
+  background-color: #FFF;
+}
+.offer-item {
+  background-color: #FFFFFF;
+  margin-top: 20rpx;
+  padding: 39rpx 31rpx 37rpx;
+}
+.offer-date-icon {
+  width: 26rpx;
+  height: 26rpx;
+  margin-top: 20rpx;
+  margin-right: 10rpx;
+}
+.offer-date-wrapper {
+  display: flex;
+  position: relative;
+}
+.offer-date-info {
+  position: relative;
+  padding-right: 25rpx;
+  width: 190rpx;
+}
+.offer-date-info:after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  right: 0;
+  height: 70%;
+  width: 1rpx;
+  background-color: #DDDDDD;
+}
+.offer-date-title {
+  font-size: 32rpx;
+  margin-bottom: 9rpx;
+  color: #333333;
+}
+.offer-date-date {
+  color: #999999;
+  font-size: 24rpx;
+}
+.offer-job-wrapper {
+  padding-left: 37rpx;
+  overflow: hidden;
+  width: 100%;
+}
+.offer-job-company {
+  color: #333333;
+  font-size: 32rpx;
+  margin-bottom: 18rpx;
+  font-weight: bold;
+}
+.offer-job-name {
+  color: #666666;
+  font-size: 24rpx;
+}
+.offer-item-icon {
+  color: #BDBDBD;
+  padding-left: 27rpx;
+}
+.empty-panel {
+  margin-top: 200rpx;
+}
+.time-range {
+  font-size: 24rpx;
+  padding-right: 22rpx;
+}
+.time-msg {
+  font-size: 38rpx;
+  font-weight: bold;
+}
+.icon-opt {
+  height: 28rpx;
+  width: 12rpx; 
+}

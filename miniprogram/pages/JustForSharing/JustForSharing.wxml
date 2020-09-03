@@ -1,0 +1,125 @@
+<navBar page-name="职位分享" showNavBut='{{showNavBut}}'></navBar>
+<!-- <view class="sharing__tips">
+	<image class="shating__icon" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/laba.png"></image>
+	<text class="shating__text">可以复制文案，保存图片发布到朋友圈哦！</text>
+</view> -->
+<!-- 画 -->
+<canvas class="canvasImg" canvas-id="shareImg"></canvas>
+<!-- 暂时注释-->
+<!-- <view class="sharing__content">
+	<view class="sharing__but" bindtap="saveText">
+		<text class="sharing__but_text">复制文案</text>
+	</view>
+	<view class="sharing__title">急招！急招！</view>
+	<view class="sharing__row">
+		<text>招聘职位：</text>
+		<text class="flex_3">{{JobDetail.Title}}</text>
+	</view>
+	<view class="sharing__row"><text>招聘数量：</text><text>{{JobDetail.NumberOfHiring}}人</text></view>
+	<view class="sharing__row"><text>工作区域：</text><text>{{JobDetail.Location}}</text></view>
+	<view class="sharing__row"><text>岗位年薪：</text><text>{{JobDetail.SalaryFrom / 10000 }}-{{JobDetail.SalaryTo / 10000 }}万</text></view>
+	<view class="sharing__row"><text>所属行业：</text><text>{{JobDetail.Industry}}</text></view>
+	<view class="sharing__row">
+		<text>其他要求：</text>
+		<view><text>{{JobDetail.AgeFrom}}-{{JobDetail.AgeTo}}岁</text><text class="margin__10">|</text><text>{{JobDetail.EducationLevel}}</text></view>
+	</view>
+</view> -->
+<view class="currentIndex" bindtap="currentChange"><text class="currentIndexText">换一个</text></view>
+<swiper circular bindchange="currentBindChange" current="{{currentIndex}}" class="sharing__image_body" interval="2000">
+	<swiper-item>
+		<view class="sharing__image_positiin_01">
+			<view class="sharing__row">
+				<text>招聘职位：</text>
+				<text>{{newTitle}}</text>
+			</view>
+			<view class="sharing__row"><text>招聘数量：</text><text>{{JobDetail.NumberOfHiring}}人</text></view>
+			<view class="sharing__row"><text>工作区域：</text><text>{{JobDetail.Location}}</text></view>
+			<view class="sharing__row"><text>岗位年薪：</text><text>{{JobDetail.SalaryFrom / 10000 }}-{{JobDetail.SalaryTo / 10000 }}万</text></view>
+			<view class="sharing__row"><text>所属行业：</text><text>{{newIndustry}}</text></view>
+			<view class="sharing__row">
+				<text>其他要求：</text>
+				<view><text>{{JobDetail.AgeFrom}}-{{JobDetail.AgeTo}}岁</text><text class="margin__10">|</text><text>{{JobDetail.EducationLevel}}</text></view>
+			</view>
+			<view class="row__01_line"></view>
+			<view class="shareCode">
+				<image src="{{shareCode}}" class="shareCode__img" mode="aspectFit"></image>
+			</view>
+			<view class="shareCode__text">扫码投递职位</view>
+			<view class="shareCode__saveText">
+				<image class="shareCode__saveImg" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/666.png" mode="aspectFit"></image>
+			</view>
+		</view>
+		<image mode="aspectFit" class="sharing__image" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/01.png"></image>
+	</swiper-item>
+	<swiper-item>
+		<view class="sharing__image_positiin_02">
+			<view class="sharing__row">
+				<text>招聘职位：</text>
+				<text>{{newTitle}}</text>
+			</view>
+			<view class="sharing__row"><text>招聘数量：</text><text>{{JobDetail.NumberOfHiring}}人</text></view>
+			<view class="sharing__row"><text>工作区域：</text><text>{{JobDetail.Location}}</text></view>
+			<view class="sharing__row"><text>岗位年薪：</text><text>{{JobDetail.SalaryFrom / 10000 }}-{{JobDetail.SalaryTo / 10000 }}万</text></view>
+			<view class="sharing__row"><text>所属行业：</text><text>{{newIndustry}}</text></view>
+			<view class="sharing__row">
+				<text>其他要求：</text>
+				<view><text>{{JobDetail.AgeFrom}}-{{JobDetail.AgeTo}}岁</text><text class="margin__10">|</text><text>{{JobDetail.EducationLevel}}</text></view>
+			</view>
+			<view class="row__02_line"></view>
+			<view class="shareCode__02">
+				<view class="shareCode__02_left">
+					<view class="shareCode__02_left_text">扫码投递职位</view>
+					<image class="shareCode__02_left_saveImg" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/666.png" mode="aspectFit"></image>
+				</view>
+				<view class="shareCode__02_right">
+					<image src="{{shareCode}}" class="shareCode__02_right_code" mode="aspectFit"></image>
+				</view>
+			</view>
+		</view>
+		<image mode="aspectFit" class="sharing__image" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/02.png"></image>
+	</swiper-item>
+	<swiper-item>
+		<view class="sharing__image_positiin_03">
+			<view class="sharing__row">
+				<text>招聘职位：</text>
+				<text>{{newTitle}}</text>
+			</view>
+			<view class="sharing__row"><text>招聘数量：</text><text>{{JobDetail.NumberOfHiring}}人</text></view>
+			<view class="sharing__row"><text>工作区域：</text><text>{{JobDetail.Location}}</text></view>
+			<view class="sharing__row"><text>岗位年薪：</text><text>{{JobDetail.SalaryFrom / 10000 }}-{{JobDetail.SalaryTo / 10000 }}万</text></view>
+			<view class="sharing__row"><text>所属行业：</text><text>{{newIndustry}}</text></view>
+			<view class="sharing__row">
+				<text>其他要求：</text>
+				<view><text>{{JobDetail.AgeFrom}}-{{JobDetail.AgeTo}}岁</text><text class="margin__10">|</text><text>{{JobDetail.EducationLevel}}</text></view>
+			</view>
+			<view class="row__02_line"></view>
+			<view class="shareCode__02">
+				<view class="shareCode__02_left">
+					<view class="shareCode__02_left_text">扫码投递职位</view>
+					<image class="shareCode__02_left_saveImg" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/666.png" mode="aspectFit"></image>
+				</view>
+				<view class="shareCode__02_right">
+					<image src="{{shareCode}}" class="shareCode__02_right_code" mode="aspectFit"></image>
+				</view>
+			</view>
+		</view>
+		<image mode="aspectFit" class="sharing__image" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/04.png"></image>
+	</swiper-item>
+</swiper>
+<view class="bottom__height_30"></view>
+<view class="bottom__height_30"></view>
+<view class="bottom__height_30"></view>
+<view class="sharing__image_position">
+	<view class="sharing__image_buttom">
+		<button bindtap="initCanvas" class="sharing__image_left">
+			<image class="sharing__image_icon" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/123.png"></image>
+			<text>保存到相册</text>
+		</button>
+		<text class="color__DDD">|</text>
+		<button open-type="share" class="sharing__image_right">
+			<image class="sharing__image_icon" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/456.png"></image>
+			<text>分享给朋友</text>
+		</button>
+	</view>
+	<view wx:if="{{isScreenBottomRound}}" class="bottom__height_30"></view>
+</view>

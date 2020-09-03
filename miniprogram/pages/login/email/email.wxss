@@ -1,0 +1,17 @@
+.h1 {
+  margin-top: 79rpx;
+  margin-bottom: 50rpx; 
+}
+.forget-pwd {
+  margin-top: 24rpx;
+  color: var(--color-blue);
+  font-size: 28rpx;
+  text-align: right;
+}
+.btn-login {
+  margin-top: 62rpx;
+  font-size: 34rpx;
+}
+.form-email {
+  padding-right: 40rpx;
+}

@@ -1,0 +1,14 @@
+<navBar page-name="放弃原因" showNavBut='{{showNavBut}}'></navBar>
+<view class="panel-set-list">
+  <view class="panel-set-item" data-id="{{ item.id }}" wx:for="{{ reasonConf }}" bindtap="changeCurResonId">
+    <view class="panel-set-data">
+      {{ item.msg }}
+    </view>
+    <view class="callback-icon {{ item.id == curReasonId ? 'selected' : '' }}">
+      <icon class="search-icon selected" type="success" color="#3B87FF" size="36rpx" />
+      <image class="search-icon empty" mode="aspectFit" src="/imgs/icon-circle.png"></image>
+    </view>
+  </view>
+</view>
+<InputPanel wx:if="{{ curReasonId == 10 }}" style="width: 100%;" keywords="{{ otherReasonMsg }}" limit="140" type="input" bindinput="bindInput" placeholder="原因描述"></InputPanel>
+<button class="btn btn-blue btn-mlr-40 btn-submit {{ disabled ? 'disabledColor' : '' }}" bindtap="save">确定</button>

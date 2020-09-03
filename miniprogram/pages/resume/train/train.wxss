@@ -1,0 +1,14 @@
+page {
+  background-color: #F5F5F5;
+}
+.save-btn {
+  margin-top: 40rpx;
+}
+.panel-set-item {
+  align-items: center;
+}
+.panel-set-img {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 110rpx;
+}

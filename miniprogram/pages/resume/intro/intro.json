@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "InputPanel": "/components/input-panel/input-panel",
+    "navBar": "../../../components/navBar/navBar"
+  }
+}

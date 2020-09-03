@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SettingItem": "/components/setting-item/setting-item"
+  },
+  "navigationBarTitleText": "培训经历"
+}

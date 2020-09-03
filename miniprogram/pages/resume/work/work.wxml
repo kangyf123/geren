@@ -1,0 +1,34 @@
+<navBar page-name="工作经历" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}"></navBar>
+<view class="panel-set-list">
+  <SettingItem title="公司名称" emptyText="请填写" value="{{ query.Company }}" 
+    data-url="/pages/input/input?keywords={{ query.Company }}&title=公司名称&field=Company&limit=30"
+    bindtap="_navigateTo" value="{{ query.Company }}"></SettingItem>
+  <SettingItem title="所属行业" value="{{ info.IndustryId.name?info.IndustryId.name:info.IndustryText }}" 
+    data-url="/pages/expect-job/expect-job?max=1&field=IndustryId&titleText=所属行业&type=industry" 
+    data-type="IndustryId"
+    data-dataType="industry"
+    data-beforenavigate="setSelectedDataToStorage" 
+    bindtap="_navigateTo"></SettingItem>
+  <SettingItem title="职位名称" emptyText="请填写" value="{{ query.JobTitle }}" 
+    data-url="/pages/input/input?keywords={{ query.JobTitle }}&title=职位名称&field=JobTitle&limit=30"
+    bindtap="_navigateTo"></SettingItem>
+  <SettingItem title="职位类别" value="{{ info.OccupationId.name? info.OccupationId.name:info.OccupationText}}" 
+    data-url="/pages/expect-job/expect-job?max=1&field=OccupationId&titleText=职位类别&&type=job" 
+    data-type="OccupationId"
+    data-dataType="job"
+    data-beforenavigate="setSelectedDataToStorage" 
+    bindtap="_navigateTo" no-bottom-line="{{ true }}"></SettingItem>
+</view>
+
+<view class="panel-set-list">
+  <SettingItemDate title="在职时间" data-start="DateFrom" data-end="DateTo" title-start="入职时间" title-end="离职时间"
+    start="{{ query.DateFrom }}" end="{{ query.DateTo }}" is-end-current="{{ query.IsCurrent }}"
+    bindchange="_dateChange"></SettingItemDate>
+  <SettingItem title="职责业绩" emptyText="请填写" value="{{ query.Description && '已填写' }}" 
+    data-url="/pages/input/input?keywords={{ query.Description }}&title=职责业绩&field=Description&limit=1000"
+    bindtap="_navigateTo" no-bottom-line="{{ true }}"></SettingItem>
+</view>
+
+<button class="btn btn-blue save-btn {{ isComplete ? '' : 'disabled' }}" 
+  data-url="/v1/Member/EditMemeberWorkExp" 
+  bindtap="_save">保存</button>

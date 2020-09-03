@@ -1,0 +1,38 @@
+// components/sunVideo/sunVideo.js
+Component({
+  /**
+   * 组件的属性列表
+   */
+  properties: {
+    autoplay:{
+      type: Boolean,
+      value: false
+    },
+    src: {
+      type: String,
+      value: ""
+    },
+    showMask: {
+      type: Boolean,
+      value: false
+    },
+    poster: {
+      type: String,
+      value: ""
+    }
+  },
+
+  /**
+   * 组件的初始数据
+   */
+  data: {
+
+  },
+
+  /**
+   * 组件的方法列表
+   */
+  methods: {
+
+  }
+})

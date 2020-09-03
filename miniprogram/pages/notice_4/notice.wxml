@@ -1,0 +1,10 @@
+<navBar page-name="提示" showNavBut='{{showNavBut}}'></navBar>
+<view class="head-panel"  >
+  <view class="notice-panel">
+    <image class="notice-img" mode="aspectFit" src="/imgs/icon-ok-circle.png"></image>
+    <view class="notice-msg">
+      <view>放弃原因已发送给猎头</view>
+    </view>
+    <button class="btn-blue notice-btn" bindtap="navigateBack">关闭</button>
+  </view>
+</view>

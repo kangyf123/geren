@@ -1,0 +1,39 @@
+<wxs module="strFilter" src="../../wxs/str.wxs"></wxs>
+<navBar page-name="{{searchInprogressTitle}}" showNavBut='{{showNavBut}}' is-edited="{{ _dataList._isEdited }}"></navBar>
+<view class="head-panel">
+  <view class="search-panel input">
+    <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+    <input class="search-input" placeholder="搜索行业" 
+      value="{{ _dataList._kwd }}" bindinput="_searchList"/>
+    <image class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png" 
+      wx:if="{{ _dataList._kwd }}"
+      bindtap="_removeKwd"></image>
+  </view>
+</view>
+<view class="head-sep"></view>
+<view class="list-panel">
+  <view class="list-sep"></view>
+  <view class="search-list"  >
+    <view class="search-item {{ _dataList._selected[item.id] ? 'selected' : '' }}" 
+      wx:for="{{ _dataList._list }}" 
+      wx:key="index" 
+      data-index="{{ index }}"
+      bindtap="_addToSelected">
+      <view class="search-name" wx:if="{{ _dataList._kwd !== '' }}">
+        <text wx:for="{{ strFilter.split( item.name, _dataList._kwd) }}" wx:for-item="strPart" class="{{ _dataList._kwd === strPart ? 'font-blue' : '' }}">{{ strPart }}</text>
+      </view>
+      <view class="search-name" wx:else>
+        {{ item.name }}
+      </view>
+      <image class="search-icon search-icon-empty" mode="aspectFit" src="/imgs/icon-circle.png"></image>
+      <icon class="search-icon selected" type="success" color="#3B87FF" size="36rpx"/>
+    </view>
+    <view class="empty-panel" wx:if="{{ _dataList._list.length === 0 }}">
+      <EmptyPanel msg="搜索结果为空"></EmptyPanel>
+    </view>
+  </view>
+  <view class="fixed-bottom-placeholder {{ _isScreenBottomRound ? 'has-round-bottom' : '' }}"></view>
+  <view class="fixed-bottom-panel">
+    <button class="fix-bottom-btn btn-blue  {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} {{ _dataList._selectedCount > 0 ? '' : 'disabled' }}" bindtap="_dataSubmit">确定</button>
+  </view>
+</view>

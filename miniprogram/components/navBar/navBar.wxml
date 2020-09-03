@@ -1,0 +1,15 @@
+<view class="navbar custom-class" style='height:{{navHeight}}px;background-color:{{bgColor}}'>
+  <view class="navbar-action-wrap navbar-action-group row item-center" style='top:{{navTop}}px;background-color:{{bgColor}}'>
+      <image wx:if="{{showNavBut}}" class="navbar-action_item" src="/imgs/icon-goBack.png" bindtap="_navBack"></image>
+      <image wx:if="{{showNewNavBut}}" class="navbar-action_item_new" src="/imgs/white_arrow.png" bindtap="_navBack"></image>
+      <view wx:if="{{showNavButHome}}" class="navbar-action_item last" bindtap="_toHome">Home</view>
+  </view>
+  <view wx:if="{{pageName !== 'searchbar'}}" class='navbar-title' style='top:{{navTop}}px;color:{{textColor}}'>
+    {{pageName}}
+  </view>
+  <view wx:if="{{pageName == 'searchbar'}}" class="navbar-search" style='top:{{navTop}}px' mode="aspectFit" data-url="/pages/job-search/job-search" bindtap="_navigateTo">
+    <image src="../../imgs/icon-search.png" class="icon-search"></image>
+    <text class="navbar-text">搜索商品</text>
+  </view>
+</view>
+<view style="height:{{navHeight+'px'}}"></view>

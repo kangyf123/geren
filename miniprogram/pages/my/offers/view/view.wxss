@@ -1,0 +1,58 @@
+page {
+  height: 100%;
+
+}
+.page {
+  height: 100%;
+  overflow: hidden;
+}
+.bg {
+  width: 100%;
+  height: 100%;
+}
+.container {
+  position: absolute;
+  top: 48rpx;
+  bottom: 48rpx;
+  left: 48rpx;
+  right: 48rpx;
+  background-color: #FFF;
+  border-radius: 10rpx;
+  box-shadow: 0 0 73rpx 0 #99C0FF;
+}
+.container-bottom-img {
+  width: calc(100% + 26rpx);
+  position: absolute;
+  bottom: 0;
+  left: -13rpx;
+}
+.content {
+  margin: 16rpx;
+  border:2rpx solid#E7CAA0;
+  border-radius: 10rpx;
+  height: calc(100% - 100rpx);
+  padding: 39rpx 31rpx;
+}
+.item {
+  font-size: 28rpx;
+  display: flex;
+  margin-bottom: 18rpx;
+}
+.title {
+  width: 165rpx;
+  flex-shrink: 0;
+}
+.title-padding-word {
+  padding-left: 14rpx;
+  padding-right: 14rpx;
+}
+.sep {
+  border-bottom: dashed 1rpx #BEBEBE;
+  margin-bottom: 39rpx;
+  margin-top: 33rpx;
+}
+.red-bold {
+  font-weight: bold;
+  color: #FF7452;
+}
+

@@ -1,0 +1,60 @@
+<view class="page {{ !isShowSearchTipPanel && kwd && count > 0 ? 'search-list' : '' }}">
+  <navBar page-name="搜索职位" showNavBut='{{showNavBut}}'></navBar>
+  <view class="head-panel">
+    <view class="search-panel input" style="">
+      <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+      <input class="search-input" bindinput="ajaxGetJobSearchTip" value="{{ kwd }}" auto-focus placeholder="搜索职位名称" bindconfirm="searchByKwd" />
+      <image wx:if="{{ kwd !== '' }}" class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png" bindtap="clearKwd"></image>
+    </view>
+  </view>
+
+  <view class="head-sep"></view>
+  <view class="history-list" wx:if="{{ isShowSearchTipPanel }}">
+    <view class="list-sep"></view>
+    <view class="history-item" wx:for="{{ searchTipList }}" wx:key="index">
+      <view class="history-name" data-name="{{ item }}" bindtap="searchByKwd">
+        <text wx:for="{{ item }}" wx:for-item="sepName" wx:for-index="sepIndex" wx:key="sepIndex">
+        <text class="history-keyword" wx:if="{{ sepIndex > 0 }}">{{ kwd }}</text>
+        <text>{{ sepName }}</text>
+        </text>
+      </view>
+    </view>
+  </view>
+  <view wx:else>
+    <view wx:if="{{ kwd }}">
+      <view class="list-panel">
+        <view class="list-sep"></view>
+        <view class="search-list">
+          <view class="search-item" wx:for="{{ list }}" wx:key="JobId">
+            <ItemJob showIndus="{{true}}" data="{{ item }}"></ItemJob>
+            <view class="list-sep"></view>
+          </view>
+          <view wx:if="{{ count == 0 }}" class="empty-panel">
+            <EmptyPanel msg="未搜到相关职位"></EmptyPanel>
+          </view>
+          <view class="no-more-data {{ !(count > 0 && count <= filters.page * filters.size) ? 'hide': '' }}">没有更多数据了</view>
+        </view>
+      </view>
+    </view>
+    <view wx:else>
+      <view class="history-panel" wx:if="{{ historyList.length > 0 }}">
+        <view class="history-title">搜索历史</view>
+        <view class="history-list">
+          <view class="history-item" wx:for="{{ historyList }}" data-name="{{ item.SearchKey }}" bindtap="searchByKwd" wx:key="index">
+            <view class="text-with-icon reverse">
+              <image class="icon icon-time" mode="aspectFit" src="/imgs/icon-time.png"></image>
+              <view class="text history-name">{{ item.SearchKey }}</view>
+            </view>
+          </view>
+        </view>
+        <view class="history-clear" wx:if="{{ historyList.length > 0 }}">
+          <image class="icon-remove" mode="aspectFit" src="/imgs/icon-remove.png"></image>
+          <text class="remove-name" bindtap="ajaxClearSearchHistory">清除历史纪录</text>
+        </view>
+      </view>
+      <view wx:else class="empty-panel">
+        <EmptyPanel msg="暂无搜索历史"></EmptyPanel>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,15 @@
+var filter = {
+  getListReachBottomClass: function (total, filters) {
+    if (total > 0 && total <= filters.page * filters.size) {
+      return '';
+    }
+    return 'hide';
+  },
+  getListEmptyClass: function (total) {
+    if (total == 0) {
+      return '';
+    }
+    return 'hide';
+  },
+};
+module.exports = filter;

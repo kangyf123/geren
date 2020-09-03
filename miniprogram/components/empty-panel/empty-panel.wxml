@@ -1,0 +1,6 @@
+<view class="empty-panel">
+  <view class="empty-wrapper">
+    <image class="logo-empty" mode="aspectFit" src="/imgs/logo-empty.png"></image>
+    <view class="empty-msg">{{ msg }}</view>
+  </view>
+</view>

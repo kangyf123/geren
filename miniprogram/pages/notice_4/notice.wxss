@@ -1,0 +1,31 @@
+page {
+  background-color: #fff;
+}
+.head-panel {
+  background-color: #FFF;
+  text-align: center;
+  padding-top: 60rpx;
+  padding-bottom: 67rpx;
+}
+.notice-panel {
+  display: inline-block;
+  width: 456rpx;
+}
+.notice-img {
+  width: 90rpx;
+  height: 90rpx;
+}
+.notice-msg {
+  font-size: 28rpx;
+  margin-top: 30rpx;
+}
+.notice-btn {
+  margin-top: 41rpx;
+  font-size: 28rpx;
+}
+
+.sep-module {
+  margin-top: 20rpx;
+  background-color: #FFF;
+  padding-top: 55rpx;
+}

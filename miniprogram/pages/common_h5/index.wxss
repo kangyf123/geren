@@ -1,0 +1,7 @@
+/* pages/common_h5/index.wxss */
+.common__jump {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99
+}

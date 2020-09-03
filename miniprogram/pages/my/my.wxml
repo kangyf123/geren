@@ -1,0 +1,110 @@
+<wxs module="imgFilter" src="../../wxs/img.wxs"></wxs>
+<navBar page-name="我的" showNavBut='{{showNavBut}}'></navBar>
+<view wx:if="{{ isPageShow }}">
+  <view class="head-panel">
+    <view class="user-wrapper" data-url="/pages/resume/basic/basic" bindtap="_navigateWithLoginTo" data-beforenavigate="saveBaseInfoDataToStorage" data-point="1" data-pointkey="botton_baseinfo">
+      <image class="user-img" mode="aspectFill" src="{{ imgFilter.getImgUrl(info.PictureUrl) }}"></image>
+      <view class="user-info">
+        <view class="user-name {{ _isLogin && !info.Name ? 'only-name' : '' }}">{{ _isLogin ? info.Name ? info.Name : '用户' + info.Phone : '点击登录' }}</view>
+        <view class="user-mobile" wx:if="{{ (!_isLogin) || (_isLogin && info.Name) }}">{{ _isLogin ? info.Phone : '登录后查看更多信息' }}</view>
+      </view>
+      <view class="user-goInfo-background">
+        <image class="user-goInfo-image" mode="aspectFit" src="/imgs/icon-info-background.png"></image>
+        <image class="user-goInfo" mode="aspectFit" src="/imgs/icon-goInfo.png"></image>
+      </view>
+    </view>
+    <view class="my-tips">
+      <image class="my-icon" src="{{advertisementImage}}"></image>
+      <view bindtap="openApplet" class="my-bindtap"></view>
+    </view>
+  <!-- </view>
+
+  <view class="panel-set-list"> -->
+    <view class="panel-set-item" data-url="/pages/resume/resume" bindtap="_navigateWithLoginTo" data-point="1" data-pointkey="botton_onlineresume">
+      <view class="panel-set-data">
+        <view class="panel-set-title text-with-icon reverse">
+          <image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/icon-document.png"></image>
+          <view class="text">在线简历</view>
+        </view>
+        <view class="panel-set-val empty">{{ _isLogin && data.ResumePercent !== undefined ? '完整度' + data.ResumePercent + '%' : '' }}</view>
+      </view>
+      <view class="panel-set-icon">
+        <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+      </view>
+    </view>
+    <view class="panel-set-item" data-url="/pages/attachments/attachments" bindtap="_navigateWithLoginTo" data-point="1" data-pointkey="botton_fileresume">
+      <view class="panel-set-data">
+        <view class="panel-set-title text-with-icon reverse">
+          <image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/icon-attachment.png"></image>
+          <view class="text">附件简历</view>
+        </view>
+        <view class="panel-set-val" wx:if="{{ _isLogin }}">
+          <text class="empty" wx:if="{{ data.AttachResumeCount > 0 }}">已上传</text>
+          <text class="empty" wx:else>未上传</text>
+        </view>
+      </view>
+      <view class="panel-set-icon">
+        <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+      </view>
+    </view>
+
+
+    <view class="panel-set-item-height" wx:if="{{ IsAssessor }}"></view>
+    <view class="panel-set-item" wx:if="{{ IsAssessor }}" data-url="/pages/headhunters/details/details?id=0&phoneNum={{info.NewPhone}}" bindtap="_navigateTo" data-point="1" data-pointkey="botton_hd">
+      <view class="panel-set-data">
+        <view class="panel-set-title text-with-icon reverse">
+          <image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/icon-recruitment.png"></image>
+          <view class="text">招聘主页</view>
+        </view>
+      </view>
+      <view class="panel-set-icon">
+        <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+      </view>
+    </view>
+
+
+    <view class="panel-set-item" data-url="/pages/job-intention/job-intention" bindtap="_navigateWithLoginTo" data-point="1" data-pointkey="botton_managejob">
+      <view class="panel-set-data">
+        <view class="panel-set-title text-with-icon reverse">
+          <image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/icon-gear.png"></image>
+          <view class="text">管理求职意向</view>
+        </view>
+      </view>
+      <view class="panel-set-icon">
+        <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+      </view>
+    </view>
+
+
+
+    <view class="panel-set-item" data-url="/pages/applyQuickly/applyQuickly" bindtap="_navigateWithLoginTo" data-point="1" data-pointkey="botton_managejob">
+      <view class="panel-set-data">
+        <view class="panel-set-title text-with-icon reverse">
+          <image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/pagesapplyQuickly.png"></image>
+          <view class="text">极速应聘记录</view>
+        </view>
+      </view>
+      <view class="panel-set-icon">
+        <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+      </view>
+    </view>
+
+
+
+
+
+  </view>
+  <view class="panel-set-list" wx:if="{{ _isLogin }}">
+    <view class="panel-set-item" bindtap="logout">
+      <view class="panel-set-data">
+        <view class="panel-set-title text-with-icon reverse">
+          <image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/icon-out.png"></image>
+          <view class="text">退出登录</view>
+        </view>
+      </view>
+      <view class="panel-set-icon">
+        <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+      </view>
+    </view>
+  </view>
+</view>

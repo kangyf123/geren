@@ -1,0 +1,40 @@
+/* pages/internal-recruitment/internal-tip-page/index.wxss */
+.tips__content_top {
+  width: 750rpx;
+  height: 730rpx;
+}
+.tips__content_footer {
+  background-image: linear-gradient(to bottom ,#4188F1, #2346E0);
+  padding: 0 30rpx;
+}
+.tips__module {
+  text-align: center
+}
+.tips__footer_module {
+  height: 196rpx;
+  background-image: linear-gradient(to bottom ,#3C70E9, #2B4EE9);
+  border-radius: 10rpx;
+  margin: 0 auto;
+  position: relative;
+  top: -60rpx;
+  padding: 20rpx 0 40rpx 0;
+  box-sizing: border-box;
+}
+.tips__module_text {
+  text-align: center;
+  color: #fff;
+  font-size: 32rpx;
+  font-weight: 600
+}
+.tips__module_text--sub {
+  color: #fff;
+  font-size: 26rpx;
+  text-align: center;
+  opacity: 0.8
+}
+.tips__footer_text {
+  text-align: center;
+  padding: 24rpx 0;
+  color: #9DCDFD;
+  font-size: 28rpx;
+}

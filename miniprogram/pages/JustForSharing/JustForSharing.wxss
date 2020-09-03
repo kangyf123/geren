@@ -1,0 +1,258 @@
+.sharing__tips {
+  display: flex;
+  align-items: center;
+  height: 76rpx;
+  background: rgba(255, 245, 237, 1);
+  padding: 0 31rpx;
+}
+
+.shating__icon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 24rpx;
+}
+
+.shating__text {
+  font-size: 28rpx;
+  font-weight: 400;
+  color: rgba(255, 136, 0, 1);
+}
+
+.sharing__content {
+  margin: 20rpx 30rpx 21rpx;
+  background: rgba(247, 247, 247, 1);
+  border-radius: 8rpx;
+  padding-top: 37rpx;
+  padding-left: 31rpx;
+  padding-right: 31rpx;
+  padding-bottom: 35rpx;
+}
+.flex_3{
+  flex:3
+}
+.sharing__image_position{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFF;
+}
+.sharing__image_body {
+  margin: 20rpx 30rpx 32rpx;
+  position: relative;
+  height: 1200rpx;
+  border-radius: 8rpx;
+  overflow: hidden;
+}
+
+.sharing__image {
+  width: 100%;
+  height: 1200rpx;
+  border-radius: 8rpx;
+}
+
+.sharing__but {
+  width: 160rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  border-radius: 25rpx;
+  border: 1px solid rgba(59, 135, 255, 1);
+  font-size: 24rpx;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sharing__but_text {
+  color: rgba(59, 135, 255, 1);
+}
+
+.sharing__title {
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-top: 25rpx;
+  color: rgba(51, 51, 51, 1);
+}
+
+.sharing__row {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  font-size: 28rpx;
+  margin-top: 12rpx;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.margin__10 {
+  margin: 0 20rpx;
+}
+
+.sharing__image_positiin_01 {
+  position: absolute;
+  top: 465rpx;
+  left: 85rpx;
+}
+
+.sharing__image_positiin_02 {
+  position: absolute;
+  top: 675rpx;
+  left: 85rpx;
+
+}
+
+.sharing__image_positiin_03 {
+  position: absolute;
+  top: 600rpx;
+  left: 85rpx;
+
+}
+
+.sharing__image_buttom {
+  display: flex;
+  align-items: center;
+  background-color: #FFF;
+  height: 99rpx;
+  justify-content: space-evenly;
+  border-top: 1px solid #EEEEEE;
+  /* position: sticky;
+  bottom: 0; */
+}
+.bottom__height_30{
+  height: 42rpx;
+}
+
+.sharing__image_left,
+.sharing__image_right {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  background-color: #FFFFFF;
+  font-size: 30rpx;
+}
+
+.sharing__image_icon {
+  width: 38rpx;
+  height: 38rpx;
+  margin-right: 17rpx;
+}
+
+.color__DDD {
+  color: #DDD;
+}
+
+.row__01_line {
+  width: 525rpx;
+  background: #EEEEEE;
+  height: 1px;
+  margin-top: 40rpx;
+  margin-bottom: 55rpx;
+}
+
+.row__02_line {
+  width: 525rpx;
+  background: #EEEEEE;
+  height: 1px;
+  margin-top: 29rpx;
+  margin-bottom: 29rpx;
+}
+
+
+.shareCode {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 19rpx;
+  width: 525rpx;
+}
+
+.shareCode__img {
+  /* background-color: lightcoral;  */
+  width: 140rpx;
+  height: 140rpx;
+}
+
+.shareCode__text {
+  width: 525rpx;
+  font-size: 28rpx;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+  text-align: center;
+  margin-bottom: 11rpx;
+}
+
+.shareCode__saveText {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 525rpx;
+  height: 34rpx;
+}
+
+.shareCode__saveImg {
+  width: 182rpx;
+  height: 34rpx;
+}
+
+.shareCode__02 {
+  width: 525rpx;
+  display: flex;
+  justify-content: space-between;
+}
+
+.shareCode__02_left {
+  width: 360rpx;
+  display: flex;
+  flex-direction: column;
+}
+
+.shareCode__02_left_text {
+  font-size: 28rpx;
+  font-weight: 600;
+  color: rgba(0, 0, 0, 1);
+}
+
+.shareCode__02_left_saveImg {
+  width: 180rpx;
+  height: 70rpx;
+}
+
+.shareCode__02_right {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.shareCode__02_right_code {
+  width: 110rpx;
+  height: 110rpx;
+  /* background-color: red; */
+}
+
+.currentIndex {
+  width: 136rpx;
+  height: 58rpx;
+  line-height: 58rpx;
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 29rpx;
+  text-align: center;
+  position: absolute;
+  right: 60rpx;
+  margin-top: 41rpx;
+  z-index: 100;
+}
+
+.currentIndexText {
+  opacity: 1;
+  font-size: 26rpx;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+}
+.canvasImg{
+  opacity: 0;
+  position: fixed;
+  z-index: -2;
+  top: -2000rpx;
+  width: 690rpx;
+  height: 1200rpx;
+}

@@ -1,0 +1,6 @@
+/* components/sunVideo/sunVideo.wxss */
+.sunVideo_wrap, .internal__video_el {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}

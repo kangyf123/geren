@@ -1,0 +1,62 @@
+<view class="internal__wrap">
+ <compNavBar bindaddSupport="addSupport" heartNum="{{heartNum}}" heartState="{{heartState}}"></compNavBar>
+  <view class="internal__video">
+    <sunVideo src="{{src}}" poster="{{poster}}" showMask="true"></sunVideo>  
+  </view>
+  <view class="internal__compList_item mb-0">
+    <view class="internal__compinfo_info Common__border_1px">
+     <view class="internal__info_title--42">{{jobData.JobTitle}}
+      <text class="internal__job_salary">{{jobData.SalaryText}}</text>
+     </view>
+     <view class="internal__module_item">{{jobData.LocationName}}</view>
+     <view class="internal__module_item">{{jobData.YearsExperienceText}}</view>
+     <view class="internal__module_item">{{jobData.EducationLevelText}}</view>
+    </view>
+  </view>
+  <view class="internal__job">
+    <view class="internal__info_title">职位描述</view>
+    <view class="internal__job_item Common_clr__border--eee Common_border__b" bindtap="jionItemClick">
+         <text class="internal__job_text">
+           {{jobData.JobDescription}}
+         </text> 
+    </view>
+  </view>
+  <view class="internal__compList_item pb">
+      <view class="map__container" >
+          <sunMap address="{{companyLocationData.WorkAddress}}" latitude="{{companyLocationData.Latitude}}" longitude="{{companyLocationData.Longitude}}"></sunMap>
+      </view>
+       <view class="risComp_wrap" style="margin-top: 66rpx;padding:0 30rpx">
+          <risComp bg="{{true}}"></risComp>  
+       </view>
+  </view>
+  <view class="internal__jion">
+    <view class="internal__jion_tips" ><sunFadeTip></sunFadeTip></view>
+    <view class="internal__jion_btn" bindtap="jionUs">极速应聘</view>
+  </view>
+</view>
+
+<view class="modal__wrap" hidden="{{!showCodeModal}}">
+  <view class="modal__content">
+    <view class="modal__content_header">
+      <view class="modal__content_title">留下您的联系方式</view>
+      <view class="modal__content_title">我们HR会在3小时内与您联系</view>
+      <view class="modal__content_inputer">
+        <input placeholder="请输入你的姓名" data-key="CandidateName" value="{{modalQuery.CandidateName}}" bindinput="modalQueryHandler" class="modal__content_input"></input>
+      </view>
+      <view class="modal__content_inputer">
+        <input placeholder="请输入你的电话" data-key="MobilePhone" value="{{modalQuery.MobilePhone}}" bindinput="modalQueryHandler"  class="modal__content_input modal__content_input--number"></input>
+        <text class="modal__content_getCode" bindtap="getCode">{{loadingCoding ? jumpNum +'s' : '获取验证码'}}</text>
+      </view>
+      <view class="modal__content_inputer">
+        <input placeholder="请输入验证码" data-key="VerifyCode" value="{{modalQuery.VerifyCode}}" bindinput="modalQueryHandler" class="modal__content_input"></input>
+      </view>
+
+    </view>
+    <view class="modal__content_footer">
+      <view class="modal__footer_cancel layout" bindtap="modalBtnClick" data-type="cancel">取消</view>
+       <view class="modal__footer_submit layout" bindtap="modalBtnClick" data-type="submit">提交</view>
+    </view>
+  </view>  
+</view>
+
+

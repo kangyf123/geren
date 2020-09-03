@@ -1,0 +1,363 @@
+
+page {
+  background-color: #F5F5F5;
+}
+.textOverflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 250rpx;
+  text-align: center;
+}
+.layout-head {
+  background-color: #FFFFFF;
+}
+.banner-panel {
+  text-align: center;
+}
+/** 猎头推荐列表 start **/
+.headhunter-head {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 33rpx;
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+}
+.headhunter-title {
+  color: #333333;
+  font-size: 30rpx;
+}
+.headhunter-more {
+  display: flex;
+  align-items: center;
+}
+.headhunter-more-msg {
+  color: #999999;
+  font-size: 28rpx;
+}
+.headhunter-more-img {
+  width: 20rpx;
+  height: 20rpx;
+  margin-left: 14rpx;
+}
+.banner-img {
+  width: 690rpx;
+  height: 290rpx;
+}
+
+.headhunter-list {
+  display: flex;
+  overflow: scroll;
+  margin: 30rpx;
+  margin-right: 0;
+}
+.headhunter-item {
+  border: solid 1rpx #DDDDDD;
+  margin-right: 20rpx;
+  width: 180rpx;
+  flex-shrink: 0;
+  text-align: center;
+  color: #333;
+  padding: 31rpx 8rpx;
+}
+.headhunter-img {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+  background-color: #000;
+  
+}
+.headhunter-name {
+  margin-top: 18rpx;
+  font-size: 26rpx;
+}
+.headhunter-position {
+  margin-top: 3rpx;
+  font-size: 22rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.headhunter-industry {
+  margin-top: 16rpx;
+  background-color: #F7F7F7;
+  color: #3B87FF;
+  display: inline-block;
+  padding: 6rpx 15rpx;
+  border-radius: 4rpx;
+  font-size: 20rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 80%;
+}
+.headhunter-blank {
+  width: 15rpx;
+  flex-shrink: 0;
+}
+/** 猎头推荐列表 end **/
+
+/** 职位列表 start **/
+.job-panel {
+  margin-top: 20rpx;
+}
+.job-search {
+  background-color: #FFF;
+  padding-left: 30rpx;
+  padding-right: 6rpx;
+  display: flex;
+  line-height: 1;
+  border-bottom: solid 1rpx #EEE;
+  position: sticky;
+  position: -webkit-sticky;
+  z-index: 999;
+  top: 88px;
+  border-top: solid 1rpx #F5F5F5;
+}
+.job-search-placeholder {
+  height: 106rpx;
+  display: none;
+}
+.job-search-placeholder.show {
+  display: block;
+}
+.job-search.fixed {
+  position: fixed;
+  top: 137rpx;
+  width: calc(100% - 60rpx);
+  border-top: solid 1rpx #EEE;
+  border-bottom-color: transparent;
+}
+.job-filter {
+  width: calc(100% - 360rpx);
+  padding: 30rpx 0;
+}
+.job-sort {
+  display: flex;
+  width: 360rpx;
+  flex-shrink: 0;
+  align-items: center;
+  color: #666;
+  justify-content: flex-end;
+}
+.job-sort-list {
+  display: flex;
+}
+.job-sort-item {
+  width: 110rpx;
+  text-align: center;
+}
+.job-sort-text {
+  padding-top: 30rpx;
+  padding-bottom: 30rpx;
+  font-size: 28rpx;
+  width: 64rpx;
+  border-bottom: solid 4rpx transparent;
+  display: inline-block;
+}
+.job-sort-item.selected {
+  color: #333;
+  font-weight: bold;
+}
+.job-sort-item.selected .job-sort-text {
+  border-bottom-color: #3B87FF;
+}
+.job-search-icon {
+  width: 80rpx;
+  text-align: right;
+  margin-left: 25rpx;
+  border-left: solid 1rpx #DDDDDD;  
+}
+.icon-search {
+  width: 34rpx;
+  height: 34rpx;
+}
+.job-intention-name {
+  max-width: 240rpx;
+  font-size: 30rpx;
+}
+.job-intention-icon {
+  width: 18rpx;
+  height: 18rpx;
+}
+.job-item {
+  margin-bottom: 21rpx;
+}
+.job-item-headhunter {
+  justify-content: start;
+
+}
+.job-item-headhunter-img {
+  width: 46rpx;
+  height: 46rpx;
+}
+.job-item-headhunter-info {
+  font-size: 28rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+
+.empty-panel {
+  background-color: #FFF;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+/** 职位列表 end **/
+
+/** 登录 start **/
+.login-panel {
+  position: fixed;
+  bottom: 0;
+  width: 100%; 
+}
+.login-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.7;
+}
+.login-wrapper {
+  padding: 16rpx 30rpx 16rpx 38rpx;
+  position: relative;
+  z-index: 1;
+}
+.login-text-name {
+  font-size: 28rpx;
+  color: #fff;
+  font-weight: bold;
+}
+.login-text-msg {
+  font-size: 24rpx;
+  color: #fff;
+}
+.btn-login {
+  font-size: 28rpx;
+  padding: 14rpx 32rpx;
+  display: inline-block;
+  line-height: 1;
+  border-radius: 6rpx;
+}
+/** 登录 end **/
+
+.home_funs__module {
+ 
+  padding-left: 10px;
+}
+.home_fun__icon--pos {
+  position: absolute;
+  top: 30rpx;
+  left: 16rpx;
+}
+.home_funs__icon {
+  display: inline-block;
+  width: 52rpx;
+  height: 52rpx;
+}
+.home__module__box {
+  height: 100%;
+  box-sizing: border-box;
+  font-size: 0;
+  line-height: 34rpx;
+}
+.home_module__job {
+  width: 690rpx;
+  height: 150rpx;
+  margin-top: 10rpx;
+  margin-bottom: 23rpx;
+}
+
+.home_search__isComplete {
+  background: #FFF5ED;
+  color:#FF8800;
+  font-size: 24rpx;
+  padding: 16rpx 30rpx;
+  position: relative;
+}
+
+.home_btn__goComplete {
+  display: inline-block;
+  border-radius: 20rpx;
+  width: 105rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  background: #FF8800;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  right: 30rpx;
+  top: 12rpx;
+}
+.home_search__reCommend {
+  background: #f5f5f5;
+  text-align: center;
+  font-size: 28rpx;
+}
+.home_reCommend_text {
+  color: #999;
+}
+.home_localpoint {
+  width: 20rpx;
+  height: 20rpx;
+}
+
+.home_local {
+  position: absolute;
+  right: -16rpx;
+  top: 0;
+}
+.swiper .wx-swiper-dots.wx-swiper-dots-horizontal{
+     margin-bottom: 2rpx;
+}
+.swiper .wx-swiper-dot{
+    width:20rpx;
+    display: inline-flex;
+    height: 4rpx;
+    justify-content:space-between;
+}
+.swiper .wx-swiper-dot::before{
+    content: '';
+    flex-grow: 1; 
+    background: rgba(255,255,255,0.6);
+    border-radius: 8rpx
+}
+.swiper .wx-swiper-dot-active::before{
+    background:#fff;   
+}
+
+.home_recommend__huntHead {
+  padding: 30rpx 0 0 30rpx;
+  background: #fff;
+  font-weight: 500
+}
+.no-more-data {
+  padding-bottom: 110rpx;
+}
+.home__icon_go {
+  width: 94rpx;
+  height: 94rpx;
+  position: absolute;
+  top: 36rpx;
+  right: 20rpx;
+ -webkit-animation: scaleDraw 1s ease-in-out infinite;
+}
+
+@keyframes scaleDraw {  
+            0%{
+                transform: scale(0.9);  
+            }
+            25%{
+                transform: scale(1.1); 
+            }
+            50%{
+                transform: scale(0.9);
+            }
+            75%{
+                transform: scale(1.1);
+            }
+            100%{
+                transform: scale(0.9);
+            }
+}

@@ -1,0 +1,44 @@
+<!--index.wxml-->
+<view id="main" class="content flex-center-column">
+  <view id="video-container" class="video-container n{{totalUser}}">
+     <view wx:for="{{media}}" wx:key="key" bindtap="switchVideoView" data-index="{{index}}" wx:key="index"
+     style="position:absolute;left:{{item.left}}px; top:{{item.top}}px; width: {{item.width}}px; height: {{item.height}}px; "
+     class="{{item.view}}"
+     >
+        <agora-pusher 
+        wx:if="{{item.type === 0 && !item.holding}}" 
+        id="rtc-pusher" 
+        x="{{item.left}}" 
+        y="{{item.top}}" 
+        width="{{item.width}}" 
+        height="{{item.height}}" 
+        url="{{item.url}}" 
+        muted="{{muted}}"  
+        beauty="{{beauty}}" 
+        debug="{{debug}}" 
+        enableCamera="{{closeCamera}}"
+        bindpushfailed="onPusherFailed"
+        bindstateChange = "stateChange"
+        >
+        </agora-pusher>
+        <agora-player  bindstateChange = "stateChange" wx:if="{{item.type === 1 && !item.holding}}" id="rtc-player-{{item.uid}}" uid="{{item.uid}}" x="{{item.left}}" y="{{item.top}}" width="{{item.width}}"  height="{{item.height}}"  cls="{{item.view}}" debug="{{debug}}" url="{{item.url}}">
+        </agora-player>
+    </view> 
+  </view>
+  <view class="footer flex-center-column">
+    <view class="toolbar">
+      <button plain="true" class="mic {{muted?'muted': ''}} btn" bindtap='onMute'></button>
+      <button plain="true" hover-class="hover" class="{{closeCamera ? 'camera' :'abled_camera'}} btn" bindtap='unpubishScream'></button>
+      <button plain="true" hover-class="hover" class="unpubish  btn" bindtap='onSwitchCamera'></button>
+      <button plain="true" hover-class="hover" class="hangup btn" bindtap='onLeave'></button>
+     
+      <!-- <button plain="true" class="makeup btn" bindtap='onMakeup'></button> -->
+      <!-- <button plain="true" hover-class="hover" class="log btn" bindtap='onSubmitLog'></button> -->
+      <!-- <button plain="true" class="switch btn" hover-class="hover" bindtap='onMakeup'></button> -->
+    </view>
+  </view>
+</view>
+<view class="video_channel"><image  class="back_item" src="/imgs/white_arrow.png" bindtap="onLeave"></image>面试间： {{channel}}</view>
+<view class="set_beauty">
+ <button class="makeup {{beauty === 5 ?'':'off'}} beauti_btn" bindtap='onMakeup'></button>
+ </view>

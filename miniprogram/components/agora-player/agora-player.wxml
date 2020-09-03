@@ -1,0 +1,14 @@
+<view class="play-container {{cls}}" style="height:100%;width:100%">
+  <live-player wx:if="{{url!==''}}" 
+  id="player-{{uid}}" src="{{url}}" 
+  mode="RTC" 
+  class="player" 
+  orientation="{{orientation}}" 
+  bindstatechange="playerStateChange" 
+  bindnetstatus="recorderNetChange" 
+  object-fit="fillCrop" 
+  style="height:{{height}}px; position: absolute; width: 100%; top: 0; left: 0;"
+  debug="{{debug}}"
+    />
+  <view wx:if="{{status !== 'ok'}}" class="video_status">{{status}}</view>
+</view>

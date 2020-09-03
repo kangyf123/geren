@@ -1,0 +1,21 @@
+<navBar page-name="加入锐仕方达" showNavBut='{{true}}'></navBar>
+<view class="tips__content">
+  <view class="tips__content_top">
+    <image style="width: 100%;height: 100%;" src="/imgs/image__bg_tip--big.png"></image>
+  </view>
+  <view class="tips__content_footer">
+    <view class="tips__footer_module">
+      <view class="tips__module">
+        <image onload style="width: 170rpx;height: 54rpx" src="/imgs/Common__logo_light.png"></image>
+      </view>
+      <view class="tips__module tips__module_text">
+        全国130+分公司，虚位以待，只等你来
+      </view>
+      <view class="tips__module tips__module_text--sub">
+        猎头行业，人人大有可为
+      </view>
+    </view>
+    <risComp></risComp> 
+    <view class="tips__footer_text">加入锐仕方达，自己做老板</view>
+  </view>
+</view>

@@ -1,0 +1,3 @@
+<navBar page-name="放弃原因" showNavBut='{{showNavBut}}'></navBar>
+<InputPanel style="width: 100%;" keywords="{{ otherReasonMsg }}" limit="140" type="input" bindinput="bindInput" placeholder="原因描述"></InputPanel>
+<button class="btn btn-blue btn-mlr-40 btn-submit {{ disabled ? 'disabledColor' : '' }}" bindtap="save">确定</button>

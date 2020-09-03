@@ -1,0 +1,15 @@
+<navBar page-name="打开电脑浏览器" showNavBut='{{showNavBut}}'></navBar>
+<view class="page">
+  <view class="main-panel">
+    <view class="logo-wrapper">
+      <image class="logo-computer" mode="aspectFit" src="/imgs/logo-computer.png"></image>
+    </view>
+    <view class="notice-msg">用电脑浏览器打开下面网址</view>
+    <view class="flex-between notice-input-panel">
+      <view class="copy-link overflow-dot">http://member.risfond.com/home2.aspx</view>
+      <button class="btn-light-gray copy-btn" 
+        data-url="http://member.risfond.com/home2.aspx"
+        bindtap="copyLink">复制</button>
+    </view>
+  </view>
+</view>

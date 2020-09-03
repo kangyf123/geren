@@ -1,0 +1,6 @@
+{
+  "component": true,
+  "usingComponents": {
+    "canvas_draw": "../canvasdrawer/canvasdrawer"
+  }
+}

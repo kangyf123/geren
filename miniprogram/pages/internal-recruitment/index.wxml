@@ -1,0 +1,51 @@
+<view class="internal__wrap">
+  <compNavBar showHeart="{{false}}" bindaddSupport="addSupport" heartNum="{{heartNum}}" heartState="{{heartState}}"></compNavBar>
+  <view class="internal__video">
+    <sunVideo src="{{src}}" showMask="true"></sunVideo>  
+  </view>
+  <view class="selector__wrap">
+      <sunSelector 
+      selectorData="{{selectorData}}" 
+      bindsunSelectorEvent="sunSelectorEvent" 
+      selectedDataProps="{{localData.City}}"
+      jumpAnotherPage="{{jumpOpts}}"
+      title="城市选择" ></sunSelector>
+  </view>
+  <view class="internal__compList Common_layout__mb--150">
+    <view class="internal__compList_item" bindtap="complistClick" data-id="{{item.Id}}" wx:for="{{List}}" wx:key="index">
+      <view class="internal__compList_item--compinfo">
+        <view class="internal__compinfo_img">
+          <image class="internal__compinfo_img--el" src="{{item.AttachmentUrl}}"></image>
+        </view>
+        <view class="internal__compinfo_info">
+          <view class="Common_list__title--list">{{ item.CompanyName }}</view>
+          <text class="internal__module_item" wx:for="{{item.ClientWelfareList}}" wx:key="Welfare" wx:for-item="Welfare">{{Welfare.WelfareText}}</text>
+        </view>
+      </view>
+       <view class="internal__compList_item--detailinfo">
+        <view class="internal__heart_wrap">
+          <image class="heart__img" src="/imgs/Common_icon_emptyHeart.png"></image>
+          <text class="heart__text Common_clr__font--999">{{item.SupportAmount}}</text>
+        </view>
+        <view class="internal__job_wrap">
+          <text class="internal__job_text--26 Common_clr__font--999">在招职位</text>
+          <text class="internal__job_text--26 internal__job_text--s Common_clr__font--primary">{{item.JobRecruitCount > 0? item.JobRecruitCount + "个" : 0}}</text>
+          <image class="icon__arrow" src="/imgs/icon-arrow-right.png"></image>  
+        </view>
+       </view>
+    </view>
+  </view>
+</view>
+
+<view class="tipModal" hidden="{{hideTipModal}}">
+  <view class="tipModal__tip"  bindtap="_handlerNavigateTo" data-url="internal-tip-page/index">
+    <image class="tipModal__tip_img" src="/imgs/image__bg_tip--big.png"></image>
+    <image class="tipModal__tip_logo" src="/imgs/Common__logo_light.png"></image>
+  </view>
+  <view class="tipModal__footer" bindtap="_handlerNavigateTo" data-url="internal-tip-page/index">
+    <view class="tipModal__footer_btn">查看详情></view>
+  </view>
+  <view class="tipModal__controls" bindtap="tipClose">
+      <image class="tipModal__controls_close" src="/imgs/Common__icon_cClose.png"></image>
+  </view>
+</view>

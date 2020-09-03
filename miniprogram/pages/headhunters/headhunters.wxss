@@ -1,0 +1,321 @@
+page {
+  min-height: 100%;
+  height: 100%;
+  max-height: fit-content;
+}
+.page {
+  min-height: 100%;
+  background-color: #F5F5F5;
+}
+.page.white {
+  background-color: #FFF;
+}
+/** 头部搜索 start **/
+.head-search-panel {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  display: flex;
+  font-size: 28rpx;
+  height: 28rpx;
+  text-align: center;
+  line-height: 1;
+  border-top: solid 1rpx #EEEEEE;
+  padding-top: 29rpx;
+  padding-bottom: 32rpx;
+  background-color: #FFFFFF;
+}
+.head-search-panel-placeholder {
+  height: 90rpx;
+}
+.head-city-panel {
+  width: calc(26% - 1rpx);
+  border-right: solid 1rpx #DDDDDD;
+}
+.head-industry-panel {
+  width: calc(28% - 1rpx);
+  border-right: solid 1rpx #DDDDDD;
+}
+.head-service-panel {
+  width: calc(30% - 1rpx);
+  border-right: solid 1rpx #DDDDDD;
+}
+.head-icon-panel {
+  width: 16%;
+}
+.icon-search {
+  width: 32rpx;
+  height: 32rpx;
+}
+.filter-name {
+  display: inline-block;
+  max-width: calc(100% - 80rpx);
+}
+/** 头部搜索 end **/
+
+/** 猎头列表 start **/
+.headhunter-list {
+  margin-top: 20rpx;
+}
+.headhunter-item {
+  background-color: #FFFFFF;
+  margin-bottom: 20rpx;
+  padding: 35rpx 30rpx 30rpx;
+}
+.headhunter-profile {
+  display: flex;
+}
+.headhunter-img {
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 90rpx;
+  margin-right: 30rpx;
+}
+.headhunter-info {
+  width: calc(100% - 120rpx);
+}
+.headhunter-name-pos {
+  margin-bottom: 15rpx;
+}
+.headhunter-name {
+  font-size: 32rpx;
+  color: #333333;
+  font-weight: bold;
+}
+
+.headhunter-position {
+  font-size: 24rpx;
+  padding-left: 22rpx;
+}
+
+.headhunter-pos-img {
+  height: 24rpx;
+  width: 24rpx;
+  margin-right: 6rpx!important;
+}
+.headhunter-pos-name {
+  color: #999999!important;
+  font-size: 24rpx;
+}
+.headhunter-company {
+  font-size: 24rpx;
+  color: #333333;
+  margin-bottom: 11rpx;
+}
+.headhunter-industry {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 18rpx;
+}
+.headhunter-stat {
+  font-size: 24rpx;
+  color: #666666;
+  margin-top: 13rpx;
+}
+.headhunter-item-sep {
+  width: calc(100% + 30rpx);
+  height: 1rpx;
+  background-color: #EEE;
+  margin-top: 15px;
+  margin-bottom: 14px;
+}
+.headhunter-jobs-panel {
+  font-size: 24rpx;
+}
+.headhunter-jobs-msg {
+  color: #333;
+}
+.headhunter-jobs-job-name {
+  color: #3B87FF;
+}
+/** 猎头列表 end **/
+.empty-panel {
+  background-color: #FFF;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+.filter-icon-panel {
+  margin-left: 19rpx;
+  display: inline-block;
+}
+.filter-triangle {
+  width: 0;
+  height: 0;
+  border: 9rpx solid transparent;
+  display: inline-block;
+  position: relative;
+  
+}
+.filter-triangle.top {
+  border-bottom-color: #C2C2C2;
+  top: -3rpx;
+  display: none;
+}
+
+.filter-triangle.bottom {
+  border-top-color: #C2C2C2;
+  top: 3rpx;
+  display: inline-block;
+}
+.filter-icon-panel.show-filter-panel .filter-triangle.top {
+  display: inline-block;
+}
+.filter-icon-panel.show-filter-panel .filter-triangle.bottom {
+  display: none;
+}
+
+/** 筛选列表 start **/
+.filter-panel {
+  top: 227rpx;
+}
+.filter-panel .popup-body.position {
+  padding: 0;
+}
+.filter-panel .popup-body.industry {
+  height: 819rpx;
+  padding: 0;
+}
+.filter-panel .popup-body.order {
+  padding: 0;
+}
+.filter-search-panel {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+  margin-bottom: 10rpx;
+}
+.search-panel.input {
+  display: flex;
+  align-items: center;
+}
+.search-panel.input .search-input {
+  vertical-align: initial;
+}
+.search-panel.input .delete-icon {
+  margin-top: 0;
+}
+/** 筛选列表 end **/
+
+/** 猎头地点筛选 start **/
+.cities-panel {
+  display: flex;
+  height: 672rpx;
+  overflow: hidden;
+  padding-top: 21rpx;
+}
+.panel-sep {
+  height: 22rpx;
+
+}
+.menu-list {
+  width: 196rpx;
+  background-color: #F9F9F9;
+  overflow: scroll;
+  padding-bottom: 34rpx;
+}
+.menu-item {
+  margin-top: 48rpx;
+  color: #666666;
+  text-align: center;
+  border-right: solid 5rpx transparent;
+  font-size: 30rpx;
+}
+.menu-item.selected {
+  border-right-color: #3B87FF;
+  color: #333333;
+  font-weight: bold;
+}
+.menu-item:first-child {
+  margin-top: 34rpx;
+}
+.city-wrapper {
+  width: calc(100% - 196rpx);
+  overflow: scroll;
+}
+.city-list {
+  display: flex;
+  margin-left: 30rpx;
+  margin-right: 17rpx;
+  flex-wrap: wrap;
+  padding-bottom: 20rpx;
+}
+.city-item {
+  margin-top: 15rpx;
+  width: 33.33333333%;
+  text-align: center;
+}
+.city-name {
+  margin-right: 10%;
+  border: solid 1rpx #DDD;
+  padding-top: 14rpx;
+  padding-bottom: 14rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 26rpx;
+}
+.city-item.selected .city-name {
+  border-color: #3B87FF;
+  color: #3B87FF;
+}
+/** 猎头地点筛选 end **/
+
+/** 筛选项搜索 start **/
+.panel-head {
+  position: fixed;
+  width: calc(100% - 60rpx);
+  height: 60rpx;
+  background-color: #fff;
+  padding-bottom: 17rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.panel-head-placeholder {
+  height: 70rpx;
+}
+.search-list-wrapper {
+  height: 757rpx;
+  overflow: scroll;
+}
+.search-list {
+  background-color: #FFF;
+}
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #EEEEEE;
+  padding: 25rpx 32rpx 24rpx;
+}
+.search-name {
+  width: calc(100% - 60rpx);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+.msg-highlight {
+  color: #3B87FF;
+}
+.search-icon.selected {
+  display: none;
+}
+.search-icon-empty {
+  width: 28rpx;
+  height: 28rpx;
+  border: solid 4rpx #DDDDDD;
+  border-radius: 18px;
+}
+.search-item.selected .search-icon.selected {
+  display: block;
+}
+.search-item.selected .search-icon-empty {
+  display: none;
+}
+.selected-label-list {
+  height: 35rpx;
+}
+.search-gray-panel {
+  height: 20rpx;
+  background-color: #F5F5F5;
+}
+/** 筛选项搜索 end **/

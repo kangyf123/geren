@@ -1,0 +1,20 @@
+<view class="panel-set-item">
+  <view class="panel-set-data">
+    <view class="panel-set-title">
+      {{ title }}
+    </view>
+    <view class="panel-set-val">
+      <picker class="date-select start" mode="multiSelector" value="{{ startDate.val }}" range="{{ startDate.conf }}" bindcancel="bindcancel"  
+        range-key="name" data-type="startDate" data-field="start" bindchange="bindDateChange"
+        bindcolumnchange="bindcolumnchange">
+        <view class="{{ start ? '' : 'empty' }}">{{ start ? start : titleStart }}</view>
+      </picker>
+      <view class="date-select-sep">-</view>
+      <picker class="date-select start" mode="multiSelector" value="{{ endDate.val }}" range="{{ endDate.conf }}"   
+        range-key="name" data-type="endDate" data-field="end" bindchange="bindDateChange"
+        bindcolumnchange="bindcolumnchange" bindcancel="bindcancel">
+        <view class="{{ isEndCurrent || end ? '' : 'empty' }}">{{ isEndCurrent ?  '至今': end ? end : titleEnd }}</view>
+      </picker>
+    </view>
+  </view>
+</view>

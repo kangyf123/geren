@@ -1,0 +1,85 @@
+
+<view class="page">
+  <navBar page-name="查看offer" showNavBut='{{showNavBut}}'></navBar>
+  <image class="bg" mode="widthFix" src="/imgs/bg-view-job.jpg"></image>
+  <view class="container" style="margin-top:{{navHeight}}">
+    <view class="content">
+      <view></view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">姓&emsp;&emsp;名：</text>
+        </view>
+        <view class="val">{{ data.Name }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">性&emsp;&emsp;别：</text>
+        </view>
+        <view class="val">{{ data.Gender }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">年&emsp;&emsp;龄：</text>
+        </view>
+        <view class="val">{{ data.Age }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">学&emsp;&emsp;历：</text>
+        </view>
+        <view class="val">{{ data.EducationLevel }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">现<text class="title-padding-word">居</text>地：</text>
+        </view>
+        <view class="val">{{ data.LiveLocation }}</view>
+      </view>
+      <view class="sep"></view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">录用公司：</text>
+        </view>
+        <view class="val">{{ data.ClientName }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">录用部门：</text>
+        </view>
+        <view class="val">{{ data.Department }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">录用职位：</text>
+        </view>
+        <view class="val">{{ data.JobTitle }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">offer年薪：</text>
+        </view>
+        <view class="val red-bold">{{ data.FormatYearSalary }}万（{{ data.YearSalaryType }}）</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">入职时间：</text>
+        </view>
+        <view class="val">{{ data.EntryDate }}</view>
+      </view>
+      <view class="sep"></view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">服务猎头：</text>
+        </view>
+        <view class="val">{{ data.StaffName }}</view>
+      </view>
+      <view class="item">
+        <view class="title">
+          <text decode="{{ true }}">offer时间：</text>
+        </view>
+        <view class="val">{{ data.OfferTimeStr }}</view>
+      </view>
+    </view>
+    <image class="container-bottom-img" mode="widthFix" src="/imgs/envelop-view-job.png"></image>
+  </view>
+</view>

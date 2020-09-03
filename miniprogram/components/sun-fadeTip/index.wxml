@@ -1,0 +1,6 @@
+<view class="sunTip {{leftTip ? 'sunTip__arrow_left' :'sunTip__arrow_bottom'}} {{showTip ? 'fadeIn' : 'fadeOut'}}">
+  <view class="sunTip_img">
+    <image src="../../imgs/Common__icon_logo--small.png"></image>
+  </view>
+  <text class="sunTip_context">{{tipText}}</text>
+</view>

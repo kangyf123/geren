@@ -1,0 +1,189 @@
+.Common_layout__mr--20 {
+  margin-right: 20rpx;
+}
+.Common_layout__mr--15 {
+ margin-right: 15rpx;
+}
+
+.Common_layout__mb--20 {
+  margin-bottom: 20rpx;
+}
+
+.Common_layout__mb--150 {
+  margin-bottom: 150rpx;
+}
+
+.Common_layout__mt--34 {
+  margin-top: 34rpx;
+}
+
+.Common_layout__pv--30 {
+  padding: 0 30rpx;
+}
+
+.Common_layout__pd--23 {
+  padding: 23rpx 0;
+}
+
+.Common_layout__pt--38 {
+  padding-top: 38rpx;
+}
+
+.Common_layout__pd--25 {
+  padding: 25rpx 0;
+}
+
+
+
+.Common_layout__inline {
+  display: inline-block;
+}
+.Common_layout__ellipsis {
+   white-space: nowrap;
+   text-overflow: ellipsis;
+   overflow: hidden;
+}
+.Common_layout__inline {
+  display: inline-block;
+}
+
+.Common_clr__font--primary {
+  color: #3B87FF
+}
+.Common_clr__font--666 {
+  color: #666
+}
+.Common_clr__font--999 {
+  color: #999;
+}
+.Common_clr__border--eee {
+  border-color: #eee !important;
+}
+.Common_font__blod {
+  font-weight: bold
+}
+
+.Common_font_title--primary {
+  font-size: 30rpx;
+}
+
+.Common_font_sub {
+  font-size: 24rpx;
+}
+
+.Common_font_size--26 {
+  font-size: 31rpx;
+}
+.Common_font_size--20 {
+  font-size: 20rpx;
+}
+.Common_font_weight--normal {
+  font-weight: normal
+}
+.Common_font_size--48 {
+  font-size: 48rpx;
+}
+.Common_font_size--28 {
+  font-size: 28rpx;
+}
+
+.Common_list {
+  padding: 0 30rpx;
+  box-sizing: border-box;
+  background: #fff;
+}
+.Common_list__item {
+  padding: 26rpx 0;
+  display: flex;
+  border-bottom: 1rpx solid #eee;
+}
+
+.Common_list__title {
+  font-weight: 600;
+  font-size: 32rpx;
+  margin-right: 24rpx;
+}
+.Common_list__title--list {
+  font-weight: 600;
+  font-size: 32rpx;
+}
+.Common_list__ava {
+  flex: 0 0 130rpx;
+  height: 130rpx;
+  display: inline-block;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-top: 10rpx
+}
+
+.Common_list__info {
+  flex: 0 0 550rpx;
+  height: 150rpx;
+  padding-left: 26rpx;
+  box-sizing: border-box;
+}
+
+.Common_list__info--item {
+  height: 50rpx;
+  line-height: 50rpx;
+  max-width: 514rpx;
+}
+
+
+.Common_image {
+  width: 100%;
+  height: 100%;
+}
+
+
+.Common_pos__father {
+  position: relative;
+}
+
+.Common__border_1px{
+  border-bottom: 1px solid rgb(249, 249, 249);
+}
+
+
+.agora-bg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.h1{
+font-size: 32rpx;
+}
+.h2{
+font-size: 24rpx;
+}
+
+.flex-center-column{
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.Common_border__b {
+  border-bottom: 1rpx solid;
+}
+
+.Common_icon_small {
+  width: 24rpx;
+  height: 24rpx;
+}
+.Common_btn__size--large {
+  width: 530rpx
+}
+.Common_tip-block {
+  background: #3B87FF;
+  display: inline-block;
+  width: 66rpx;
+  height: 34rpx;
+  border-radius: 4rpx;
+  text-align: center;
+  line-height: 34rpx;
+  color: #fff;
+  font-size: 22rpx;
+  transform:translateY(-4rpx);
+}

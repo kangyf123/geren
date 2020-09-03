@@ -1,0 +1,12 @@
+<view class="page" style="background-color:{{RecordCount == 0 ?'#FFFFFF' :'#F5F5F5'}}">
+	<navBar page-name="极速应聘记录" showNavBut='{{showNavBut}}'></navBar>
+	<view wx:if="{{RecordCount == 0}}">
+		<view class="empty__margin">
+			<EmptyPanel msg="{{'暂无数据'}}"></EmptyPanel>
+		</view>
+	</view>
+	<view class="layout-mb-20 ma-top-20" wx:for="{{ list }}" wx:key="index">
+		<ItemJob isNewdate="{{isNewdate}}" hasHeadhunter="{{hasHeadhunter}}" needDate="{{hasHeadhunter}}" data="{{ item }}"></ItemJob>
+	</view>
+	<view wx:if="{{zeroList}}" class="no-more-data">没有更多数据了</view>
+</view>

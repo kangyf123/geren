@@ -1,0 +1,102 @@
+<wxs module="strFilter" src="../../wxs/str.wxs"></wxs>
+<navBar page-name="{{searchInprogressTitle}}" showNavBut='{{showNavBut}}' is-edited="{{ _dataList._isEdited }}"></navBar>
+<view class="head-panel">
+  <view class="search-panel input">
+    <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+    <input class="search-input" placeholder="搜索职位" value="{{ _dataList._kwd }}" bindinput="searchByKwd" />
+    <image class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png" wx:if="{{ _dataList._kwd }}" bindtap="_removeKwd"></image>
+  </view>
+  <view class="search-selected-panel" wx:if="{{ selectedList.length > 0 && !_dataList._kwd && _dataList._maxSelectedCount > 1 }}">
+    <view class="flex-between selected-panel">
+      <view class="selected-label-list">
+        <view class="selected-label-item" wx:for="{{ selectedList }}" data-id="{{ item.Id }}" wx:key="Id"
+          bindtap="removeJob">
+          <view class="selected-label-wrapper">
+            <view class="selected-name overflow-dot">{{ item.Text }}</view>
+            <image class="selected-remove-img" mode="aspectFit" src="/imgs/icon-delete-blue.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="selected-text">
+        <text class="selected-num">{{ selectedList.length }}</text>/{{ _dataList._maxSelectedCount }}
+      </view>
+    </view>
+  </view>
+</view>
+<view class="head-sep {{ selectedList.length > 0 && !_dataList._kwd && _dataList._maxSelectedCount > 1 ? 'with-selected-panel' : '' }}"></view>
+<view class="list-panel">
+  <view class="list-sep"></view>
+
+  <!-- 根据关键字搜索职位 start -->
+  <view class="search-list" wx:if="{{ _dataList._kwd !== '' }}">
+    <view class="search-item" 
+      wx:for="{{ searchList }}" 
+      wx:key="index"
+      data-index="{{ index }}" 
+      bindtap="selectJobInSearchPanel">
+      <view class="search-item-content">
+        <view class="search-name no-icon">
+          <text  wx:for="{{ strFilter.split( item.Text, _dataList._kwd) }}" wx:key="index" wx:for-item="strPart" class="{{ _dataList._kwd === strPart ? 'font-blue' : '' }}">{{ strPart }}</text>
+        </view>
+        <view class="search-msg">{{ item.parentsText }}</view>
+      </view>
+      
+    </view>
+    <view class="empty-panel" wx:if="{{ searchList.length === 0 }}">
+      <EmptyPanel msg="搜索结果为空"></EmptyPanel>
+    </view>
+  </view>
+  <!-- 根据关键字搜索职位 end -->
+
+  <!-- 职位大类 start -->
+  <view class="search-list" wx:else>
+    <view class="search-item" 
+      wx:for="{{ typeList }}" 
+      wx:key="index"
+      data-index="{{ index }}" 
+      bindtap="showJobPopup">
+      <view class="search-name {{ item.hasSelectedInChildren == true ? 'has-selected-data' : '' }}">
+        {{ item.Text }}
+      </view>
+      <image class="icon-arrow-right" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+    </view>
+  </view>
+  <!-- 职位大类 end -->
+
+  <view class="fixed-bottom-placeholder {{ _isScreenBottomRound ? 'has-round-bottom' : '' }}"></view>
+  <view class="fixed-bottom-panel">
+    <button class="fix-bottom-btn btn-blue  {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} {{ selectedList.length > 0 ? '' : 'disabled' }}" bindtap="saveJob">确定</button>
+  </view>
+  <view class="popup-panel popup-job-select {{ jobPopup.isShow ? 'show' : '' }}" style="top: {{ navHeight }}">
+    <view class="popup-mask"></view>
+    <view class="popup-wrapper popup-top" bindtap="hideJobPopup">
+      <view class="popup-content popup-job-select-panel {{ selectedList.length > 0 && _dataList._maxSelectedCount > 1 ? 'with-selected' : '' }}" catchtap="disabledBubble">
+        <view class="popup-job-select-menu">
+          <view class="popup-job-select-menu-item  {{ item.hasSelectedInChildren == true ? 'has-selected-data' : '' }} {{ jobPopup.curMenu.Id == item.Id ? 'selected' : '' }}" 
+            wx:for="{{ jobPopup.menuList }}"
+            wx:key="index" 
+            data-index="{{ index }}"
+            bindtap="showJobsByMenu">
+            <view class="popup-job-select-menu-line"></view>
+            {{ item.Text }}
+          </view>
+        </view>
+        <view class="popup-job-select-data">
+          <view class="popup-job-select-data-item {{ selectedObj[item.Id] ? 'selected' : '' }}" 
+          wx:for="{{ jobPopup.jobList }}"
+            wx:key="index"
+            data-index="{{ index }}" 
+            bindtap="selectJobInPopup">
+            <view class="popup-job-select-data-title">
+              {{ item.Text }}
+            </view>
+            <view class="popup-job-select-data-opt">
+              <icon class="popup-job-select-data-selected" type="success" color="#3B87FF" size="36rpx" />
+              <image wx:if="{{ _dataList._maxSelectedCount > 1 }}" class="popup-job-select-data-unselect" mode="aspectFit" src="/imgs/icon-circle.png"></image>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,34 @@
+.page {
+  text-align: center;
+}
+.main-panel {
+  margin-top: 157rpx;
+}
+.logo-computer {
+  width: 140rpx;
+  height: 140rpx;
+}
+.notice-msg {
+  color: #999999;
+  font-size: 28rpx;
+  margin-top: 12rpx;
+  margin-bottom: 31rpx;
+}
+.notice-input-panel {
+  background-color: #F9F9F9;
+  padding: 18rpx 24rpx 18rpx 34rpx;
+  margin-left: 40rpx;
+  margin-right: 40rpx;
+}
+.copy-link {
+  padding-right: 15rpx;
+}
+.copy-btn {
+  width:110rpx;
+  height:44rpx;
+  border-radius:4rpx;
+  font-size: 24rpx;
+  line-height: 44rpx;
+  color: #3B87FF;
+  flex-shrink: 0;
+}

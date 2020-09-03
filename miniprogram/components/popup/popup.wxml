@@ -1,0 +1,18 @@
+<view class="popup-panel" wx:if="{{ isShow }}">
+  <view class="popup-mask"></view>
+  <view class="popup-wrapper">
+    <view class="popup-content">
+      <view class="popup-head">
+        <view class="popup-title">即将拨号</view>
+        <view class="popup-close-icon" bindtap="hide">×</view>
+      </view>
+      <view class="popup-body">
+        <image class="headhunter-img" mode="aspectFit" src="{{ img }}"></image>
+        <view class="headhunter-name">{{ name }}</view>
+        <view class="headhunter-position">{{ position }}</view>
+        <button class="btn-call" bindtap="_call">确认拨打</button>
+        <view class="headhunter-msg">“联系时请说是锐仕精英小程序看到的”</view>
+      </view>
+    </view>
+  </view>
+</view>

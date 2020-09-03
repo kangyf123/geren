@@ -1,0 +1,45 @@
+page {
+  background-color: #F5F5F5;
+}
+.panel-set-list {
+  background-color: #fff;
+  margin-top: 21rpx;
+}
+.panel-set-item {
+  display: flex;
+  justify-content: space-between;
+  padding-left: 29rpx;
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-top: 31rpx;
+  padding-bottom: 27rpx;
+}
+.panel-set-data {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 70rpx);
+  flex-shrink: 1;
+  color: #333333;
+}
+.panel-set-title {
+  flex-shrink: 0;
+  padding-right: 29rpx;
+}
+.panel-set-val {
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.panel-set-val.empty {
+  color: #999999;
+}
+.panel-set-icon {
+  color: #BDBDBD;
+  padding-right: 29rpx;
+  padding-left: 16rpx;
+  flex-shrink: 0;
+}
+.save {
+  margin: 41rpx 42rpx;
+  font-size: 34rpx;
+}

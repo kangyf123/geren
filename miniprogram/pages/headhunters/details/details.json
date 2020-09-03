@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "Popup": "../../../components/popup/popup",
+    "ItemJob": "../../../components/item-job/item-job",
+    "EmptyPanel": "../../../components/empty-panel/empty-panel",
+    "navBar": "/components/navBar/navBar",
+    "ItemSucc": "../../../components/item-succ/item-succ"
+  },
+    "navigationBarTextStyle": "white"
+}

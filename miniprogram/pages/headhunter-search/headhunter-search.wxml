@@ -1,0 +1,76 @@
+
+<view class="page {{ !isShowSearchTipPanel && enName && count > 0 ? 'search-list' : '' }}">
+  <navBar page-name="搜索猎头" showNavBut='{{showNavBut}}'></navBar>
+  <view class="head-panel">
+    <view class="search-panel input">
+      <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+      <input class="search-input" value="{{ enName }}" auto-focus placeholder="搜索猎头姓名" bindinput="getHeadhunterSearchText" bindconfirm="ajaxGetHeadhunterSearch" />
+      <image wx:if="{{ enName !== '' }}" class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png" bindtap="clearEnName"></image>
+    </view>
+  </view>
+
+  <view class="head-sep"></view>
+  <view wx:if="{{ enName }}">
+    <view class="headhunter-list">
+      <view class="headhunter-item" wx:for="{{ list }}" wx:key="index" data-url="/pages/headhunters/details/details?id={{ item.Staffinfo.StaffId }}" bindtap="_navigateTo">
+        <view class="headhunter-profile">
+          <image class="headhunter-img" mode="aspectFit" src="{{ item.Staffinfo.MiddlePictureUrl }}"></image>
+          <view class="headhunter-info">
+            <view class="flex-between headhunter-name-pos">
+              <view class="headhunter-name-panel">
+                <text class="headhunter-name">{{ item.Staffinfo.EnName }}</text>
+                <text class="headhunter-position">{{ item.Staffinfo.PositionName }}</text>
+              </view>
+              <view class="text-with-icon reverse headhunter-pos">
+                <image class="icon headhunter-pos-img" mode="aspectFit" src="/imgs/icon-pointer.png"></image>
+                <view class="text headhunter-pos-name">
+                  {{ item.CompanyLocationName }}
+                </view>
+              </view>
+            </view>
+            <view class="headhunter-industry overflow-dot">
+              擅长行业：{{ item.Staffinfo.BusinessScopeName }}
+            </view>
+            <view class="headhunter-stat">
+              累计服务{{ item.WorkStatistic.TuijianCount }}人，面试{{ item.WorkStatistic.MianshiCount }}人，offer{{ item.WorkStatistic.OfferCount }}人，入职{{ item.WorkStatistic.ShanggangCount }}人
+            </view>
+            <view class="headhunter-item-sep" wx:if="{{ item.NewestJobName !== '' && item.PublishJobCount > 0 }}"></view>
+            <view class="flex-between headhunter-jobs-panel" wx:if="{{ item.NewestJobName !== '' && item.PublishJobCount > 0 }}">
+              <view class="headhunter-jobs-msg">正在寻访：
+                <text class="headhunter-jobs-job-name">{{ item.NewestJobName }}</text>等{{ item.PublishJobCount }}个职位人才</view>
+              <view class="headhunter-jobs-icon">
+                <image class="icon-right-arrow" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{ count == 0 }}" class="empty-panel">
+        <EmptyPanel msg="未搜到相关猎头"></EmptyPanel>
+      </view>
+    </view>
+    <view class="no-more-data {{ !(count > 0 && count <= filters.page * filters.size) ? 'hide': '' }}">没有更多数据了</view>
+
+
+  </view>
+  <view wx:else>
+    <view class="history-panel" wx:if="{{ historyList.length > 0 }}">
+      <view class="history-title">搜索历史</view>
+      <view class="history-list">
+        <view class="history-item" wx:for="{{ historyList }}" wx:key="index" data-name="{{ item.SearchKey }}" bindtap="ajaxGetHeadhunterSearch">
+          <view class="text-with-icon reverse">
+            <image class="icon icon-time" mode="aspectFit" src="/imgs/icon-time.png"></image>
+            <view class="text history-name">{{ item.SearchKey }}</view>
+          </view>
+        </view>
+      </view>
+      <view class="history-clear" wx:if="{{ historyList.length > 0 }}">
+        <image class="icon-remove" mode="aspectFit" src="/imgs/icon-remove.png"></image>
+        <text class="remove-name" bindtap="ajaxClearSearchHistory">清除历史纪录</text>
+      </view>
+    </view>
+    <view wx:else class="empty-panel">
+      <EmptyPanel msg="暂无搜索历史"></EmptyPanel>
+    </view>
+  </view>
+</view>

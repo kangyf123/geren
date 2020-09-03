@@ -1,0 +1,15 @@
+.rui-rtpn-map{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+}
+.rui-rtpn-location{
+  width: 15vw;
+  height: 15vw;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 12vw;
+  right: 2vw;
+  border: 1rpx solid #1296db;
+  z-index: 10;
+}

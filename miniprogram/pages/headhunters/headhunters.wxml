@@ -1,0 +1,158 @@
+<wxs module="filter" src="./headhunters.wxs"></wxs>
+<wxs module="strFilter" src="../../wxs/str.wxs"></wxs>
+
+<view class="page {{ searchFilter.isShow && searchFilter.list.length === 0 || !searchFilter.isShow && list.length === 0 ? 'white' : '' }}">
+  <navBar page-name="猎头" showNavBut='{{showNavBut}}' backUrl="{{ backUrl }}"></navBar>
+  <view wx:if="{{ !searchFilter.isShow }}">
+    <view class="head-search-panel" style="margin-top:{{navHeight}}">
+      <view class="head-city-panel" data-type="locationCode" bindtap="switchSelectFilterPanel">
+        <view class="filter-name overflow-dot">{{ info.locationCode.id&&info.locationCode.id!=='00' ? info.locationCode.name : '全国' }}</view>
+        <view class="filter-icon-panel {{ selectFilter.isShow && selectFilter.type === 'locationCode' ? 'show-filter-panel': '' }}">
+          <view class="filter-triangle top"></view>
+          <view class="filter-triangle bottom"></view>
+        </view>
+      </view>
+      <view class="head-industry-panel" data-type="businessScopeID" bindtap="switchSelectFilterPanel">
+        <view class="filter-name overflow-dot">{{ info.businessScopeID.id ? info.businessScopeID.name : '所有行业' }}</view>
+        <view class="filter-icon-panel {{ selectFilter.isShow && selectFilter.type === 'businessScopeID' ? 'show-filter-panel': '' }}">
+          <view class="filter-triangle top"></view>
+          <view class="filter-triangle bottom"></view>
+        </view>
+      </view>
+      <view class="head-service-panel" data-type="order" bindtap="switchSelectFilterPanel">
+        <view class="filter-name overflow-dot">{{ info.order.id ? info.order.name : '服务最多' }}</view>
+        <view class="filter-icon-panel {{ selectFilter.isShow && selectFilter.type === 'order' ? 'show-filter-panel': '' }}">
+          <view class="filter-triangle top"></view>
+          <view class="filter-triangle bottom"></view>
+        </view>
+      </view>
+      <view class="head-icon-panel">
+        <image class="icon-search" bindtap="openSearch" mode="aspectFit" src="/imgs/icon-search-dark.png"></image>
+      </view>
+    </view>
+    <view class="head-search-panel-placeholder"></view>
+    <view class="headhunter-list">
+      <view class="headhunter-item" wx:for="{{ list }}" wx:key="index" data-url="/pages/headhunters/details/details?id={{ item.Staffinfo.StaffId }}" bindtap="_navigateTo">
+        <view class="headhunter-profile">
+          <image class="headhunter-img" mode="aspectFit" src="{{ item.Staffinfo.MiddlePictureUrl }}"></image>
+          <view class="headhunter-info">
+            <view class="flex-between headhunter-name-pos">
+              <view class="headhunter-name-panel">
+                <text class="headhunter-name">{{ item.Staffinfo.EnName }}</text>
+                <text class="headhunter-position">{{ item.Staffinfo.PositionName }}</text>
+              </view>
+              <view class="text-with-icon reverse headhunter-pos">
+                <image class="icon headhunter-pos-img" mode="aspectFit" src="/imgs/icon-pointer.png"></image>
+                <view class="text headhunter-pos-name">
+                  {{ item.CompanyLocationName }}
+                </view>
+              </view>
+            </view>
+            <view class="headhunter-industry overflow-dot">
+              擅长行业：{{ item.Staffinfo.BusinessScopeName }}
+            </view>
+            <view class="headhunter-stat">
+              累计服务{{ item.WorkStatistic.TuijianCount }}人，面试{{ item.WorkStatistic.MianshiCount }}人，offer{{ item.WorkStatistic.OfferCount }}人，入职{{ item.WorkStatistic.ShanggangCount }}人
+            </view>
+            <view class="headhunter-item-sep" wx:if="{{ item.NewestJobName !== '' && item.PublishJobCount > 0 }}"></view>
+            <view class="flex-between headhunter-jobs-panel" wx:if="{{ item.NewestJobName !== '' && item.PublishJobCount > 0 }}">
+              <view class="headhunter-jobs-msg">正在寻访：
+                <text class="headhunter-jobs-job-name">{{ item.NewestJobName }}</text>等{{ item.PublishJobCount }}个职位人才</view>
+              <view class="headhunter-jobs-icon">
+                <image class="icon-right-arrow" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+      <view wx:if="{{ count == 0 }}" class="empty-panel">
+        <EmptyPanel></EmptyPanel>
+      </view>
+    </view>
+    <view class="no-more-data {{ !(count > 0 && count <= filters.page * filters.size) ? 'hide': '' }}">没有更多数据了</view>
+    <view class="popup-panel filter-panel" wx:if="{{ selectFilter.isShow }}">
+      <view class="popup-mask"></view>
+      <view class="popup-wrapper popup-top" bindtap="hideSelectFilterPanel">
+        <view class="popup-content" catchtap="disabledBubble">
+          <view class="popup-body position" wx:if="{{ selectFilter.type === 'locationCode' }}">
+            <view>
+              <view class="search-panel show filter-search-panel" bindtap="showSearchFilterPanel">
+                <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+                <text class="search-name">搜索地区</text>
+              </view>
+              <view>
+                <view class="cities-panel">
+                  <view class="menu-list">
+                    <view class="menu-item overflow-dot {{ selectFilter.data.curMenuIndex === index ? 'selected' : '' }}" wx:for="{{ menuList }}" wx:key="index" data-index="{{ index }}" bindtap="changeMenu">{{item.id==='00'?'热门':item.name}}</view>
+                  </view>
+                  <view class="city-wrapper">
+                    <view class="city-list">
+                      <view class="city-item {{ selectFilter.selected.id === item.id ? 'selected': '' }}" wx:for="{{ selectFilter.data.list }}" wx:key="index" data-index="{{ index }}" bindtap="selectSelectFilter">
+                        <view class="city-name">{{item.name }}</view>
+                      </view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="popup-body industry" wx:if="{{ selectFilter.type === 'businessScopeID' }}">
+            <view>
+              <view class="search-panel show filter-search-panel" bindtap="showSearchFilterPanel">
+                <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+                <text class="search-name">搜索行业</text>
+              </view>
+              <view class="search-list-wrapper">
+                <view class="search-list">
+                  <view class="search-item {{ selectFilter.selected.id ==  item.id ? 'selected' : '' }}" wx:for="{{ selectFilter.data.list }}" wx:key="index" data-index="{{ index }}" bindtap="selectSelectFilter">
+                    <view class="search-name">
+                      {{ filter.formatSearchName(item, menuObj) }}
+                    </view>
+                    <icon class="search-icon selected" type="success" color="#3B87FF" size="33rpx" />
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+          <view class="popup-body order" wx:if="{{ selectFilter.type === 'order' }}">
+            <view class="search-list">
+              <view class="search-item {{ selectFilter.selected.id ==  item.id ? 'selected' : '' }}" wx:for="{{ selectFilter.data.list }}" wx:key="index" data-index="{{ index }}" bindtap="selectSelectFilter">
+                <view class="search-name">
+                  {{ filter.formatSearchName(item, menuObj) }}
+                </view>
+                <icon class="search-icon selected" type="success" color="#3B87FF" size="33rpx" />
+              </view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="search-filter-panel" wx:else>
+    <view class="panel-head">
+      <view class="search-panel input">
+        <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+        <input class="search-input" placeholder="{{ searchFilter.placeholder }}" value="{{ searchFilter.kwd }}" bindinput="searchFilterList" />
+        <image class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png" wx:if="{{ searchFilter.kwd }}" bindtap="removeSearchKwd"></image>
+      </view>
+    </view>
+    <view class="panel-head-placeholder"></view>
+    <view class="search-gray-panel"></view>
+    <view class="search-list">
+      <view class="search-item {{ selectFilter.selected.id ==  item.id ? 'selected' : '' }}" wx:for="{{ searchFilter.list }}" wx:key="index" data-index="{{ index }}" bindtap="selectSearchFilter">
+      
+        <view class="search-name" wx:if="{{ searchFilter.kwd !== '' }}">
+          <text wx:for="{{ strFilter.split( filter.formatSearchName(item, menuObj), searchFilter.kwd) }}" wx:for-item="strPart" class="{{ searchFilter.kwd === strPart ? 'font-blue' : '' }}">{{ strPart }}</text>
+        </view>
+        <view class="search-name" wx:else>
+          {{ filter.formatSearchName(item, menuObj) }}
+        </view>
+        <icon class="search-icon selected" type="success" color="#3B87FF" size="36rpx" />
+      </view>
+      <view class="empty-panel" wx:if="{{ searchFilter.list.length === 0 }}">
+        <EmptyPanel msg="搜索结果为空"></EmptyPanel>
+      </view>
+    </view>
+  </view>
+</view>

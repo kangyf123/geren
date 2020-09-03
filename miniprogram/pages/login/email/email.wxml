@@ -1,0 +1,16 @@
+<navBar page-name="登录" showNavBut='{{showNavBut}}'></navBar>
+<view class="layout-mlr-40">
+  <view class="h1">邮箱登录</view>
+  <view class="form-input-item">
+    <view>
+      <input class="form-email" auto-focus placeholder="请输入邮箱" value="{{ email }}" maxlength="50" data-field="email" bindinput="_setToData" data-aftercallback="_setSubmitEnableState" />
+    </view>
+
+    <image wx:if="{{ email }}" class="form-input-icon-remove" mode="aspectFit" src="/imgs/icon-delete.png" bindtap="_clearInput" data-field="email"></image>
+  </view>
+  <view class="form-input-item with-opt">
+    <input class="form-input-input" password="true" placeholder="请输入密码" value="{{ pwd }}" maxlength="20" data-field="pwd" bindinput="_setToData" data-aftercallback="_setSubmitEnableState" />
+    <text class="form-input-btn" data-url="/pages/login/find/find" bindtap="_navigateTo">忘记密码？</text>
+  </view>
+  <button class="btn-blue btn-login {{ _isSubmitEnable ? '' : 'disabled' }}" bindtap="login">登录</button>
+</view>

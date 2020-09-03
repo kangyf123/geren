@@ -1,0 +1,383 @@
+{
+	"cloudfunctionRoot": "cloud/",
+	"description": "项目配置文件",
+	"packOptions": {
+		"ignore": []
+	},
+	"setting": {
+		"urlCheck": false,
+		"es6": true,
+		"postcss": true,
+		"preloadBackgroundData": false,
+		"minified": true,
+		"newFeature": true,
+		"coverView": true,
+		"nodeModules": true,
+		"autoAudits": false,
+		"showShadowRootInWxmlPanel": true,
+		"scopeDataCheck": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		},
+		"useIsolateContext": true,
+		"useCompilerModule": true,
+		"userConfirmedUseCompilerModuleSwitch": false
+	},
+	"compileType": "miniprogram",
+	"libVersion": "2.12.1",
+	"appid": "wx2b32ce8195bd6d29",
+	"projectname": "src",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
+	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"cloudfunctionTemplateRoot": "cloudfunctionTemplate",
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"plugin": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"currentL": -1,
+			"list": []
+		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "pages/recommends/recommends",
+					"pathName": "pages/recommends/recommends",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "pages/recommends/recommends",
+					"pathName": "pages/recommends/recommends",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": 3,
+					"name": "pages/internal-recruitment/internal-job/index",
+					"pathName": "pages/internal-recruitment/internal-job/index",
+					"query": "id=0&StaffId=34",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/internal-recruitment/index",
+					"pathName": "pages/internal-recruitment/index",
+					"query": "id=0",
+					"scene": null
+				},
+				{
+					"id": 5,
+					"name": "pages/internal-recruitment/index",
+					"pathName": "pages/internal-recruitment/index",
+					"query": "id=0&StaffId=30",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "id=0&StaffId=34",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/my",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/login",
+					"pathName": "pages/login/login",
+					"query": "id=0&StaffId=34",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "pages/internal-recruitment/internal-job/index",
+					"pathName": "pages/internal-recruitment/internal-job/index",
+					"query": "id=17&StaffId=34",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/internal-recruitment/internal-job/index",
+					"pathName": "pages/internal-recruitment/internal-job/index",
+					"query": "id=234977&StaffId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/internal-recruitment/internal-job/index",
+					"pathName": "pages/internal-recruitment/internal-job/index",
+					"query": "id=1&StaffId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/home/home",
+					"pathName": "pages/home/home",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=154450",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=1&StaffId=22",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/internal-recruitment/index",
+					"pathName": "pages/internal-recruitment/index",
+					"query": "id=1&StaffId=22",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/internal-recruitment/index",
+					"pathName": "pages/internal-recruitment/index",
+					"query": "id=1&StaffId=22",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/login/mobile/mobile",
+					"pathName": "pages/login/mobile/mobile",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=154450",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/headhunters/details/details",
+					"pathName": "pages/headhunters/details/details",
+					"query": "id=11544",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/expect-job/expect-job",
+					"pathName": "pages/expect-job/expect-job",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/resume/work/work",
+					"pathName": "pages/resume/work/work",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyQuickly/applyQuickly",
+					"pathName": "pages/applyQuickly/applyQuickly",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=228950",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=239108",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyQuickly/applyQuickly",
+					"pathName": "pages/applyQuickly/applyQuickly",
+					"query": "id=239108",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=154450",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=154450",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "id=154450",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "id=159842",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=159842",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "id=152432",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=153049",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyQuickly/applyQuickly",
+					"pathName": "pages/applyQuickly/applyQuickly",
+					"query": "id=153049",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=153049",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "id=153049",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyQuickly/applyQuickly",
+					"pathName": "pages/applyQuickly/applyQuickly",
+					"query": "id=153049",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=152177",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyQuickly/applyQuickly",
+					"pathName": "pages/applyQuickly/applyQuickly",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "id=152300",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/JustForSharing/JustForSharing",
+					"pathName": "pages/JustForSharing/JustForSharing",
+					"query": "id=152319",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/jobs/details/details",
+					"pathName": "pages/jobs/details/details",
+					"query": "id=152319",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/applyQuickly/applyQuickly",
+					"pathName": "pages/applyQuickly/applyQuickly",
+					"scene": null
+				}
+			]
+		}
+	}
+}

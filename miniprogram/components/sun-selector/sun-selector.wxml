@@ -1,0 +1,44 @@
+<!--components/sun-selector/sun-selector.wxml-->
+<view class="selector__warp Common_border__b Common_clr__border--eee">
+  <scroll-view class="selector__scrollbar" scroll-x='true' scroll-into-view="{{selector}}" scroll-with-animation="true">
+    <view class="selector__scrollbar_inner">
+    <view  class="selector__scrollbar_item Common_clr__font--666 Common_font_size--28 {{selectorIndex == index? 'selector__item--active': ''}}" 
+    wx:for="{{selectorData}}" 
+    wx:key="index" 
+    data-selectorid="{{item.Id}}" 
+    data-index="{{index}}"
+    data-selector="{{'dropbar_' + index}}"
+    id="{{'scrollbar_' + index}}"
+    bindtap="scrollbarClick">
+    {{item.Text}}
+      <view class="selector__item_active--bar"></view>
+    </view>
+  </view>
+  </scroll-view>
+   <view class="selector__switchpanel" bindtap="sunSelectorSwitchPanel">
+       <image class="selector__navicon" src="/imgs/Common__icon_nav.png"></image>
+   </view>
+   <view wx:if="{{!jumpAnotherPage.switch}}" class="selector__dropbar_mask {{showDropPanel ? 'dropShow' : 'dropHide'}}" >
+    <view class="selector__dropbar">
+        <view class="selector__dropbar_head" >
+          <image class="selector__iconclose" src="/imgs/Common__icon_close.png" bindtap="sunSelectorSwitchPanel"></image>
+        </view>
+        <view class="selector__dropbar_title">
+        {{title}}
+        </view>
+        <scroll-view class="selector__dropbar_content"  scroll-y='true' scroll-into-view="{{selector}}" scroll-with-animation="true">
+          <view class="selector__dropbar_innerContent">
+             <view class="selector__dropbar_content--item Common_layout__ellipsis  {{index == selectorIndex ? 'dropbar__item--active' : ''}}"
+              wx:for="{{selectorData}}"
+              data-index="{{index}}"
+              data-selectorid="{{item.Id}}"
+              data-selector="{{'scrollbar_' + index}}"
+              bindtap="scrollbarClick"
+              id="{{'dropbar_' + index}}"
+              wx:key="index"
+             >{{item.Text}}</view>
+          </view>
+        </scroll-view>
+    </view>
+   </view>
+</view>

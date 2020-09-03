@@ -1,0 +1,9 @@
+var filter = {
+  getImgUrl: function (img) {
+    if (!img || img === "/static/images/defaultphoto_middle.gif") {
+      return "/imgs/logo-user.png";
+    }
+    return img;
+  },
+};
+module.exports = filter;

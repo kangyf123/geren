@@ -1,0 +1,52 @@
+.input-panel {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.input-wrapper {
+  border-bottom: solid 1rpx #EEE;
+  padding-bottom: 26rpx;
+  padding-top: 26rpx;
+  position: relative;
+}
+.input-input {
+  font-size: 30rpx;
+}
+.input-textarea {
+  width: 100%;
+}
+.input-textarea.large {
+  height: 700rpx;
+}
+.input-counter {
+  font-size: 24rpx;
+  padding-top: 16rpx;
+  color: #999999;
+  text-align: right;
+}
+.btn-save {
+  margin: 35rpx 42rpx;
+  margin-bottom: 0rpx;
+}
+
+.input-wrapper.number .input-input {
+  width: calc(100% - 32rpx);
+  display: inline-block;
+}
+.input-wrapper.number .input-unit {
+  width: 32rpx;
+  display: inline-block;
+}
+.icon-remove {
+  position: absolute;
+  width: 26rpx;
+  top: 37rpx;
+  right: 0;
+  height: 26rpx;
+  display: none;
+}
+.with-remove-icon .icon-remove {
+  display: initial;
+}
+.with-remove-icon .input-input {
+  padding-right: 40rpx;
+}

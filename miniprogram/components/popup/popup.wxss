@@ -1,0 +1,95 @@
+.popup-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.popup-panel .popup-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+.popup-panel .popup-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+.popup-panel .popup-content {
+  width: 80%;
+  background-color: #FFFFFF;
+  border-radius: 8rpx;
+}
+.popup-panel .popup-head {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-top: 25rpx;
+  padding-bottom: 23rpx;
+  position: relative;
+}
+.popup-panel .popup-title {
+  text-align: center;
+  font-size: 34rpx;
+}
+.popup-panel .popup-close-icon {
+  position: absolute;
+  right: 30rpx;
+  top: 10rpx;
+  font-size: 50rpx;
+}
+.popup-panel .popup-body {
+  padding: 40rpx;
+  text-align: center;
+}
+.popup-footer {
+  border-top: solid 1rpx #EEEEEE;
+  font-size: 32rpx;
+  display: flex;
+}
+.popup-opt-item {
+  width: calc(50% - 1rpx);
+  text-align: center;
+  padding-top: 29rpx;
+  padding-bottom: 29rpx;
+}
+.popup-cancel {
+  border-right: solid 1rpx #EEEEEE;
+}
+.popup-submit {
+  color: #3B87FF;
+  width: 50%;
+}
+.headhunter-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 120rpx;
+  margin-bottom: 30rpx;
+}
+.headhunter-name {
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 8rpx;
+}
+.headhunter-position {
+  font-size: 24rpx;
+  margin-bottom: 34rpx;
+}
+.btn-call {
+  width: 400rpx;
+  font-size: 28rpx;
+  background-color: #3B87FF;
+  color: #FFFFFF;
+  margin-bottom: 27rpx;
+}
+.headhunter-msg {
+  color: #999999;
+  font-size: 24rpx;
+}

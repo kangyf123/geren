@@ -1,0 +1,93 @@
+<wxs module="listFilter" src="../../../wxs/list.wxs"></wxs>
+<view class="page" wx:if="{{ isPageShow }}">
+	<navBar page-name="猎头详情" textColor="#FFF" bgColor="#303858" showNewNavBut='{{showNavBut}}' backUrl="{{ backUrl }}"></navBar>
+	<view style="position:sticky;top:{{navHeight}}">
+		<view class="{{BusinessScopeNameLength > 9 ? 'height_647' : 'height_608'}} {{EnNameLength>9?'height_668':'height_608'}}" style="position: relative">
+			<view class="new__head_panel">
+				<image class="new__head_logo" src="../../../imgs/new__icon_logo.png"></image>
+				<image class="new__head_img" src="../../../imgs/new__icon_background.png"></image>
+				<view class="new__head_card {{BusinessScopeNameLength > 9 ? 'height_540' : 'height_520'}} {{EnNameLength>9?'height_560':'height_520'}}">
+					<view class="new__head_card_top">
+						<view class="new__head_card_left">
+							<view class="new__head_card_row">
+								<text class="new__head_EnName">{{ info.EnName }}</text>
+								<text class="new__head_PositionName" style="width: 125rpx">{{info.PositionName}}</text>
+							</view>
+							<view class="new__head_card_row">
+								<text class="new__head_PositionName">擅长行业：{{ info.BusinessScopeName}}</text>
+
+								<view class="new__head_CompanyLocationName_border">
+									<view class="text-with-icon reverse headhunter-pos">
+										<image class="icon headhunter-pos-img" mode="aspectFit" src="/imgs/icon-pointer.png"></image>
+										<view class="new__head_CompanyLocationName">
+											{{ info.CompanyLocationName }}
+										</view>
+									</view>
+								</view>
+							</view>
+						</view>
+						<view class="new__head_card_right">
+							<image class="new__head_card_img_border" src="../../../imgs/new__icon_touxiang.png"></image>
+							<image class="new__head_card_img" mode="aspectFit" src="{{ info.MiddlePictureUrl }}"></image>
+						</view>
+						<image class="new__head_card_authentication" src="../../../imgs/new__icon_adopt.png"></image>
+					</view>
+					<view class="new__head_card_bottom">
+						<view class="new__head_card_bottom_top">
+							<view class="new__head_bottom_left">
+								<text>在招</text>
+								<view class="text__margin_4"><text class="text__font44">{{info.RecruitingJobCount}}</text><text class="text__font26">个职位</text></view>
+							</view>
+							<view class="new__head_bottom_right">
+								<text>近1个月沟通</text>
+								<view class="text__margin_4"><text class="text__font44">{{info.CommunicationCount}}</text><text class="text__font26">位人选</text></view>
+							</view>
+						</view>
+						<view class="new__head_card_bottom_bottom">
+							<text class="text__color_yellow">累计服务：{{info.ServicesCount}}人</text>
+							<text class="text__color_yellow border__color_grey">行业竞争力超过{{info.Competitivenes}}%的猎头</text>
+						</view>
+						<image class="new__head_card_xing" src="../../../imgs/new__icon_xingxing.png"></image>
+					</view>
+
+				</view>
+			</view>
+		</view>
+		<view class="new__display_flex">
+			<view class="new_scroll_horizontal_item {{ tabIndex == 0 ? 'selected' : '' }}" data-index="0" bindtap="itemClick">
+				招聘岗位
+			</view>
+			<view class="new_scroll_horizontal_item {{ tabIndex == 1 ? 'selected' : '' }}" data-index="1" bindtap="itemClick">
+				成功案例
+			</view>
+		</view>
+	</view>
+
+
+
+	<view class="job-list" wx:if="{{tabIndex == 0}}">
+		<view class="layout-mb-20 new__width_700" wx:for="{{ list }}" wx:key="index">
+			<ItemJob data="{{ item }}" has-headhunter="{{ false }}"></ItemJob>
+		</view>
+		<view wx:if="{{ count === 0 }}" class="job-empty">
+			<EmptyPanel msg="暂无招聘岗位"></EmptyPanel>
+		</view>
+		<view wx:if="{{ !isLoading }}" class="no-more-data {{ listFilter.getListReachBottomClass(count, filters) }}">没有更多数据了</view>
+	</view>
+
+	<view class="job-list" wx:if="{{tabIndex == 1}}">
+		<view class="layout-mb-20 new__width_700" wx:for="{{ dataSuccCase }}" wx:key="index">
+			<ItemSucc needFormatValue="{{true}}" data="{{ item }}" navTo="{{false}}"></ItemSucc>
+		</view>
+		<view wx:if="{{ resSuccCase.RecordCount === 0 }}" class="job-empty">
+			<EmptyPanel msg="暂无成功案例"></EmptyPanel>
+		</view>
+		<view wx:if="{{ resSuccCase.isLast }}" class="no-more-data">没有更多数据了</view>
+	</view>
+	<view class="fixed-bottom-placeholder {{ _isScreenBottomRound ? 'has-round-bottom' : '' }}"></view>
+	<view class="fixed-bottom-panel background__yellow">
+		<button class="btn-black fix-bottom-btn {{ _isScreenBottomRound ? 'has-round-bottom' : '' }}" bindtap="showCallPopup">职位咨询</button>
+	</view>
+
+	<Popup id="callPopup" name="{{ info.EnName }}" img="{{ info.MiddlePictureUrl }}" position="{{ info.PositionName }}" mobile="{{ info.MobileNumber }}"></Popup>
+</view>

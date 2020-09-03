@@ -1,0 +1,59 @@
+<navBar page-name="基本信息" is-edited="{{ isEdited }}" showNavBut='{{showNavBut}}'></navBar>
+<view class="panel-set-list"  >
+  <view class="panel-set-item" bindtap="uploadImg">
+    <view class="panel-set-data">
+      <view class="panel-set-title">
+        个人照片
+      </view>
+    </view>
+    <view class="panel-set-icon">
+      <image class="panel-set-img" mode="aspectFill" src="{{ query.PictureUrl }}"></image>
+    </view>
+  </view>
+  <SettingItem title="姓名" emptyText="请填写" value="{{ query.Name }}" 
+    data-url="/pages/input/input?keywords={{ query.Name }}&title=姓名&field=Name&limit=20&strict=nospace,nospecialchar"
+    bindtap="_navigateTo" value="{{ query.Name }}"></SettingItem>
+  <picker bindchange="_bindSelectChange" value="{{ info.GenderId.index }}" data-type="GenderId" 
+    range="{{ conf.GenderId }}" range-key="name">
+    <SettingItem title="性别" value="{{ info.GenderId.name }}"></SettingItem>
+  </picker>
+  <picker mode="date" end="{{ now }}" value="{{ query.Birthdate }}" bindchange="bindDateChange" data-type="Birthdate">
+    <SettingItem title="年龄" value="{{ query.Birthdate }}"></SettingItem>
+  </picker>
+  <picker bindchange="_bindSelectChange" value="{{ info.EducationLevelId.index }}" data-type="EducationLevelId" 
+    range="{{ conf.EducationLevelId }}" range-key="name">
+    <SettingItem title="学历" value="{{ info.EducationLevelId.name }}" no-bottom-line="{{ true }}"></SettingItem>
+  </picker>
+</view>
+
+<view class="panel-set-list">
+  <picker bindchange="_bindSelectChange" value="{{ info.YearsExperience.index }}" data-type="YearsExperience" 
+    range="{{ conf.YearsExperience }}" range-key="name">
+    <SettingItem title="工作年限" value="{{ info.YearsExperience.name }}"></SettingItem>
+  </picker>
+
+  
+  <SettingItem title="目前年薪" emptyText="请填写" value="{{ query.AnnualSalary }}" 
+    data-url="/pages/input/input?keywords={{ query.AnnualSalary }}&title=目前年薪&field=AnnualSalary&min=1&max=999&type=number&unit=万&limit=3"
+    bindtap="_navigateTo" value="{{ query.AnnualSalary ? query.AnnualSalary + '万' : '' }}"></SettingItem>
+
+
+  <picker bindchange="_bindSelectChange" value="{{ info.WorkStatusId.index }}" data-type="WorkStatusId" 
+    range="{{ conf.WorkStatusId }}" range-key="name">
+    <SettingItem title="工作状态" value="{{ info.WorkStatusId.name }}"></SettingItem> 
+  </picker>
+  <picker mode="multiSelector" range="{{ conf.LiveLocationId }}" range-key="areaName" value="{{ info.LiveLocationId }}"
+    bindcolumnchange="changeLiveLocationIdSelectorColumn"
+    bindchange="changeLiveLocationIdSelector">
+    <SettingItem title="现居地"  value="{{ info.LiveLocationIdText }}"></SettingItem>
+  </picker>
+
+  <SettingItem title="邮箱" value="{{ query.Email }}"
+    data-url="/pages/input/input?keywords={{ query.Email }}&title=邮箱&field=Email&limit=50&type=email"
+    bindtap="_navigateTo" no-bottom-line="{{ true }}"></SettingItem>
+</view>
+<view class="opt-panel">
+  <button class="btn btn-blue save-btn {{ isComplete ? '' : 'disabled' }}" 
+    data-url="/v1/Member/SaveBasicInfo" 
+    bindtap="_save">保存</button>
+</view>

@@ -1,0 +1,98 @@
+/* components/joinRisfondComp/index.wxss */
+.risfond__tip_icon {
+  width: 32rpx;
+  height: 32rpx;
+}
+.risfond__top {
+  text-align: center;
+  border-bottom-left-radius: 38%;
+  border-bottom-right-radius: 38%;
+  border-top-left-radius: 10rpx;
+  border-top-right-radius: 10rpx;
+  background-image: linear-gradient(to bottom ,#8AACFC, #3B87FF);
+}
+.risfond__tip_title {
+  display: inline-block;
+  font-size: 32rpx;
+  color: #fff;
+  transform: translateY(-6rpx);
+  padding: 32rpx 0 20rpx 0;
+  font-weight: 600
+}
+.risfond__tip {
+  background: #fff;
+  border-radius: 10rpx;
+}
+.mr-14 {
+  margin-right: 14rpx; 
+} 
+.mr-24 {
+  margin-right: 24rpx; 
+}
+.ml-4 {
+  margin-left: 4rpx;
+}
+.ml-8 {
+  margin-left: 8rpx;
+}
+.risfond__content_title {
+  font-size: 28rpx;
+  display: block;
+  font-weight: 600
+}
+.risfond__content {
+  padding: 32rpx 32rpx 0 32rpx;
+  box-sizing: border-box;
+}
+.risfond__content_module {
+  display: inline-block;
+  padding: 8rpx 24rpx 8rpx 60rpx;
+  background: #FFDB93;
+  font-size: 24rpx;
+  border-radius: 46rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.risfond__icon_arrow {
+  width: 28rpx;
+  height: 28rpx;
+  position: absolute;
+  top: 10rpx;
+  left: 16rpx;
+}
+.risfond__content_item {
+  display: flex;
+}
+.risfond__item_img {
+  width: 82rpx;
+  height: 82rpx;
+}
+.risfond__item_iwarp {
+  flex: 0 0 110rpx
+}
+.risfond__item_content {
+  flex: 1;
+}
+.risfond__item_content--title {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+.risfond__item_content--subtitle {
+  color:#999999;
+  font-size: 26rpx; 
+}
+.risfond__content_list {
+  
+  margin-top: 36rpx;
+  
+}
+.risfond__content_item {
+  padding: 32rpx 0; 
+  border-top: 1rpx solid #eee;
+}
+.risfond__clr_range {
+  background-image: linear-gradient(to bottom ,#F8AF4B, #F18D2D);
+}
+.risfond__intro {
+  font-size: 28rpx;
+}

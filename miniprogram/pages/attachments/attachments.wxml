@@ -1,0 +1,31 @@
+<view class="page {{ count === 0 ? 'white': '' }}">
+  <navBar page-name="附件简历" showNavBut='{{showNavBut}}'></navBar>
+  <view class="attachment-notice">
+    最多上传3份附件，已上传
+    <text class="attachment-text-blue">{{ count }}份</text>
+  </view>
+  <view class="resume-list">
+    <view class="flex-between resume-item" wx:for="{{ list }}" wx:key="index">
+      <view class="flex-start resume-info">
+        <image wx:if="{{ item.fileType === 'doc' }}" class="resume-type-icon" mode="aspectFit" src="/imgs/icon-word.png"></image>
+        <image wx:if="{{ item.fileType === 'pdf' }}" class="resume-type-icon" mode="aspectFit" src="/imgs/icon-pdf.png"></image>
+        <view class="overflow-dot resume-name">
+          {{ item.Name }}
+        </view>
+      </view>
+      <view class="flex-between resume-opt-panel">
+        <view class="resume-opt-item resume-preview" data-url="{{ item.Date }}" bindtap="openDocument">预览</view>
+        <view class="resume-opt-item resume-remove" data-id="{{ item.Id }}" bindtap="removeAttachResume">删除 </view>
+      </view>
+    </view>
+  </view>
+  <view class="empty-panel" wx:if="{{ count === 0 }}">
+    <EmptyPanel msg="暂无附件简历"></EmptyPanel>
+  </view>
+  <view wx:if="{{ count < 3 }}">
+    <view class="fixed-bottom-placeholder {{ _isScreenBottomRound ? 'has-round-bottom' : '' }}"></view>
+    <view class="fixed-bottom-panel">
+      <button class="fix-bottom-btn {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} btn-blue" data-url="/pages/copy/copy" bindtap="_navigateTo" data-point="1" data-pointkey="botton_phoneupload">上传附件简历</button>
+    </view>
+  </view>
+</view>

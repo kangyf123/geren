@@ -1,0 +1,12 @@
+<!--components/sunVideo/sunVideo.wxml-->
+<view class="sunVideo_wrap">
+ <video class="internal__video_el" 
+ autoplay="{{autoplay}}" 
+ id="myVideo" 
+ src="{{src}}" 
+ binderror="videoErrorCallback"  
+ show-mute-btn="{{true}}"
+ muted="{{false}}"
+ initial-time="{{1}}"
+ ></video>
+</view>

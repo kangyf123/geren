@@ -1,0 +1,15 @@
+<navBar page-name="语言能力" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}"></navBar>
+<view class="panel-set-list">
+  <picker bindchange="bindSelectChange" data-type="LanguageId" 
+    value="{{index}}" range="{{ conf.LanguageId }}" range-key="name">
+    <SettingItem title="语种名称" value="{{ info.LanguageId.name }}"></SettingItem>
+  </picker>
+  <picker bindchange="bindSelectChange" data-type="ProficiencyId" 
+    value="{{index}}" range="{{ conf.ProficiencyId }}" range-key="name">
+    <SettingItem title="掌握程度" value="{{ info.ProficiencyId.name }}" no-bottom-line="{{ true }}"></SettingItem>
+  </picker>
+</view>
+
+<button class="btn btn-blue save-btn {{ isComplete ? '' : 'disabled' }}" 
+  data-url="/v1/Member/EditMemberLanguage" 
+  bindtap="_save">保存</button>

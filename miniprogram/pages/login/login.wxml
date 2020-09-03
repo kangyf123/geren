@@ -1,0 +1,41 @@
+<navBar page-name="登录" showNavBut='{{showNavBut}}'></navBar>
+<view class="page"  >
+  <view class="logo">
+    <image class="logo-company" mode="aspectFit" src="/imgs/logo-risfond-circle.png"></image>
+  </view>
+  <button class="opt-btn btn-blue" open-type="getUserInfo"  bindgetuserinfo="bindgetuserinfo">
+    <image class="icon icon-wechat" mode="aspectFit" src="/imgs/icon-wechat.png"></image>
+    微信授权登录
+  </button>
+  <!-- created zhaogang 2020/06/22 由于微信消息订阅功能 必须微信授权 故注释 手机登录 -->
+  <!-- <button class="opt-btn btn-white" data-url="/pages/login/mobile/mobile" bindtap="_navigateTo">
+    <image class="icon icon-mobile" mode="aspectFit" src="/imgs/icon-mobile.png"></image>
+    手机快捷登录
+  </button> -->
+</view>
+<view class="email-login-panel">
+  <view class="msg-panel">
+    <view class="msg-panel-text">其他登录方式</view>
+  </view>
+  
+  <view class="bottom-logo-panel">
+    <view class="bottom-logo-item" data-url="/pages/login/email/email" bindtap="_navigateTo">
+      <image class="bottom-logo-img" mode="aspectFit" src="/imgs/icon-envelop-circle.png"></image>
+      <view class="bottom-logo-name">邮箱登录</view>
+    </view>
+  </view>
+</view>
+
+<view class="popup-panel popup-login" wx:if="{{ popup.isShow }}">
+  
+  <view class="popup-wrapper">
+    <view class="popup-content">
+      <view class="popup-login-title">锐仕精英</view>
+      <view class="popup-login-msg">登录后即可进行操作</view>
+      <view class="popup-login-opts">
+        <button class="popup-login-btn" open-type="getPhoneNumber"  bindgetphonenumber="bindgetphonenumber">微信手机号快捷登录</button>
+      </view>
+    </view>
+    <view class="popup-mask" bindtap="hidePopup"></view>
+  </view>
+</view>

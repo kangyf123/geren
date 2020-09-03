@@ -1,0 +1,19 @@
+<wxs module="listFilter" src="../../../wxs/list.wxs"></wxs>
+<view class="page {{ count === 0 ? 'white': '' }}">
+  <navBar page-name="主动应聘职位" showNavBut='{{showNavBut}}'></navBar>
+  <view class="recommend-panel">
+    <view class="job-type-placeholder"></view>
+    <view class="scroll-horizontal-list job-type-panel" style="margin-top:{{navHeight}}">
+      <view class="scroll-horizontal-item job-type-item {{ filters.status === item.id ? 'selected' : '' }}" data-type="{{ item.id }}" bindtap="changeStatus" wx:for="{{ menu }}" wx:key="index">{{ item.name }}</view>
+    </view>
+    <view class="job-list">
+      <view class="job-item" wx:for="{{ list }}" wx:key="index">
+        <ItemJob data="{{ item }}"></ItemJob>
+      </view>
+    </view>
+    <view class="empty-panel" wx:if="{{ count === 0 }}">
+        <EmptyPanel></EmptyPanel>
+      </view>
+    <view wx:if="{{ !isLoading }}" class="no-more-data {{ listFilter.getListReachBottomClass(count, filters) }}">没有更多数据了</view>
+  </view>
+</view>

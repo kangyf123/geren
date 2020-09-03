@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "sunSelector": "../../components/sun-selector/sun-selector",
+    "sunVideo": "../../components/sunVideo/sunVideo",
+    "compNavBar": "../../components/compNavBar/compNavBar"
+  }
+}

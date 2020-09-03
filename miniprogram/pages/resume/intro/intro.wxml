@@ -1,0 +1,3 @@
+<navBar page-name="个人简介" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}"></navBar>
+<InputPanel keywords="{{ content }}" limit="140" type="input" placeholder="简单介绍一下自己" bindinput="bindInput"></InputPanel>
+<button class="btn btn-blue btn-save" bindtap="bindSave">保存</button>

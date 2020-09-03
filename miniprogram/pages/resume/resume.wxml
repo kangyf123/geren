@@ -1,0 +1,191 @@
+<wxs module="imgFilter" src="../../wxs/img.wxs"></wxs>
+<navBar page-name="在线简历" showNavBut='{{showNavBut}}'></navBar>
+<view class="flex-between integrity-panel">
+  <view class="integrity-text">完整度</view>
+  <progress class="integrity-progress" style="width: 100%;" percent="{{ completionRatio }}" color="#3B87FF" backgroundColor="#DBE9FF" border-radius="10" stroke-width="4"/>
+  <view class="integrity-text">{{ completionRatio }}%</view>
+</view>
+<view class="integrity-panel-placeholder"></view>
+<view class="layout-main">
+  <view class="panel-item panel-basic">
+    <view class="flex-start">
+      <view class="resume-img-wrapper">
+        <image class="resume-img" mode="aspectFill" src="{{ info.PictureUrl }}"></image>
+        <image wx:if="{{ info.IsSaved }}" class="resume-gender" mode="aspectFit" src="{{ info.GenderId == 1 ? '/imgs/icon-boy.png' : '/imgs/icon-girl.png' }}"></image>
+      </view>
+      
+      <view class="resume-info">
+        <view class="flex-between resume-name">
+          <view class="resume-name-text">{{ info.Name || '基本信息'}}</view>
+          <view class="panel-opt-text" 
+            data-type="info"
+            data-url="/pages/resume/basic/basic" 
+            bindtap="setStorageAndnavigateTo">编辑</view>
+        </view>
+        <view
+          data-type="info"
+          data-url="/pages/resume/basic/basic" 
+          bindtap="setStorageAndnavigateTo">
+            <view class="resume-age" wx:if="{{ info.IsSaved }}">{{ info.resumeIntro }}</view>
+            <view class="resume-age" wx:else>点击编辑基本信息</view>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-item">
+    <view class="flex-between panel-title-panel">
+      <view class="panel-title">个人简介</view>
+      <view class="panel-opt-text" 
+        bindtap="navigateToInputPage">编辑</view>
+    </view>
+    <view class="panel-content-item panel-message panel-intro">
+      <view class="intro-item" wx:for="{{ info.StatementsArr }}" wx:key="index">
+        <text decode="{{ true }}" space="nbsp">{{ item }}</text>
+      </view>
+    </view>
+  </view>
+
+  <view class="panel-item">
+    <view class="flex-between panel-title-panel">
+      <view class="panel-title">工作经历</view>
+      <view class="panel-opt-text" 
+        data-url="/pages/resume/work/work" 
+        data-type="workList"
+        data-index="-1"
+        bindtap="setStorageAndnavigateTo">添加</view>
+    </view>
+    <view class="panel-content-item data-item" wx:for="{{ workList }}" wx:key="index">
+      <view class="flex-between">
+        <view class="company-name overflow-dot">{{ item.Company }}</view>
+        <view class="flex-between data-item-opt-list">
+          <view class="data-item-opt-item" 
+            data-url="/pages/resume/work/work" 
+            data-type="workList"
+            data-index="{{ index }}"
+            bindtap="setStorageAndnavigateTo">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-edit.png"></image>
+          </view>
+          <view class="data-item-opt-item" 
+            data-url="/v1/Member/DeleteMemeberWorkExp"
+            data-id="{{ item.ExperienceId }}" data-name="experienceId"
+            data-title="工作经历"
+            bindtap="ajaxRemoveResumeItem">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-remove-red.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="panel-message">
+        <text class="panel-item-title overflow-dot">{{ item.JobTitle || '未知' }}</text>
+        <text class="panel-item-sep">•</text>
+        <text class="panel-item-date">{{ item.DateFrom }}-{{ item.IsCurrent ? '至今' : item.DateTo }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="panel-item">
+    <view class="flex-between panel-title-panel">
+      <view class="panel-title">项目经历</view>
+      <view class="panel-opt-text" 
+        data-url="/pages/resume/project/project" 
+        data-type="projectList"
+        data-index="-1"
+        bindtap="setStorageAndnavigateTo">添加</view>
+    </view>
+    <view class="panel-content-item data-item" wx:for="{{ projectList }}" wx:key="index">
+      <view class="flex-between">
+        <view class="company-name overflow-dot">{{ item.ProjectName }}</view>
+        <view class="flex-between data-item-opt-list">
+          <view class="data-item-opt-item"
+            data-url="/pages/resume/project/project" 
+            data-type="projectList"
+            data-index="{{ index }}"
+            bindtap="setStorageAndnavigateTo">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-edit.png"></image>
+          </view>
+          <view class="data-item-opt-item" 
+            data-url="/v1/Member/DeleteMemeberProjectExp"
+            data-id="{{ item.Id }}" data-name="projInfoID"
+            data-title="项目经历"
+            bindtap="ajaxRemoveResumeItem">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-remove-red.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="panel-message">
+        <text class="panel-item-title overflow-dot">{{ item.JobTitle || '未知' }}</text>
+        <text class="panel-item-sep">•</text>
+        <text class="panel-item-date">{{ item.DateFrom }}-{{ item.IsCurrent ? '至今' : item.DateTo }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="panel-item">
+    <view class="flex-between panel-title-panel">
+      <view class="panel-title">教育经历</view>
+      <view class="panel-opt-text" 
+        data-url="/pages/resume/edu/edu" 
+        data-type="eduList"
+        data-index="-1"
+        bindtap="setStorageAndnavigateTo">添加</view>
+    </view>
+    <view class="panel-content-item data-item" wx:for="{{ eduList }}" wx:key="index">
+      <view class="flex-between">
+        <view class="company-name overflow-dot">{{ item.Institution }}</view>
+        <view class="flex-between data-item-opt-list">
+          <view class="data-item-opt-item"
+            data-url="/pages/resume/edu/edu" 
+            data-type="eduList"
+            data-index="{{ index }}"
+            bindtap="setStorageAndnavigateTo">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-edit.png"></image>
+          </view>
+          <view class="data-item-opt-item" 
+            data-url="/v1/Member/DeleteMemeberEduExp"
+            data-id="{{ item.EducationId }}" data-name="educationId"
+            data-title="教育经历"
+            bindtap="ajaxRemoveResumeItem">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-remove-red.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="panel-message">
+        <text class="panel-item-title overflow-dot">{{ item.StudyField || '未知' }}</text>
+        <text class="panel-item-sep">•</text>
+        <text class="panel-item-date">{{ item.DateFrom }}-{{ item.IsCurrent ? '至今' : item.DateTo }}</text>
+      </view>
+    </view>
+  </view>
+  <view class="panel-item">
+    <view class="flex-between panel-title-panel">
+      <view class="panel-title">语言能力</view>
+      <view class="panel-opt-text" 
+        data-url="/pages/resume/language/language" 
+        data-type="languageList"
+        data-index="-1"
+        bindtap="setStorageAndnavigateTo">添加</view>
+    </view>
+    <view class="panel-content-item data-item" wx:for="{{ languageList }}" wx:key="index">
+      <view class="flex-between">
+        <view class="company-name overflow-dot">{{ item.ResumeLangName }}</view>
+        <view class="flex-between data-item-opt-list">
+          <view class="data-item-opt-item"
+            data-url="/pages/resume/language/language" 
+            data-type="languageList"
+            data-index="{{ index }}"
+            bindtap="setStorageAndnavigateTo">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-edit.png"></image>
+          </view>
+          <view class="data-item-opt-item" 
+            data-url="/v1/Member/DeleteMemeberLanguageExp"
+            data-id="{{ item.LanguageId }}" data-name="languageid"
+            data-title="语言能力"
+            bindtap="ajaxRemoveResumeItem">
+            <image class="data-item-opt-img" mode="aspectFit" src="/imgs/icon-remove-red.png"></image>
+          </view>
+        </view>
+      </view>
+      <view class="panel-message">
+        掌握程度：{{ item.ProficiencyName }}
+      </view>
+    </view>
+  </view>
+</view>

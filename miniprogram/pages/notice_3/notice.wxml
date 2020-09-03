@@ -1,0 +1,13 @@
+<navBar page-name="提示" showNavBut='{{showNavBut}}'></navBar>
+<view class="head-panel"  >
+  <view class="notice-panel">
+    <image class="notice-img" mode="aspectFit" src="/imgs/icon-ok-circle.png"></image>
+    <view class="notice-msg">
+      <view></view>
+      <view>
+       该职位为“有意向”状态，要及时查看投递进展哦！猎头{{name}}会尽快与您电话沟通，请保持电话畅通哦！
+      </view>
+    </view>
+    <button class="btn-blue notice-btn" bindtap="navigateBack">好的</button>
+  </view>
+</view>

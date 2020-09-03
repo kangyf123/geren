@@ -1,0 +1,19 @@
+var filter = {
+  split: function (str, kwd) {
+    if (!kwd) {
+      return [str];
+    }
+    var arr = str.split(kwd),
+      len = arr.length;
+
+    var result = [];
+    for (var i = 0; i < len; i++) {
+      result.push(arr[i]);
+      if (i < len - 1) {
+        result.push(kwd);
+      }
+    }
+    return result;
+  },
+};
+module.exports = filter;

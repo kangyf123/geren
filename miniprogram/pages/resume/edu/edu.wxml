@@ -1,0 +1,25 @@
+
+<navBar page-name="教育经历" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}"></navBar>
+<view class="panel-set-list">
+  <SettingItem title="学校名称" emptyText="请填写" value="{{ query.Institution }}" 
+    data-url="/pages/input/input?keywords={{ query.Institution }}&title=学校名称&field=Institution&limit=30"
+    bindtap="_navigateTo"></SettingItem>
+  <picker bindchange="_bindSelectChange" value="{{ info.UnifiedAdmission.index }}" data-type="UnifiedAdmission" 
+    range="{{ conf.UnifiedAdmission }}" range-key="name">
+    <SettingItem title="是否统招" value="{{ info.UnifiedAdmission.name }}"></SettingItem>
+  </picker>
+  <SettingItem title="专业名称" emptyText="请填写" value="{{ query.StudyField }}" 
+    data-url="/pages/input/input?keywords={{ query.StudyField }}&title=专业名称&field=StudyField&limit=30"
+    bindtap="_navigateTo"></SettingItem>
+  <SettingItemDate title="就读时间" data-start="DateFrom" data-end="DateTo" 
+    start="{{ query.DateFrom }}" end="{{ query.DateTo }}" is-end-current="{{ query.IsCurrent }}"
+    bindchange="_dateChange"></SettingItemDate>
+  <picker bindchange="_bindSelectChange" value="{{ info.EducationLevel.EducationLevel.index }}" data-conf="EducationLevel" data-type="EducationLevel.EducationLevel" 
+    range="{{ conf.EducationLevel }}" range-key="name">
+    <SettingItem title="学历" value="{{ info.EducationLevel.EducationLevel.name? info.EducationLevel.EducationLevel.name:EducationLevel.name }}" no-bottom-line="{{ true }}"></SettingItem>
+  </picker>
+</view>
+
+<button class="btn btn-blue save-btn {{ isComplete ? '' : 'disabled' }}" 
+  data-url="/v1/Member/EditMemberEduExp" 
+  bindtap="_save">保存</button>

@@ -1,0 +1,18 @@
+<navBar page-name="提示" showNavBut='{{showNavBut}}'></navBar>
+<view class="head-panel"  >
+  <view class="notice-panel">
+    <image class="notice-img" mode="aspectFit" src="/imgs/icon-ok-circle.png"></image>
+    <view class="notice-msg">
+      <view>简历已发送给猎头{{ name }}</view>
+      <view>请静候佳音！</view>
+    </view>
+    <button class="btn-blue notice-btn" bindtap="navigateBack">关闭</button>
+  </view>
+</view>
+
+<view class="sep-module">
+  <view class="module-title">
+    <text class="module-title-name">相似职位</text>
+  </view>
+</view>
+<SimilarJobs list="{{ similarList }}"></SimilarJobs>

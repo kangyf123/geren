@@ -1,0 +1,32 @@
+<navBar page-name="求职意向" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}" back-url="{{ backUrl }}"></navBar>
+<view class="page"  >
+  <view class="panel-set-list">
+    <SettingItem title="期望地点" value="{{ location.nameStr }}" 
+      data-url="/pages/expect-position/expect-position" 
+      data-type="location"
+      data-beforenavigate="setSelectedDataToStorage" 
+      bindtap="_navigateTo"></SettingItem>
+
+    <SettingItem title="期望行业" value="{{ industry.nameStr }}"
+      data-url="/pages/expect-job/expect-job?titleText=期望行业&type=industry"
+      data-type="industry" 
+      data-beforenavigate="setSelectedDataToStorage"
+      bindtap="_navigateTo"></SettingItem>
+
+    <SettingItem title="期望职位" value="{{ job.nameStr }}"
+      data-url="/pages/expect-job/expect-job?titleText=期望职位&type=job"
+      data-type="job"
+      data-beforenavigate="setSelectedDataToStorage"
+      bindtap="_navigateTo"></SettingItem>
+
+    <picker mode="selector" 
+      range-key="name"
+      bindchange="salarySelectorChange"
+      bindcancel="salarySelectorCancel"
+      value="{{ salaryIndex }}"
+      range="{{ salaryDic }}" >
+      <SettingItem title="期望年薪" value="{{ salaryDic[salaryIndex].name }}" no-bottom-line="{{ true }}"></SettingItem>
+    </picker>
+  </view>
+  <button class="btn-blue {{ isComplete ? '' : 'disabled' }} save" bindtap="ajaxEditMemberDesiredInfo">保存</button>
+</view>

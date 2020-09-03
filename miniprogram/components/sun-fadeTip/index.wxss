@@ -1,0 +1,70 @@
+/* components/sun-fadeTip/index.wxss */
+.sunTip {
+  padding: 20rpx 28rpx;
+  background: rgba(0, 0, 0, 0.76);
+  padding-left: 80rpx;
+  bottom: -50px;
+  opacity: 0;
+  transition: all 1s cubic-bezier(0.05, 0.71, 0.05, 0.95);
+  width: auto;
+  height: auto;
+}
+.sunTip_context {
+  color: #fff;
+  font-size: 24rpx;
+}
+.sunTip__arrow_bottom {
+  position: relative;
+  display: inline-block;
+  border-radius: 46rpx;
+  font-size: 0
+}
+.sunTip_img image{
+  width: 40rpx;
+  height: 40rpx;
+  position: absolute;
+  left: 27rpx;
+  top: 16rpx
+}
+.sunTip__arrow_left{
+  position: relative;
+  display: inline-block;
+  border-radius: 46rpx;
+  font-size: 0
+}
+.sunTip__arrow_left::after {
+  content: "";
+  border-top: 16rpx solid #000;
+  border-right: 14rpx solid transparent;
+  border-left: 14rpx solid transparent;
+  position: absolute;
+  bottom: -12rpx;
+  left: 40rpx;
+  opacity: 0.76;
+  margin-left: -8rpx;
+}
+.sunTip__arrow_bottom::after {
+  content: "";
+  border-top: 16rpx solid #000;
+  border-right: 14rpx solid transparent;
+  border-left: 14rpx solid transparent;
+  position: absolute;
+  bottom: -12rpx;
+  left: 50%;
+  opacity: 0.76;
+  margin-left: -8rpx;
+}
+.fadeIn {
+   bottom: 0px;
+   opacity: 1;
+   width: auto;
+   height: auto
+}
+
+.fadeOut {
+  bottom: -50px;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}

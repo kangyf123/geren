@@ -1,0 +1,248 @@
+<!--广告页-->
+<navBar page-name="锐仕微聘" showNavBut="true"></navBar>  
+<scroll-view class='introduction'>
+  <!-- 客服 -->
+  <button open-type='contact' hover-class="btn-hover" bindcontact="handleContact" class='tunnel-text tunnel-text-special'>
+    <image class='service-img' src='./img/service.png'></image>
+  </button>
+  <view class='banner'>
+    <image class='img' src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/banner@2x.png'></image>
+  </view>
+  <!-- 我们的服务 -->
+  <view class='service'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>我们提供的服务</text>
+      <text class='sub-title'>The services we provide</text>
+    </view>
+    <view class='ser-content'>
+      <view class='one'>
+        <view class='name-box'>
+          <text class='name'>简历优化</text>
+        </view>
+        <view class='content-box'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/one-1@2x.png' class='img-one'></image>
+          <text class='txt'>国内一线HR/猎头为你量身定制高质量简历，</text>
+          <text class='txt'>提高与求职目标匹配度，打造具有竞争力</text>
+          <text class='txt'>的简历，获得更高薪的心仪工作！</text>
+        </view>
+      </view>
+      <view class='two'>
+        <view class='name-box'>
+          <text class='name'>面试辅导</text>
+        </view>
+        <view class='content-box'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/one-3@2x.png' class='img-one'></image>
+          <text class='txt'>手把手带你了解行业情况、薪资待遇、面试套路、</text>
+          <text class='txt'>工作法则，提出快速改进方案，助你在面试中</text>
+          <text class='txt'>知己知彼、百战百胜！</text>
+        </view>
+      </view>
+      <view class='three'>
+        <view class='name-box'>
+          <text class='name'>职业规划</text>
+        </view>
+        <view class='content-box'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/one-2@2x.png' class='img-one'></image>
+          <text class='txt'>对你进行职业方向、基本素质等全方位分析了解，</text>
+          <text class='txt'>基于你的兴趣爱好、未来职业发展全面规划</text>
+          <text class='txt'>职业生涯，让求职从此告别迷茫！</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 适合的人群 -->
+  <view class='crowd'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>适合的人群</text>
+      <text class='sub-title'>Suitable crowd</text>
+    </view>
+    <view class='crowd-content'>
+      <view class='line'>
+        <view class='line-tag'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/two-1@2x.png' class='img-line'></image>
+          <view class='txt'>
+            <text class='name'>应届生</text>
+            <text class='sub-name'>职业生涯起步期</text>
+          </view>
+        </view>
+        <view class='line-tag'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/two-2@2x.png' class='img-line'></image>
+          <view class='txt'>
+            <text class='name'>工作1~3年</text>
+            <text class='sub-name'>职业生涯学习期</text>
+          </view>
+        </view>
+      </view>
+      <view class='line'>
+        <view class='line-tag'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/two-3@2x.png' class='img-line'></image>
+          <view class='txt'>
+            <text class='name'>工作4~10年</text>
+            <text class='sub-name'>职业生涯发展期</text>
+          </view>
+        </view>
+        <view class='line-tag'>
+          <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/two-4@2x.png' class='img-line'></image>
+          <view class='txt'>
+            <text class='name'>工作10年以上</text>
+            <text class='sub-name'>职业生涯瓶颈期</text>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 背景色块 -->
+  <view class='gray-bg'></view>
+
+  <!-- 服务费用说明 -->
+  <view class='serve'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>服务费用说明</text>
+      <text class='sub-title'>Description of service charges</text>
+    </view>
+    <view class='content-box'>
+      <view class="tr bg-w">
+        <view class="th type">服务对象</view>
+        <view class="th">
+          简历优化
+        </view>
+        <view class="th ">
+          面试辅导
+        </view>
+        <view class="th job">职业规划</view>
+      </view>
+      <block wx:for="{{listData}}" wx:key="code">
+        <view class="tr bg-g" wx:if="{{index % 2 == 0}}">
+        <view class="td td-c type">{{item.code}}</view>
+          <view class="td text-bold">{{item.text}}</view>
+          <view class="td text-bold">{{item.type}}</view>
+          <view class="td job text-bold">{{item.typeR}}</view>
+        </view>
+        <view class="tr tr-b" wx:else>
+          <view class="td td-c type">{{item.code}}</view>
+          <view class="td text-bold">{{item.text}}</view>
+          <view class="td text-bold">{{item.type}}</view>
+          <view class="td job text-bold">{{item.typeR}}</view>
+        </view>
+      </block>
+      <view class='gray-bg-b'></view>
+    </view>
+  </view>
+  <!-- 背景色块 -->
+  <view class='gray-bg'></view>
+  <!-- 如何提供服务 -->
+  <view class='provide'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>我们如何提供服务</text>
+      <text class='sub-title'>How do we provide services</text>
+    </view>
+    <view class='provide-content'>
+      <view class='child'>
+        <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/three-1@2x.png' class='img-child'></image>
+        <view class='txt'>
+          <text class='name'>下单</text>
+          <text class='sub-name'>在微信搜索“锐仕微聘”小程序，提交订单并支付</text>
+        </view>
+      </view>
+      <view class='child'>
+        <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/three-2@2x.png' class='img-child'></image>
+        <view class='txt'>
+          <text class='name'>专家服务</text>
+          <text class='sub-name'>下单后专家24h内与您联系，详细了解您的需求</text>
+        </view>
+      </view>
+      <view class='child'>
+        <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/three-3@2x.png' class='img-child'></image>
+        <view class='txt'>
+          <text class='name'>专家交付</text>
+          <text class='sub-name'>专家预计在3个工作日内交付完成</text>
+        </view>
+      </view>
+      <view class='child'>
+        <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/three-4@2x.png' class='img-child'></image>
+        <view class='txt'>
+          <text class='name'>确认完成</text>
+          <text class='sub-name'>专家交付后及时确认或者与专家沟通修改完善</text>
+        </view>
+      </view>
+      <view class='child'>
+        <image src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/three-5@2x.png' class='img-child'></image>
+        <view class='txt'>
+          <text class='name'>评价服务</text>
+          <text class='sub-name'>确认后评价专家的服务，如果不满意可以向客服投诉</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 背景色块 -->
+  <view class='gray-bg'></view>
+  <!-- 为什么需要专家服务 -->
+  <view class='need'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>为什么需要专家服务</text>
+      <text class='sub-title'>Why need expert services</text>
+    </view>
+    <view class='need-content'>
+      <swiper class='swiper' indicator-color='#E6E6E6' indicator-active-color='#3B87FF' indicator-dots="{{indicatorDots}}" circular="{{circular}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}">
+        <block wx:for="{{imgUrls}}" wx:key="index">
+          <swiper-item>
+            <image src="{{item.img}}" class="slide-image"></image>
+            <view class='txt'>
+              <text class='name'>{{item.name}}</text>
+              <text class='sub-name'>{{item.subName}}</text>
+            </view>
+          </swiper-item>
+        </block>
+      </swiper>
+    </view>
+  </view>
+  <!-- 服务优势 -->
+  <view class='advantage'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>服务优势</text>
+      <text class='sub-title'>Service advantage</text>
+    </view>
+    <view class='advantage-content'>
+      <view class='child'>
+        <image class='img' src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/four-1@2x.png'></image>
+        <text class='txt'>专业</text>
+      </view>
+      <view class='child'>
+        <image class='img' src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/four-2@2x.png'></image>
+        <text class='txt'>高效</text>
+      </view>
+      <view class='child'>
+        <image class='img' src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/four-3@2x.png'></image>
+        <text class='txt'>安全</text>
+      </view>
+      <view class='child'>
+        <image class='img' src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/four-4@2x.png'></image>
+        <text class='txt'>保质</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 关于我们 -->
+  <!-- <view class='about'>
+    <view class='title-box'>
+      <text class='line'></text>
+      <text class='title'>关于我们</text>
+      <text class='sub-title'>About us</text>
+    </view>
+    <view class='about-content'>
+      <text class='txt'>北京锐仕方达人力资源集团有限公司成立于2008年，目前已在全球70余所城市设立120多家分支机构，与26000企业建立合作关系，成功运作30000多岗位。锐仕微聘为锐仕方达推出的一款小程序产品，主打简历优化、面试辅导、职业规划等功能，依托锐仕方达3000人以上的资深猎头及职业规划师、HR资源、在确保服务的专业性与可靠性的同时还可为您提供优质的面试机会。
+        </text>
+      <image class='img' src='https://lg-5m19d6gc-1257165455.cos.ap-shanghai.myqcloud.com/kefu.png'></image>
+      <text class='tip'>客服微信</text>
+    </view>
+  </view> -->
+</scroll-view>
+ <view class="fixed-bottom-panel">
+    <button class="btn-blue fix-bottom-btn" bindtap="openMini">立即体验</button>
+  </view>

@@ -1,0 +1,268 @@
+.head-panel {
+  position: fixed;
+  width: 100%;
+  height: 60rpx;
+  background-color: #fff;
+  padding-bottom: 17rpx;
+  z-index: 2;
+}
+.head-sep {
+  height: 77rpx;
+}
+.head-sep.with-selected-panel {
+  height: 162rpx;
+}
+.search-panel {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.search-panel .search-input {
+  vertical-align: initial;
+}
+.search-panel .delete-icon {
+  margin-top: 0;
+}
+/** 已选中项 start **/
+.search-selected-panel {
+  background-color: #fff; 
+  display: block;
+  padding-top: 22rpx;
+  padding-bottom: 25rpx;
+}
+.selected-panel {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  align-items: baseline;
+}
+.selected-label-item {
+  display: inline-block;
+  padding: 7rpx 10rpx 7rpx 19rpx;
+  background-color: #F6F9FF;
+  border: solid 1rpx #CDE0FF;
+  margin-right: 20rpx;
+  border-radius: 4rpx;
+}
+.selected-label-wrapper {
+  display: flex;
+}
+.selected-name {
+  color: #3B87FF;
+  font-size: 24rpx;
+  max-width: 110rpx;
+}
+.selected-remove-img {
+  width: 36rpx;
+  height: 36rpx;
+}
+.selected-text {
+  font-size: 24rpx;
+  color: #999999;
+}
+.selected-num {
+  color: #333333;
+}
+/** 已选中项 end **/
+
+
+/** 搜索历史 start **/
+.history-panel {
+  margin-top: 42rpx;
+  display: none;
+}
+.history-title {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999999;
+  font-size: 28rpx;
+}
+.history-list {
+  margin-top: 14rpx;
+}
+.history-item {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-bottom: 28rpx;
+  padding-top: 30rpx;
+  margin-left: 30rpx;
+  color: #333;
+}
+.icon-time {
+  width: 34rpx;
+  height: 34rpx;
+  vertical-align: middle;
+}
+.history-clear {
+  margin-top: 42rpx;
+  text-align: center;
+  color: #999999;
+  line-height: 1;
+  font-size: 34rpx;
+}
+.icon-remove {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: bottom;
+  padding-right: 14rpx;
+}
+.remove-name {
+  letter-spacing: 2rpx;
+}
+/** 搜索历史 end **/
+
+
+/** 搜索列表 start **/
+.list-sep {
+  height: 20rpx;
+  background-color: #F5F5F5;
+}
+.search-list {
+  padding-bottom: 10rpx;
+}
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #EEEEEE;
+  padding: 25rpx 32rpx 24rpx 0;
+  margin-left: 32rpx;
+}
+
+.search-name {
+  width: calc(100% - 60rpx);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+.search-name.no-icon {
+  width: 100%;
+}
+.search-name.has-selected-data {
+  color: #3B87FF;
+}
+.msg-highlight {
+  color: #3B87FF;
+}
+.search-icon.selected {
+  display: none;
+}
+.search-icon-empty {
+  width: 36rpx;
+  height: 36rpx;
+}
+.search-item.selected .search-icon.selected {
+  display: block;
+}
+.search-item.selected .search-icon-empty {
+  display: none;
+}
+.search-msg {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 10rpx;
+}
+.opt-submit {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  border-top: solid 1rpx #EEEEEE;
+}
+.btn-submit {
+  margin: 21rpx 42rpx;
+}
+.save {
+  margin: 21rpx 42rpx;
+  font-size: 34rpx;
+}
+.save.has-round-bottom {
+  margin-bottom: 42rpx;
+}
+.icon-arrow-right {
+  height: 22rpx;
+  width: 12rpx;
+  margin-top: 8rpx;
+}
+/** 搜索列表 end **/
+
+/** 职位选择弹出框 start **/
+.popup-job-select {
+  z-index: 1;
+  width: 100%;
+  left: 100%;
+  transition: left .2s;
+}
+.popup-job-select.show {
+  left: 0%;
+}
+.popup-job-select .popup-job-select-panel {
+  height: 700rpx;
+  margin-top: 77rpx;
+  display: flex;
+}
+.popup-job-select .popup-job-select-panel.with-selected {
+  margin-top: 152rpx;
+}
+.popup-job-select .popup-job-select-menu {
+  background-color: #F9F9F9;
+  width: 300rpx;
+  padding: 8rpx 0;
+  overflow: scroll;
+  flex-shrink: 0;
+}
+.popup-job-select .popup-job-select-menu-item {
+  font-size: 28rpx;
+  padding: 16rpx 28rpx 16rpx 30rpx; 
+  position: relative;
+}
+.popup-job-select .popup-job-select-data {
+  padding: 7rpx 29rpx 7rpx 32rpx;
+  overflow: scroll;
+  flex-grow: 1;
+}
+.popup-job-select .popup-job-select-data-item {
+  padding-top: 17rpx;
+  padding-bottom: 17rpx;
+  font-size: 28rpx;
+  display: flex;
+}
+.popup-job-select .popup-job-select-menu-line {
+  position: absolute;
+  height: 26rpx;
+  width: 4rpx;
+  left: 0;
+  top: 24rpx;
+  background-color: #3B87FF;
+  display: none;
+}
+.popup-job-select .popup-job-select-menu-item.has-selected-data {
+  color: #3B87FF;
+}
+.popup-job-select .popup-job-select-menu-item.selected .popup-job-select-menu-line {
+  display: block;
+}
+.popup-job-select .popup-job-select-data-title {
+  padding-right: 24rpx;
+  flex-grow: 1;
+}
+.popup-job-select .popup-job-select-data-opt {
+  height: 36rpx;
+}
+.popup-job-select .popup-job-select-data-selected {
+  display: none;
+}
+.popup-job-select .popup-job-select-data-unselect {
+  width: 36rpx;
+  height: 36rpx;
+}
+.popup-job-select .popup-job-select-data-item.selected .popup-job-select-data-unselect {
+  display: none;
+}
+.popup-job-select .popup-job-select-data-item.selected .popup-job-select-data-selected {
+  display: block;
+}
+/** 职位选择弹出框 end **/
+
+.fixed-bottom-panel {
+  z-index: 0;
+}

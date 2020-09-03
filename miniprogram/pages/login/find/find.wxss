@@ -1,0 +1,10 @@
+.h1 {
+  margin-top: 78rpx;
+  margin-bottom: 50rpx;
+}
+.btn-find {
+  margin-top: 60rpx;
+}
+.form-email {
+  padding-right: 40rpx;
+}

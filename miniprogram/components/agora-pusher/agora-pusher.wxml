@@ -1,0 +1,26 @@
+<view class="pusher-container" id="rtcpusher" style="height:100%;width:100%">
+  <live-pusher 
+  wx:if="{{url!==''}}" 
+  style="height:{{height}}px; position: absolute; width: 100%; " 
+  url="{{url}}" 
+  mode="RTC" 
+  aspect="{{aspect}}" 
+  class="camera" 
+  bindstatechange="recorderStateChange" 
+  bindnetstatus="recorderNetChange" 
+  background-mute="true" 
+  muted="{{muted}}" 
+  beauty="{{beauty}}"
+  max-bitrate="500" 
+  min-bitrate="200" 
+  waiting-image="https://webdemo.agora.io/away.png" 
+  debug="{{debug}}" 
+  autopush="true" 
+  enable-camera="{{enableCamera}}"
+  binderror="{{onLiveError}}"
+  />
+  <view class="pusher_enabled__image" wx:if="{{!enableCamera}}">
+    <image class="pusher_enabled__img" src="/imgs/interview/interview_icon_nocamera.png"></image>
+   </view> 
+  <view  wx:if="{{status !== 'ok'}}" class="video_status">{{status}}</view>
+</view>

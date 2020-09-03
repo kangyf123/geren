@@ -1,0 +1,3 @@
+<navBar page-name="{{showTitleText}}" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}"></navBar>
+<InputPanel keywords="{{ keywords }}" limit="{{ limit }}" type="{{ type }}" unit="{{ unit }}" placeholder="请输入{{ showTitleText }}" bindinput="bindInput"></InputPanel>
+<button class="btn btn-blue btn-save {{ counter > 0 ? '' : 'disabled' }}" bindtap="onSave">保存</button>

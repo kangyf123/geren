@@ -1,0 +1,70 @@
+.city__selector {
+  padding: 40rpx 0 40rpx 30rpx ;
+}
+.city__selector_title {
+  font-size: 32rpx;
+  font-weight: 600;
+  padding: 20rpx 0; 
+}
+.city__selector_module {
+  width:210rpx;
+  height:64rpx;
+  background:rgba(245,245,245,1);
+  border-radius:2rpx;
+  line-height: 64rpx;
+  text-align: center;
+  margin: 20rpx 20rpx 0 0;
+  display: inline-block;
+  transition: 0.2s all linear;
+}
+.mt-30 {
+  margin-top: 30rpx;
+}
+.city__chooser {
+  position: fixed;
+  top: 340rpx;
+  right: 10rpx;
+  font-size: 30rpx;
+}
+.city__chooser_item {
+  color: #3B87FF;
+  padding-left: 20rpx
+}
+.city__selector_scrollbar {
+ position: fixed;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+}
+.city__selector_title {
+  position: sticky;
+  top: 0;
+  background: #fff;
+  z-index: 1
+}
+.selected {
+  background: #3B87FF;
+  color: #fff;
+}
+.backTop {
+  width: 50rpx;
+  height: 50rpx;
+  display: inline-block;
+  border-radius: 50%;
+  border: 1px solid #3B87FF;
+  position: fixed;
+  bottom: 200rpx;
+  right: 14rpx;
+  color: #3B87FF;
+  text-align: center;
+  line-height: 50rpx;
+}
+::-webkit-scrollbar{
+    width: 0;
+    height: 0;
+    color: transparent;
+}
+.city__chooser_selected {
+  color: #F56C6C
+}

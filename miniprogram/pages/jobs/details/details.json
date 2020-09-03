@@ -1,0 +1,9 @@
+{
+  "onReachBottomDistance":150,
+  "usingComponents": {
+    "Popup": "../../../components/popup/popup",
+    "SimilarJobs": "../../../components/similar-jobs/similar-jobs",
+    "navBar": "../../../components/navBar/navBar",
+    "sunFadeTip": "../../../components/sun-fadeTip/index"
+  }
+}

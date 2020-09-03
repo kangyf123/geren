@@ -1,0 +1,129 @@
+page {
+  background-color: #F5F5F5;
+}
+
+.head-panel {
+  background-color: #FFFFFF;
+}
+
+.user-wrapper {
+  display: flex;
+  padding: 32rpx 36rpx 38rpx;
+  position: relative;
+}
+
+.user-img {
+  width: 120rpx;
+  height: 120rpx;
+  border-radius: 60rpx;
+  object-fit: scale-down;
+}
+
+.user-info {
+  padding-top: 12rpx;
+  margin-left: 36rpx;
+
+}
+
+.user-name {
+  color: #333333;
+  font-size: 34rpx;
+  margin-bottom: 19rpx;
+  font-weight: bold;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 251rpx;
+}
+
+.user-name.only-name {
+  margin-top: 30rpx;
+  width: 350rpx;
+}
+
+.user-mobile {
+  color: #999;
+  font-size: 24rpx;
+}
+
+.user-goInfo-background {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.user-goInfo-background .user-goInfo-image {
+  width: 241rpx;
+  height: 176rpx;
+}
+
+.user-goInfo {
+  width: 14rpx;
+  height: 24rpx;
+  position: absolute;
+  top: 50%;
+  right: 26rpx;
+}
+
+.user-data-panel {
+  display: flex;
+  padding-top: 22rpx;
+  padding-bottom: 31rpx;
+}
+
+.user-data-item {
+  width: calc(33.333333333333% - 1rpx);
+  text-align: center;
+}
+
+.user-data-num {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+  font-weight: bold;
+}
+
+.user-data-name {
+  font-size: 22rpx;
+  color: #666;
+}
+
+.user-data-sep {
+  width: 1rpx;
+  height: 56rpx;
+  background-color: #DDDDDD;
+  margin-top: 20rpx;
+}
+
+.panel-set-val {
+  font-size: 28rpx;
+}
+
+.panel-set-list .text-with-icon .icon {
+  margin-right: 24rpx;
+}
+
+.panel-set-item-height {
+  height: 21rpx;
+  background-color: #F5F5F5;
+}
+
+.my-tips {
+  width: 100%;
+  height: 150rpx;
+  position: relative;
+  bottom: 30rpx;
+}
+
+.my-icon {
+  width: 100%;
+  height: 200rpx;
+}
+
+.my-bindtap {
+  width: 92%;
+  height: 140rpx;
+  position: absolute;
+  top: 30rpx;
+  left: 30rpx;
+}

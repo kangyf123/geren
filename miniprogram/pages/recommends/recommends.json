@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "EmptyPanel": "../../../components/empty-panel/empty-panel",
+    "navBar": "../../components/navBar/navBar"
+  }
+}

@@ -1,0 +1,11 @@
+<view class="panel-set-item {{ noBottomLine ? 'no-border-bottom' : '' }}">
+  <view class="panel-set-data">
+    <view class="panel-set-title">
+      {{ title }}
+    </view>
+    <view class="panel-set-val {{ value === '' ? 'empty' : value}}">{{ value || emptyText }}</view>
+  </view>
+  <view class="panel-set-icon">
+    <image class="icon-opt" mode="aspectFit" src="/imgs/icon-arrow-right.png"></image>
+  </view>
+</view>

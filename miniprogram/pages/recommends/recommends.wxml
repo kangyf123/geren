@@ -1,0 +1,64 @@
+<wxs module="listFilter" src="../../wxs/list.wxs"></wxs>
+
+<view class="page" style="background-color:{{_isLogin&&count!=0?'#F5F5F5':'#FFFFFF'}}">
+  <navBar page-name="消息" showNavBut='{{showNavBut}}'></navBar>
+  <view class="recommend-panel" >
+    <view class="job-type-placeholder"></view>
+    <view class="nav_group job-type-panel" style="margin-top:{{navHeight}}">
+      <view class="scroll-horizontal-list Common_clr__border--eee">
+      <view class="to-optimize-tips">
+        <image class="to-optimize-icon" src="{{advertisementImage}}"></image>
+        <view bindtap="jumpApplet" class="to-optimize-bindtap"></view>
+      </view>
+      </view>
+      <view class="scroll-horizontal-list Common_clr__border--eee Common_border__b">
+          <view class="scroll-horizontal-item job-type-item {{ filters.status === item.id ? 'selected' : '' }}"
+            wx:for="{{ menu }}" wx:key="id" data-type="{{ item.id }}" data-level="top"  bindtap="changeStatus">
+            {{ item.name }}
+            <view class="recommend-head-badge" hidden="{{ item.badgeNum <= 0}}" >{{ item.badgeNum }}</view>
+          </view>
+      </view>
+    </view>
+    <view wx:if="{{ _isLogin }}" style="{{tabIndex == 1 ? 'margin-top:120rpx': ''}}">
+    <view class="job-list">
+      <view class="job-item" wx:for="{{ list }}" wx:key="index" 
+       bindtap="_navigateTo"
+       data-url="/pages/jobs/details/details?id={{ item.JobId }}">
+        <view class="job-item-item first">
+          <view class="job-item-title">
+            <view class="overflow-dot job-item-title-name">
+              {{ item.Title }}
+            </view>
+            <image wx:if="{{item.IsView }}" class="icon-item-title-icon" mode="aspectFit" src="/imgs/icon-new.png"></image>
+          </view>
+          <view class="job-item-salary">{{ item.SalaryFrom / 10000 }}万-{{ item.SalaryTo / 10000 }}万</view>
+        </view>
+        <view class="job-item-item">
+          <view class="job-item-company overflow-dot">{{ item.CompanyName }}</view>
+        </view>
+        <view class="job-item-item job-item-label">
+          <view class="label label-item" wx:if="{{ item.JobLocation }}">{{ item.JobLocation }}</view>
+          <view class="label label-item" wx:if="{{ item.YearsExperience !== '' }}">{{ item.YearsExperience > 0 ? item.YearsExperience + '年以上' : '1年以内' }}</view>
+          <view class="label label-item" wx:if="{{ item.EducationLevelName !== ''}}">{{ item.EducationLevelName }}</view>
+          <view class="label label-item" wx:if="{{ item.Languages !== '' }}">{{ item.Languages }}</view>
+          <view class="label label-item" wx:if="{{ item.AgeFrom !== '' && item.AgeTo !== '' }}">{{ item.AgeFrom }} - {{ item.AgeTo }}岁</view>
+          <view class="label label-item" wx:if="{{ item.Gender !== '' }}">{{ item.Gender }}</view>
+        </view>
+      </view>
+    </view>
+       <view class="empty-panel" wx:if="{{ count === 0 }}">
+       <EmptyPanel></EmptyPanel>
+    </view>
+    <view wx:if="{{isLast && count !== 0}}" class="no-more-data padding_b">没有更多数据了</view>
+    </view>
+
+  <view class="login-panel" wx:else>
+    <view class="login-empty-panel">
+      <image class="login-empty-icon" mode="aspectFit" src="/imgs/logo-empty.png"></image>
+      <view class="login-empty-msg">您尚未登录，无法查看历史消息</view>
+    </view>
+    <button class="btn btn-blue btn-login" data-url="/pages/login/login" bindtap="_navigateTo">登录查看我的投递信息</button>
+  </view>
+  </view>
+
+</view>

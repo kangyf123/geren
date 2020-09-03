@@ -1,0 +1,118 @@
+.head-panel {
+  position: fixed;
+  width: 100%;
+  height: 60rpx;
+  background-color: #fff;
+  padding-bottom: 17rpx;
+}
+.head-sep {
+  height: 77rpx;
+}
+.search-panel {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.search-panel .search-input {
+  vertical-align: initial;
+}
+.search-panel .delete-icon {
+  margin-top: 0;
+}
+/** 搜索历史 start **/
+.history-panel {
+  margin-top: 42rpx;
+  display: none;
+}
+.history-title {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999999;
+  font-size: 28rpx;
+}
+.history-list {
+  margin-top: 14rpx;
+}
+.history-item {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-bottom: 28rpx;
+  padding-top: 30rpx;
+  margin-left: 30rpx;
+  color: #333;
+}
+.icon-time {
+  width: 34rpx;
+  height: 34rpx;
+  vertical-align: middle;
+}
+.history-clear {
+  margin-top: 42rpx;
+  text-align: center;
+  color: #999999;
+  line-height: 1;
+  font-size: 34rpx;
+}
+.icon-remove {
+  width: 36rpx;
+  height: 36rpx;
+  vertical-align: bottom;
+  padding-right: 14rpx;
+}
+.remove-name {
+  letter-spacing: 2rpx;
+}
+/** 搜索历史 end **/
+
+
+/** 搜索列表 start **/
+.list-sep {
+  height: 20rpx;
+  background-color: #F5F5F5;
+}
+.search-list {
+  padding-bottom: 10rpx;
+}
+.search-item {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: solid 1rpx #EEEEEE;
+  padding: 25rpx 32rpx 24rpx;
+}
+.search-name {
+  width: calc(100% - 60rpx);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  font-size: 28rpx;
+}
+.msg-highlight {
+  color: #3B87FF;
+}
+.search-icon.selected {
+  display: none;
+}
+.search-icon-empty {
+  width: 36rpx;
+  height: 36rpx;
+}
+.search-item.selected .search-icon.selected {
+  display: block;
+}
+.search-item.selected .search-icon-empty {
+  display: none;
+}
+.opt-submit {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  border-top: solid 1rpx #EEEEEE;
+}
+.btn-submit {
+  margin: 21rpx 42rpx;
+  font-size: 34rpx;
+}
+
+/** 搜索列表 end **/
+

@@ -1,0 +1,63 @@
+page {
+  min-height: 100%;
+  height: 100%;
+  max-height: fit-content;
+}
+.page {
+  min-height: 100%;
+  background-color: #F5F5F5;
+}
+.page.white {
+  background-color: #FFF;
+}
+.attachment-notice {
+  font-size: 24rpx;
+  background-color: #F2F7FF;
+  text-align: center;
+  color: #666666;
+  padding-top: 14rpx;
+  padding-bottom: 13rpx;
+}
+.attachment-text-blue {
+  color: #3B87FF;
+}
+.resume-item {
+  padding: 44rpx 0 44rpx 39rpx;
+  background-color: #fff;
+  margin-bottom: 20rpx;
+}
+.resume-status-icon {
+  width: 33rpx;
+  height: 33rpx;
+  margin-right: 55rpx;
+}
+.resume-type-icon {
+  width: 42rpx;
+  height: 42rpx;
+  margin-right: 24rpx;
+}
+.resume-name {
+  font-size: 28rpx;
+  font-weight: bold;
+  color: #333333;
+  width: 310rpx;
+}
+.resume-opt-item {
+  width: 122rpx;
+  text-align: center;
+  line-height: 1;
+  font-size: 28rpx;
+}
+.resume-preview {
+  color: #3B87FF;
+  border-right: solid 1rpx #DDDDDD;
+}
+.resume-remove {
+  color: #F83D3D;
+}
+.search-icon-empty {
+  width: 28rpx;
+  height: 28rpx;
+  border: solid 4rpx #DDDDDD;
+  border-radius: 18px;
+}

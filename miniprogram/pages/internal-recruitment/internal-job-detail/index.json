@@ -1,0 +1,10 @@
+{
+  "usingComponents": {
+    "sunSelector": "../../../components/sun-selector/sun-selector",
+    "sunVideo": "../../../components/sunVideo/sunVideo",
+    "compNavBar": "../../../components/compNavBar/compNavBar",
+    "sunFadeTip": "../../../components/sun-fadeTip/index",
+    "sunMap": "../../../components/sun-map/sun-map",
+    "risComp": "../../../../components/joinRisfondComp/index"
+  }
+}

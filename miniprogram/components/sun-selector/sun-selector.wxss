@@ -1,0 +1,128 @@
+/* components/sun-selector/sun-selector.wxss */
+@import "../../common/style/common.wxss";
+.selector__warp {
+  position: relative;
+  background: #fff;
+}
+.selector__scrollbar_inner {
+  display: flex;
+  height: 100%;
+  padding-right: 100rpx;
+}
+.selector__scrollbar {
+  font-size: 0;
+  width: 680rpx;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+}
+.selector__scrollbar_item {
+  display: inline-block;
+  min-width: 100rpx;
+  position: relative;
+  transition:all .3s linear;
+  height: 100%;
+}
+.selector__scrollbar_item:last-child {
+  margin-right: 100rpx
+}
+.selector__item_active--bar {
+  width: 40rpx;
+  height: 4rpx;
+  background: #3B87FF;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20rpx;
+  display: none;
+}
+.selector__item--active {
+  font-weight: 600;
+  color: #333 !important;
+}
+.selector__item--active .selector__item_active--bar {
+  display: block;
+}
+.selector__scrollbar {
+  position: relative
+}
+.selector__switchpanel {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120rpx;
+  height: 80rpx;
+  text-align: center;
+  line-height: 110rpx;
+  background-image: linear-gradient(to right ,rgba(255,255,255,0.3),#fff,#fff,#fff);
+}
+.selector__navicon {
+  width: 44rpx;
+  height: 44rpx;
+  margin-right: -30rpx
+}
+.selector__dropbar_mask {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,.4);
+  z-index: 100;
+  transition: all .5s cubic-bezier(0.94, 0.06, 0.71, 0.82)
+}
+.selector__dropbar {  
+  width: 750rpx;
+  height: 85%;
+  background: #fff;
+  border-top-left-radius: 20rpx;
+  border-top-right-radius: 20rpx;
+  position: absolute;
+  bottom: 0
+}
+.selector__iconclose {
+  width: 44rpx;
+  height: 44rpx;
+  margin: 40rpx 24rpx 10rpx 24rpx;
+}
+.selector__dropbar_head {
+  font-size: 0
+}
+.selector__dropbar_title {
+  font-size: 36rpx;
+  color: #333;
+  font-weight: 600;
+  padding:0 30rpx
+}
+
+.selector__dropbar_content {
+  height: calc(100% - 170rpx);
+  overflow: hidden;
+  /* overflow-y: scroll; */
+  margin-top: 10rpx;
+}
+.selector__dropbar_content--item {
+  display: inline-block;
+  width:155rpx;
+  height:64rpx;
+  border-radius:2rpx;
+  line-height: 64rpx;
+  text-align: center;
+  margin: 24rpx 23rpx 0 0;
+  transition:all .3s linear;
+  border: 1rpx solid #ddd; 
+}
+.selector__dropbar_innerContent {
+  padding-left: 26rpx
+}
+.dropbar__item--active {
+  border-color: #3B87FF;
+  color: #3B87FF;
+}
+
+.dropShow {
+  bottom: 0
+}
+
+.dropHide {
+  bottom: -100%;
+}

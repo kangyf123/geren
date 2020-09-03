@@ -1,0 +1,16 @@
+.h1 {
+  margin-top: 79rpx;
+  margin-bottom: 50rpx;
+}
+.btn-save {
+  margin-top: 60rpx;
+  font-size: 34rpx;
+}
+.captcha-disabled {
+  color: #999;
+  margin-top: 4rpx;
+  display: inline-block;
+}
+.form-input-icon-remove {
+  right: 220rpx!important;
+}

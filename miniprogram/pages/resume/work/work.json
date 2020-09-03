@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "SettingItem": "/components/setting-item/setting-item",
+    "SettingItemDate": "/components/setting-item-date/setting-item-date",
+    "navBar": "/components/navBar/navBar"
+  }
+}

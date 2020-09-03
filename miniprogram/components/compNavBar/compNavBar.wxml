@@ -1,0 +1,11 @@
+<!--components/compNavBar/compNavBar.wxml-->
+<view class="sunNavBar__wrap" style='height:{{navHeight}}px'>
+  <view class="sunNavBar__navBack" style="top:{{navTop + 5}}px" bindtap="_navback">
+    <image class="icon_arrow" src="/imgs/white_arrow.png"></image>
+  </view>
+  <view class="sunNavBar_heart__wrap" style="top:{{navTop + 5}}px" hidden="{{!showHeart}}" bindtap="addHeart">
+     <image class="icon-emptyheart--gray" src="{{!isHeart ? '/imgs/Common_icon__emptyheart--gray.png' : '/imgs/Common_icon__heartfull.png'}}"></image>
+     <view class="icon-emptyheart--pop">{{heartNum}}</view>
+  </view>
+ <image class="nav_mask" src="/imgs/video_mask.png"></image>
+</view>

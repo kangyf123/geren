@@ -1,0 +1,14 @@
+// 支持es4语法
+var filter = {
+  formatSearchName: function (data, menu) {
+    var name;
+    if (data.id.length === 4) {
+      name = menu[data.id.substring(0, 2)] + ' - ' + data.name;
+    } else {
+      name = data.name;
+    }
+    return name;
+  }
+}
+// 导出对外暴露的属性
+module.exports = filter;

@@ -1,0 +1,69 @@
+<view class="risfond__tip" style="margin-top: -30rpx; {{bg ? 'box-shadow:0px 3px 15px 0px rgba(217,217,217,0.5);': ''}}">
+  <view class="risfond__top">
+    <image class="risfond__tip_icon mr-14" src="/imgs/Common_icon_gg.png"></image>
+    <text class="risfond__tip_title">为什么那么多人选择做猎头？</text>
+    <image class="risfond__tip_icon ml-4" src="/imgs/Common_icon_gg.png"></image>
+  </view>
+  <view class="risfond__content">
+    <text class="risfond__content_title">猎头顾问：</text>
+    <view class="risfond__content_module">
+      <image  class="risfond__icon_arrow" src="/imgs/Common__icom_arrow--c.png"></image>
+      成全别人，成就自己
+    </view>
+    <view class="risfond__content_module">
+      <image class="risfond__icon_arrow" src="/imgs/Common__icom_arrow--c.png"></image>
+      连接人与工作，为人才匹配职位，帮企业招聘人才
+    </view>
+    <view class="risfond__content_list">
+      <view class="risfond__content_item">
+        <view class="risfond__item_iwarp">
+          <image class="risfond__item_img" src="/imgs/joinComp__icon_m.png"></image>
+        </view>
+         <view class="risfond__item_content">
+            <view class="risfond__item_content--title">高投入高回报，财务自由</view>
+            <view class="risfond__item_content--subtitle">开单立刻有收入</view>
+             <view class="risfond__item_content--subtitle">贡献销售线索也能获得服务报酬</view>
+         </view>
+      </view> 
+       <view class="risfond__content_item">
+        <view class="risfond__item_iwarp">
+          <image class="risfond__item_img" src="/imgs/JoinComp__icon_people.png"></image>
+        </view>
+         <view class="risfond__item_content">
+            <view class="risfond__item_content--title">可替代性弱，安全感高</view>
+            <view class="risfond__item_content--subtitle">不吃青春饭</view>
+             <view class="risfond__item_content--subtitle">经验/技能/人脉属于自己，难以被替代</view>
+         </view>
+      </view> 
+       <view class="risfond__content_item">
+        <view class="risfond__item_iwarp">
+          <image class="risfond__item_img" src="/imgs/JoinComp__icon_dome.png"></image>
+        </view>
+         <view class="risfond__item_content">
+            <view class="risfond__item_content--title">价值感，满足感，成就感</view>
+            <view class="risfond__item_content--subtitle">连接人与工作</view>
+             <view class="risfond__item_content--subtitle">人才推动世界，猎头推动人才</view>
+         </view>
+      </view>  
+    </view>
+  </view>
+</view>
+
+<view class="risfond__tip" style="margin-top: 30rpx;  {{bg ? 'box-shadow:0px 3px 15px 0px rgba(217,217,217,0.5);': ''}}">
+  <view class="risfond__top risfond__clr_range">
+    <image class="risfond__tip_icon mr-24" src="/imgs/Common_icon_gg.png"></image>
+    <text class="risfond__tip_title">为什么选择我们？</text>
+    <image class="risfond__tip_icon ml-8" src="/imgs/Common_icon_gg.png"></image>
+  </view>
+  <view class="risfond__content" style="padding-bottom: 32rpx">
+    <image style="width:196rpx;height:62rpx" src="/imgs/logo-company.png"></image>
+    <text class="risfond__intro">
+      锐仕方达成立于2008年5月，总部设在北京。截至目前，锐仕方达在全球70余座城市设有130余家分公司，是中国首家获得AAAA评级的猎头机构，员工规模近4000人，是亚太地区领先的高端招聘服务机构。 
+
+      公司自主研发了全球领先的IT信息管理系统储备了超过800万的高端人才资源库，已和全球超过20000家知名企业建立合作关系，企业签约招聘成功率超过80%，在业内有着极高的声誉和影响力。
+
+      招贤纳士，高薪聘请猎头顾问！2020，你怀才不遇，正好我们怀“财“不遇！
+       高薪、机会、认同、成就，你想要的我们都有！期待你的强势加入！
+    </text>
+  </view>
+</view>

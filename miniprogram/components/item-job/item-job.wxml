@@ -1,0 +1,27 @@
+<view class="job-item" bindtap="navigateTo">
+  <view class="job-item-item">
+    <view class="job-item-title overflow-dot">{{ job.Title }}</view>
+    <view class="job-item-salary">{{ job.SalaryFrom / 10000 }}万-{{ job.SalaryTo / 10000 }}万</view>
+  </view>
+  <view class="job-item-item">
+    <view class="job-item-company overflow-dot">{{ isNewdate ? job.ClientName : job.CompanyName }}</view>
+    <view wx:if="{{isNewdate}}" class="job-new-two-date job-item-date">{{publishDate}}</view>
+  </view>
+  <view class="job-item-item job-item-label">
+    <view class="label label-item" wx:if="{{ job.JobLocation !== '' && job.JobLocation !== null }}">{{ job.JobLocation }}</view>
+    <view class="label label-item" wx:if="{{ job.YearsExperience !== '' }}">{{ job.YearsExperience > 0 ? job.YearsExperience + '年以上' : '1年以内' }}</view>
+    <view class="label label-item" wx:if="{{ job.EducationLevelName !== ''}}">{{ job.EducationLevelName }}</view>
+    <view class="label label-item" wx:if="{{ job.Languages !== '' }}">{{ job.Languages }}</view>
+    <view class="label label-item" wx:if="{{ job.AgeFrom !== '' && job.AgeTo !== '' }}">{{ job.AgeFrom }} - {{ job.AgeTo }}岁</view>
+    <view class="label label-item" wx:if="{{ job.Gender !== '' }}">{{ job.Gender }}</view>
+  </view>
+  
+  <!-- <view class="job-item-item job-item-headhunter" 
+    wx:if="{{ hasHeadhunter }}"
+    catchtap="navigateToHeadhunter">
+    <image class="job-item-headhunter-img" mode="aspectFit" src="{{ staff.MiddlePictureUrl }}"></image>
+    <view class="job-item-headhunter-info overflow-dot">
+      {{ staff.EnName }} <view class="sep-dot"></view>{{ showIndus ? staff.IndustryName : staff.Position }}
+    </view>
+  </view> -->
+</view>

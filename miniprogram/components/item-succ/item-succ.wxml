@@ -1,0 +1,14 @@
+<view class="job-item" bindtap="navigateTo">
+  <view class="job-item-item">
+    <view class="job-item-title overflow-dot">{{ data.JobTitle }}</view>
+    <view class="job-item-salary">{{ needFormatValue ? data.YearSalary +"万": data.YearSalary / 10000 }}</view>
+  </view>
+  <view class="job-item-item">
+    <view class="job-item-company overflow-dot">{{ data.ClientName }}</view>
+    <view class="job-item-time">{{ data.Time }}</view>
+  </view>
+ <view class="job-item-item handler-item">
+    <image src="../../imgs/Common_icon__point.png" class="Common_icon_small icon_layout"></image>{{data.LocationName}}
+    <image src="../../imgs/Common_icon__bag.png" class="Common_icon_small icon_layout icon_layout__ml"></image>{{data.IndustryName}}
+  </view>
+</view>

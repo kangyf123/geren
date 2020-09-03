@@ -1,0 +1,135 @@
+.integrity-panel {
+  padding: 18rpx 34rpx;
+  background-color: #F2F7FF;
+  position: fixed;
+  width: calc(100% - 68rpx);
+  z-index: 1;
+}
+
+.integrity-text {
+  flex-shrink: 0;
+  color: #3B87FF;
+  font-size: 24rpx;
+}
+.integrity-progress {
+  padding-left: 24rpx;
+  padding-right: 24rpx;
+}
+.integrity-panel-placeholder {
+  height: 68rpx;
+}
+.layout-main {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.panel-item {
+  padding-top: 40rpx;
+  padding-bottom: 40rpx;
+  border-bottom: solid 1rpx #EEEEEE;
+}
+.panel-opt-text {
+  color: #3B87FF;
+  font-size: 28rpx;
+  font-weight: initial;
+}
+.panel-basic {
+  align-items: flex-start;
+}
+.resume-img-wrapper {
+  position: relative;
+  display: inline-block;
+}
+.resume-img {
+  width: 110rpx;
+  height: 110rpx;
+  border-radius: 110rpx;
+  margin-right: 34rpx;
+}
+.resume-gender {
+  height: 22rpx;
+  width: 22rpx;
+  position: absolute;
+  right: 36rpx;
+  bottom: 15rpx;
+}
+.resume-info {
+  width: calc(100% - 100rpx);
+}
+.resume-name {
+  margin-top: 11rpx;
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 9rpx;
+  font-weight: bold;
+}
+.resume-name-text {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 252rpx;
+}
+.resume-age {
+  font-size: 24rpx;
+  color: #999999;
+}
+.panel-title {
+  font-size: 36rpx;
+  font-weight: bold;
+}
+.panel-content-item {
+  margin-top: 30rpx;
+}
+.panel-message {
+  font-size: 28rpx;
+  color: #666666;
+}
+.data-item {
+
+}
+.company-name {
+  font-size: 30rpx;
+  color: #333;
+  width: calc(100% - 80rpx);
+}
+.data-item-opt-list {
+  text-align: center;
+  width: 174rpx;
+  margin-right: -25rpx;
+  position: relative;
+}
+.data-item-opt-item {
+  width: 50%;
+}
+.data-item-opt-list:after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  bottom: 30%;
+  left: 50%;
+  width: 1rpx;
+  background-color: #DDDDDD;
+}
+.data-item-opt-img {
+  width: 40rpx;
+  height: 40rpx;
+}
+.panel-content-item .panel-message {
+  margin-top: 11rpx;
+}
+.panel-item-title {
+  color: #666;
+  max-width: 350rpx;
+  display: inline-block;
+  vertical-align: top;
+}
+.panel-item-sep {
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+  color: #666;
+}
+.panel-item-date {
+  color: #666;
+}
+.intro-item {
+  color: #666;
+}

@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "usingComponents": {
+    "EmptyPanel": "../../components/empty-panel/empty-panel",
+    "navBar": "../../components/navBar/navBar",
+    "ItemJob": "../../components/item-job/item-job"
+  }
+}

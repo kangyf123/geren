@@ -1,0 +1,27 @@
+<navBar page-name="项目经历" showNavBut='{{showNavBut}}' is-edited="{{ isEdited }}"></navBar>
+<view class="panel-set-list">
+  <SettingItem title="项目名称" emptyText="请填写" value="{{ query.ProjectName }}" 
+    data-url="/pages/input/input?keywords={{ query.ProjectName }}&title=项目名称&field=ProjectName&limit=30"
+    bindtap="_navigateTo"></SettingItem>
+  <SettingItem title="担任职务" emptyText="请填写" value="{{ query.JobTitle }}" 
+    data-url="/pages/input/input?keywords={{ query.JobTitle }}&title=担任职务&field=JobTitle&limit=30"
+    bindtap="_navigateTo"></SettingItem>
+  <SettingItemDate title="项目时间" data-start="DateFrom" data-end="DateTo" 
+    start="{{ query.DateFrom }}" end="{{ query.DateTo }}" is-end-current="{{ query.IsCurrent }}"
+    bindchange="_dateChange"></SettingItemDate>
+  <SettingItem title="项目描述" emptyText="请填写" value="{{ query.ProjectIntroduction && '已填写' }}"
+    data-url="/pages/input/input?keywords={{ query.ProjectIntroduction }}&title=项目描述&field=ProjectIntroduction&limit=1000"
+    bindtap="_navigateTo" no-bottom-line="{{ true }}"></SettingItem>
+</view>
+<view class="panel-set-list">
+  <SettingItem title="项目职责" emptyText="请填写" value="{{ query.Duty && '已填写' }}" 
+    data-url="/pages/input/input?keywords={{ query.Duty }}&title=项目职责&field=Duty&limit=1000"
+    bindtap="_navigateTo"></SettingItem>
+  <SettingItem title="项目业绩" emptyText="请填写" value="{{ query.Performance && '已填写' }}" 
+    data-url="/pages/input/input?keywords={{ query.Performance }}&title=项目业绩&field=Performance&limit=1000"
+    bindtap="_navigateTo" no-bottom-line="{{ true }}"></SettingItem>
+</view>
+<button class="btn btn-blue save-btn {{ isComplete ? '' : 'disabled' }}"
+  data-url="/v1/Member/EditMemberProjectExp" 
+  bindtap="_save">保存</button>
+  

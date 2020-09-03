@@ -1,0 +1,370 @@
+<wxs module="filter" src="./filters.wxs"></wxs>
+<wxs module="imgFilter" src="../../../wxs/img.wxs"></wxs>
+<navBar page-name="职位详情" showNavBut='{{showNavBut}}' backUrl="{{ backUrl }}"></navBar>
+
+<!-- 第一次进入只为分享提示弹框 
+<view class="guide__tip" wx:if="{{showFirstModel}}">
+	<view class="guide__tip_img"></view>
+	<view class="guide__tip_tamp">
+		<image class="guide__icon_shine" src="/imgs/Common__icon_shine.png"></image>
+		<image class="share__guide_img" src="/imgs/share__guide.png" bindtap="event_iknow"></image>
+		<view>
+			<image class="internal__jion_share--img" src="/imgs/Common__icon_share--dark.png"></image>
+		</view>
+		<view class="internal__jion_share--text">分享</view>
+	</view>
+</view> -->
+
+<view style="display:none">Wrong position details ID : {{detailsJobId}}</view>
+<view style="display:none">The interface address of the current request : {{hostApp}}</view>
+<view wx:if="{{ isPageShow }}">
+	<view class="head-panel">
+		<!-- 职位详情状态 已投递 -->
+		<view class="job-status-background" wx:if="{{stepStatus==-1}}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">已投递</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<view class="job-status-content">已成功投递，请静候猎头反馈！</view>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 放弃职位 -->
+		<view class="job-status-background" wx:if="{{stepStatus==5}}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">放弃职位</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<!-- 放弃类型 -->
+				<!-- <view class="job-status-content">{{waiveType}}</view> -->
+				<view class="job-status-content" wx:for="{{ memo.ContentArr }}" wx:if="{{ item }}">{{ item }}</view>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 有意向 -->
+		<view class="job-status-background" wx:if="{{(stepStatus==14 ||stepStatus==2||stepStatus==4||stepStatus==16) || (stepStatus==1 && IsActiveDelivery)}}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">有意向</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<view class="job-status-content">您的简历已被查看，静候佳音，及时查看投递进展哦！</view>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 待面试 -->
+		<view class="job-status-background" wx:if="{{stepStatus==10}}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">待面试</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<view class="job-status-content">面试阶段：{{ filter.getInterviewStage(recommendStepData.Type) }}</view>
+				<view class="job-status-content">面试时间：{{ recommendStepData.InterviewTimeText }}</view>
+				<view class="job-status-content">面试地点：{{ recommendStepData.InterviewLocation }}</view>
+			</view>
+			<view class="job-status-bottom"></view>
+			<view class="job-status-bottom-text">
+				<button class="job-status-bottom-right job-status-bottom-right_2" bindtap="map">查看面试地点</button>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 已面试 -->
+		<view class="job-status-background" wx:if="{{stepStatus==6}}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">已面试</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<view class="job-status-content">面试阶段：{{ filter.getInterviewStage(recommendStepData.Type) }}</view>
+				<view class="job-status-content">面试时间：{{ recommendStepData.InterviewTimeText }}</view>
+				<view class="job-status-content">面试地点：{{ recommendStepData.InterviewLocation }}</view>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 offer -->
+		<view class="job-status-background" wx:if="{{stepStatus == 8 }}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">已发offer，待入职</view>
+					<view class="job-status-body-right">{{job.LastUpdateStatusTime}}</view>
+				</view>
+				<view class="job-status-content">入职职位：{{ job.Title }}</view>
+				<view class="job-status-content">入职时间：{{ recommendStepData.EntryTimeText }}</view>
+			</view>
+			<view class="job-status-bottom"></view>
+			<view class="job-status-bottom-text">
+				<button class="job-status-bottom-right" bindtap="openOffer">查看offer</button>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 已入职 -->
+		<view class="job-status-background" wx:if="{{stepStatus==9}}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">已入职</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<view class="job-status-content">入职职位：{{ job.Title }}</view>
+				<view class="job-status-content">入职时间：{{ recommendStepData.EntryTimeText }}</view>
+			</view>
+			<view class="job-status-bottom"></view>
+			<view class="job-status-bottom-text">
+				<button class="job-status-bottom-right" bindtap="openOffer">查看offer</button>
+				<button class="job-status-bottom-right" bindtap="showCallPopup">联系猎头</button>
+			</view>
+		</view>
+
+		<!-- 职位详情状态 简历不合适 -->
+		<view class="job-status-background" wx:if="{{ stepStatus == 7 }}">
+			<view class="job-status-body">
+				<view class="job-status-title">
+					<view class="job-status-body-left">简历不合适</view>
+					<view class="job-status-body-right">{{ job.LastUpdateStatusTime }}</view>
+				</view>
+				<!-- 与岗位要求不太匹配，祝早日找到合适岗位 -->
+				<view class="job-status-content">{{ memo.Content }}</view>
+			</view>
+			<view class="job-status-bottom"></view>
+			<view class="job-status-bottom-text">
+				<button class="job-status-bottom-right job-status-7" bindtap="goHome">查看其他职位</button>
+			</view>
+		</view>
+
+		<view class="head-card">
+			<view class="job-item">
+				<view class="job-item-item">
+					<view class="job-item-title">{{ job.Title }}</view>
+					<view class="job-item-salary">{{ job.SalaryFrom / 10000 || 0 }}万-{{ job.SalaryTo / 10000 || 0 }}万</view>
+				</view>
+				<view class="job-item-item">
+					<view class="job-item-company">{{ job.CompanyName }}</view>
+				</view>
+				<view class="job-item-item job-item-label">
+					<view class="label label-item" wx:if="{{ job.YearsExperience !== '' }}">{{ job.YearsExperience > 0 ? job.YearsExperience + '年以上' : '1年以内' }}</view>
+					<view class="label label-item" wx:if="{{ job.EducationLevelName !== ''}}">{{ job.EducationLevelName }}</view>
+					<view class="label label-item" wx:if="{{ job.Languages !== '' }}">{{ job.Languages }}</view>
+					<view class="label label-item" wx:if="{{ job.AgeFrom !== '' && job.AgeTo !== '' }}">{{ job.AgeFrom }} - {{ job.AgeTo }}岁</view>
+					<view class="label label-item" wx:if="{{ job.Gender !== '' }}">{{ job.Gender }}</view>
+				</view>
+			</view>
+			<view class="job-details">
+				<view class="job-industry">所属行业：{{ job.IndustryStr }}</view>
+				<view class="job-department">
+					<view class="job-department-item">所属部门：{{ job.Department }}</view>
+					<view class="job-department-item">汇报对象：{{ job.ReportTo || '--'}}</view>
+					<view class="job-department-item">工作地点：{{ job.JobLocation }}</view>
+				</view>
+			</view>
+		</view>
+	</view>
+	<view class="flex-between headhunter-panel" wx:if="{{ staff.EnName && staff.CompanyName && staff.Position }}" data-url="/pages/headhunters/details/details?id={{ staff.StaffId }}" data-point="1" data-pointkey="botton_hd" bindtap="_navigateTo">
+		<view class="headhunter-wrapper">
+			<image class="headhunter-img" mode="aspectFill" src="{{ staff.MiddlePictureUrl }}"></image>
+			<view class="headhunter-info">
+				<view class="headhunter-name-date">
+					<text class="headhunter-name">{{ staff.EnName }}</text>
+					<text class="headhunter-date" wx:if="{{ job.LastUpdateStatusTimeStr }}">{{ job.LastUpdateStatusTime }} 发布</text>
+				</view>
+				<view class="headhunter-company">{{ staff.Position }}</view>
+			</view>
+		</view>
+		<image class="headhunter-details" mode="aspectFill" src="/imgs/icon-arrow-right.png"></image>
+	</view>
+	<view class="job-desc-sep"></view>
+	<view class="module-title">
+		<text class="module-title-name">职位描述</text>
+	</view>
+
+	<view class="intro-panel">
+		<view class="intro-item" wx:for="{{ job.DescriptionArr }}" wx:key="index">
+			{{ item }}
+		</view>
+	</view>
+	<view class="module-title-sep"></view>
+	<view class="module-title">
+		<text class="module-title-name">公司介绍</text>
+	</view>
+
+	<view class="intro-panel">
+		<view class="intro-item" wx:for="{{ job.CompanyDescriptionArr }}" wx:key="index">
+			{{ item }}
+		</view>
+	</view>
+
+	<view class="sep-module" wx:if="{{ stepStatus == -1 || stepStatus == -2 }}">
+		<view class="module-title">
+			<text class="module-title-name">相似职位</text>
+		</view>
+	</view>
+	<SimilarJobs wx:if="{{ stepStatus == -1 || stepStatus == -2 }}" list="{{ similarList }}"></SimilarJobs>
+
+	<view class="fixed-bottom-placeholder  {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} {{ stepStatus === 5 || stepStatus == 9 || stepStatus == 7 ? 'bg-white' : '' }}"></view>
+
+	<!-- 职位分享位置 -->
+	<view class="fixed-bottom-panel" wx:if="{{ showType == 2 }}">
+		<view class="internal__jion_tips" style="width: 302rpx; left: 0;top:-103rpx">
+			<sunFadeTip leftTip="{{true}}" tipText="{{'可以立即分享哦!'}}"></sunFadeTip>
+		</view>
+		<view class="shape__bottom">
+			<view bindtap="openShape" class="shape__bottom_tips">
+				<image class="butt__shape_icon" src="/imgs/Shape_job_icon.png" mode="aspectFill"></image>
+				<text class="butt__shape_text">分享</text>
+			</view>
+		</view>
+		<view class="btn-consult">
+			<button class="bottom-btn {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} btn-light-blue no-margin-right" bindtap="showCallPopup">职位咨询</button>
+		</view>
+		<view class="btn-accept">
+			<button class="bottom-btn {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} btn-blue {{stepStatus == -1 ?'disabled':''}}" bindtap="showApplyJobPanel">投递简历</button>
+		</view>
+	</view>
+	<Popup id="callPopup" name="{{ staff.EnName }}" img="{{ staff.MiddlePictureUrl }}" position="{{ staff.Position }}" mobile="{{ staff.MobileNumber }}"></Popup>
+
+	<!-- 按钮 感兴趣/不感兴趣 1 -->
+	<view class="fixed-bottom-panel" wx:if="{{ showType == 1}}">
+		<view class="internal__jion_tips" style="width: 302rpx; left: 0;top:-103rpx">
+			<sunFadeTip leftTip="{{true}}" tipText="{{'可以立即分享哦!'}}"></sunFadeTip>
+		</view>
+		<view class="shape__bottom">
+			<view bindtap="openShape" class="shape__bottom_tips">
+				<image class="butt__shape_icon" src="/imgs/Shape_job_icon.png" mode="aspectFill"></image>
+				<text class="butt__shape_text">分享</text>
+			</view>
+		</view>
+		<view class="btn-consult">
+			<button class="bottom-btn {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} btn-light-blue no-margin-right bottom-text-left" bindtap="showUninterested" data-point="1" data-pointkey="botton_uninterested">不感兴趣</button>
+		</view>
+		<view class="btn-accept">
+			<button class="bottom-btn {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} btn-blue bottom-text-right" bindtap="furtherCommunication">感兴趣</button>
+		</view>
+	</view>
+	<Popup id="callPopup" name="{{ staff.EnName }}" img="{{ staff.MiddlePictureUrl }}" position="{{ staff.Position }}" mobile="{{ staff.MobileNumber }}"></Popup>
+
+	<!-- 按钮 放弃职位/联系猎头/已投递/有意向 0 -->
+	<view class="fixed-bottom-panel" wx:if="{{showType == 0}}">
+		<view class="internal__jion_tips" style="width: 302rpx; left: 0;top:-103rpx">
+			<sunFadeTip leftTip="{{true}}" tipText="{{'可以立即分享哦!'}}"></sunFadeTip>
+		</view>
+		<view class="shape__bottom">
+			<view bindtap="openShape" class="shape__bottom_tips">
+				<image class="butt__shape_icon" src="/imgs/Shape_job_icon.png" mode="aspectFill"></image>
+				<text class="butt__shape_text">分享</text>
+			</view>
+		</view>
+		<view style="height:122rpx;width: 88%;display: inline-block;" class="{{ _isScreenBottomRound ? 'has-round-bottom-new' : '' }}">
+			<button class="bottom-btn btn-blue bottom-text-right" bindtap="showCallPopup">{{showType == 0 && hasGetJobDetailOfNoLogin ? '登陆 联系猎头' :'联系猎头'}}</button>
+		</view>
+	</view>
+	<Popup id="callPopup" name="{{ staff.EnName }}" img="{{ staff.MiddlePictureUrl }}" position="{{ staff.Position }}" mobile="{{ staff.MobileNumber }}"></Popup>
+
+	<!-- 简历不完整位置  -->
+	<view class="popup-panel" wx:if="{{ isShowIncompleteResume }}">
+		<view class="popup-mask"></view>
+		<view class="apply-quikly-body">
+			<view class="popup-head-new">
+				<view class="popup-title">简历不完整</view>
+				<view class="popup-close-icon" bindtap="closeIncompleteResume">×</view>
+			</view>
+			<view class="incompLeteRe_tltle">请先将基本信息、工作经历、教育经历填写完整，再投递简历</view>
+			<view bindtap="improveResume" class="incompLeteRe_buttom incompLeteRe_buttom_blue">
+				<text class="incompLeteRe_buttom_text">完善简历</text>
+			</view>
+			<view wx:if="{{!HasFastJobApplayed}}" bindtap="openApplyQuickly" class="incompLeteRe_buttom margin_bot_43">
+				<image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/jsyp-icon.png"></image>
+				<text class="incompLeteRe_buttom_text_blue">点击进行极速应聘></text>
+			</view>
+			<view wx:if="{{HasFastJobApplayed}}" class="incompLeteRe_buttom incompLeteRe_buttom_detal margin_bot_43">
+				<image class="icon panel-set-title-icon" mode="aspectFit" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/icon_1.png"></image>
+				<text class="incompLeteRe_buttom_detal">点击进行极速应聘></text>
+			</view>
+		</view>
+	</view>
+
+	<!-- 极速应聘位置 -->
+	<view class="popup-panel" wx:if="{{modelApplyQuickly}}">
+		<view class="popup-mask"></view>
+		<view class="apply-quikly-body apply-quikly-body-2">
+			<view class="popup-head">
+				<view class="popup-title">极速应聘</view>
+				<view class="popup-close-icon" bindtap="closeApplyQuickly">×</view>
+			</view>
+			<view class="apply-quikly-content">
+				<view class="quikly__content_title">请留下您的应聘信息，保持电话畅通</view>
+				<view class="modal__content_inputer">
+					<input maxlength="30" placeholder="请输入你的姓名" data-key="CandidateName" value="{{modalQuery.CandidateName}}" bindinput="modalQueryHandler" class="modal__content_input"></input>
+				</view>
+				<view class="modal__content_inputer">
+					<input maxlength="11" placeholder="请输入你的电话" data-key="MobilePhone" value="{{modalQuery.MobilePhone}}" bindinput="modalQueryHandler" class="modal__content_input modal__content_input--number"></input>
+					<text class="modal__content_getCode" bindtap="initCode">{{loadingCoding ? jumpNum +'s' : '获取验证码'}}</text>
+				</view>
+				<view class="modal__content_inputer">
+					<input maxlength="6" placeholder="请输入验证码" data-key="VerifyCode" value="{{modalQuery.VerifyCode}}" bindinput="modalQueryHandler" class="modal__content_input"></input>
+				</view>
+				<view class="modal__content_inputer">
+					<picker bindchange="GenderChange" value="{{index}}" range="{{whetherList}}" range-key="text">
+						<view class="picker modal__content_input reset_selector" style="{{modalQueryGender !== null ? 'color: #333' : 'color:#999'}}">
+							{{modalQueryGender == null ? "请输入您的性别" : whetherList[modalQueryGender].text}}
+							<image class="icon__arrow icon__arrow_pos" src="/imgs/icon-arrow-right.png"></image>
+						</view>
+					</picker>
+				</view>
+				<view class="modal__content_inputer">
+				<!-- 用于真实年龄回显 -->
+				  <view wx:if="{{modalQuery.Birthdate}}" class="input__newBirthdate">{{newBirthdate}}</view>
+					<picker mode="date" end="{{ now }}" value="{{ modalQuery.Birthdate }}" bindchange="bindDateChange" data-type="Birthdate">
+						<view class="picker modal__content_input reset_selector" style="{{modalQuery.Birthdate ? 'color: #333' : 'color:#999'}}">
+							{{modalQuery.Birthdate ? modalQuery.Birthdate :"请输入您的年龄"}}
+							<image class="icon__arrow icon__arrow_pos" src="/imgs/icon-arrow-right.png"></image>
+						</view>
+					</picker>
+				</view>
+			</view>
+			<view class="apply-quikly-bottom">
+				<view class="apply-quikly-blue" bindtap="applyQuiklyBut">确认提交</view>
+			</view>
+		</view>
+	</view>
+	<view class="popup-panel" wx:if="{{ isShowApplyResumePanel }}">
+		<view class="popup-mask"></view>
+		<view class="popup-wrapper popup-bottom">
+			<view class="popup-content">
+				<view class="popup-head">
+					<view class="popup-title">投递简历</view>
+					<view class="popup-close-icon" bindtap="hide" bindtap="closeApplyJobPanel">×</view>
+				</view>
+				<view class="popup-body">
+					<view class="resume-list">
+						<view class="flex-between resume-item {{ item.Id == curResumeId ? 'selected' : '' }}" wx:for="{{ resumeList }}" wx:key="index" data-id="{{ item.Id }}" bindtap="changeCurResumeId">
+							<view class="flex-start resume-wrapper">
+								<image class="resume-img" mode="aspectFill" src="{{ imgFilter.getImgUrl(item.img) }}"></image>
+								<view class="resume-info">
+									<view class="resume-name overflow-dot">{{ item.Name }}</view>
+									<view class="resume-age" wx:if="{{ item.IsOnLine }}">{{ item.resumeIntro }}</view>
+								</view>
+							</view>
+							<view class="flex-between resume-opt">
+								<view class="resume-type {{ item.IsOnLine ? 'online' : '' }}">{{ item.IsOnLine ? '在线简历' : '附件简历' }}</view>
+								<icon class="resume-status selected" type="success" color="#3B87FF" size="36rpx" />
+								<image class="search-icon-empty resume-status" mode="aspectFit" src="/imgs/icon-circle.png"></image>
+							</view>
+						</view>
+					</view>
+				</view>
+				<view class="btn-new-date {{_isScreenBottomRound ? 'isScreenBottomRound__bottom':''}}">
+					<view wx:if="{{!HasFastJobApplayed}}" bindtap="openApplyQuickly" class="left-new-but">
+						<image class="icon panel-set-title-icon" mode="aspectFit" src="/imgs/jsyp-icon.png"></image>
+						<text class="left-new-text">极速应聘</text>
+					</view>
+					<view wx:if="{{HasFastJobApplayed}}" class="left-new-but left-new-but-detal">
+						<image class="icon panel-set-title-icon" mode="aspectFit" src="cloud://yun-uvfqf.7975-yun-uvfqf-1302389649/icon_1.png"></image>
+						<text class="left-new-text color__fff">极速应聘</text>
+					</view>
+					<button class="right-new-but btn-blue btn-submit {{ curResumeId === 0 ? 'disabled' : '' }}" bindtap="applyJob">确认投递</button>
+				</view>
+			</view>
+		</view>
+	</view>
+</view>

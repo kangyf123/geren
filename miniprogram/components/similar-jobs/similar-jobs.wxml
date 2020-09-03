@@ -1,0 +1,9 @@
+<view class="job-list">
+  <view class="job-item" wx:for="{{ list }}" wx:key="index">
+    <ItemJob data="{{ item }}" needDate="{{false}}" showIndus="{{true}}"></ItemJob>
+    <view class="sep"></view>
+  </view>
+</view>
+<view wx:if="{{ list.length == 0 }}" class="empty-panel">
+  <EmptyPanel></EmptyPanel>
+</view>

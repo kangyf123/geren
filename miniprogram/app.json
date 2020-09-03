@@ -1,0 +1,105 @@
+{
+  "pages": [
+    "pages/home/home",
+    "pages/JustForSharing/JustForSharing",
+    "pages/applyQuickly/applyQuickly",
+    "pages/job-intention/job-intention",
+    "pages/expect-job/expect-job",
+    "pages/resume/resume",
+    "pages/my/my",
+    "pages/notice_4/notice",
+    "pages/jobs/details/details",
+    "pages/callback/callback",
+    "pages/callback_2/callback",
+    "pages/notice/notice",
+    "pages/notice_3/notice",
+    "pages/recommends/recommends",
+    "pages/notice_2/notice",
+    "pages/login/login",
+    "pages/login/mobile/mobile",
+    "pages/login/email/email",
+    "pages/login/bind-mobile/bind-mobile",
+    "pages/headhunter-search/headhunter-search",
+    "pages/headhunters/headhunters",
+    "pages/my/interviews/interviews",
+    "pages/my/offers/offers",
+    "pages/my/offers/view/view",
+    "pages/my/jobs/jobs",
+    "pages/login/find/find",
+    "pages/headhunters/details/details",
+    "pages/resume/work/work",
+    "pages/resume/basic/basic",
+    "pages/resume/train/train",
+    "pages/resume/language/language",
+    "pages/resume/project/project",
+    "pages/resume/intro/intro",
+    "pages/resume/skill/skill",
+    "pages/resume/certificate/certificate",
+    "pages/resume/edu/edu",
+    "pages/attachments/attachments",
+    "pages/copy/copy",
+    "pages/accept-jobs/accept-jobs",
+    "pages/expect-industry/expect-industry",
+    "pages/expect-position/expect-position",
+    "pages/search/search",
+    "pages/job-search/job-search",
+    "pages/input/input",
+    "pages/index/index",
+    "pages/logs/logs",
+    "pages/meet-login/index",
+    "pages/meeting/meeting",
+    "pages/common_h5/index",
+    "pages/introduction/index",
+     "pages/internal-recruitment/index",
+    "pages/internal-recruitment/internal-job-detail/index",
+    "pages/internal-recruitment/internal-job/index",
+    "pages/map/index",
+    "components/sun-fadeTip/index",
+    "pages/internal-recruitment/internal-tip-page/index",
+    "pages/citySelector/index"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "Loading...",
+    "navigationStyle": "custom"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取位置信息"
+    }
+  },
+  "tabBar": {
+    "custom": false,
+    "color": "#999999",
+    "selectedColor": "#3B87FF",
+    "backgroundColor": "#F9F9F9",
+    "position": "bottom",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "./imgs/icon-home.png",
+        "selectedIconPath": "./imgs/icon-home-selected.png"
+      },
+      {
+        "pagePath": "pages/recommends/recommends",
+        "text": "消息",
+        "iconPath": "./imgs/nav/Nav_icon__msg.png",
+        "selectedIconPath": "./imgs/nav/Nav_icon__msg--active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "./imgs/icon-user.png",
+        "selectedIconPath": "./imgs/icon-user-selected.png"
+      }
+    ]
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json",
+  "navigateToMiniProgramAppIdList": [
+    "wx3988aa3ac4ceb293"
+  ]
+}

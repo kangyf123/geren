@@ -1,0 +1,12 @@
+<navBar page-name="找回密码" showNavBut='{{showNavBut}}'></navBar>
+<view class="layout-mlr-40">
+  <view class="h1">邮箱找回密码</view>
+  <view class="form-input-item">
+    <view>
+      <input class="form-input form-email" placeholder="请输入邮箱" maxlength="50" data-field="email" bindinput="_setToData" value="{{ email }}" data-aftercallback="_setSubmitEnableState" />
+    </view>
+
+    <image wx:if="{{ email }}" class="form-input-icon-remove" mode="aspectFit" src="/imgs/icon-delete.png" bindtap="_clearInput" data-field="email"></image>
+  </view>
+  <button class="btn-blue {{ _isSubmitEnable ? '' : 'disabled' }} btn-find" bindtap="submit">找回密码</button>
+</view>

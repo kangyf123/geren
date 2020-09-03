@@ -1,0 +1,133 @@
+page {
+  min-height: 100%;
+  height: 100%;
+  max-height: fit-content;
+}
+.page {
+  min-height: 100%;
+}
+.page.search-list {
+  background-color: #F5F5F5;
+}
+.head-panel {
+  position: fixed;
+  width: 100%;
+  height: 80rpx;
+  background-color: #fff;
+}
+.head-sep {
+  height: 77rpx;
+  background-color: #FFF;
+}
+.search-panel {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  display: flex;
+  align-items: center;
+}
+.search-panel .search-input {
+  vertical-align: initial;
+}
+.search-panel .delete-icon {
+  margin-top: 0;
+}
+/** 搜索历史 start **/
+.history-panel {
+  margin-top: 42rpx;
+}
+.history-title {
+  margin-left: 30rpx;
+  margin-right: 30rpx;
+  color: #999999;
+  font-size: 28rpx;
+}
+.history-item {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-bottom: 28rpx;
+  padding-top: 30rpx;
+  margin-left: 30rpx;
+  color: #333;
+}
+.icon-time {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.history-name {
+  font-size: 28rpx;
+}
+.history-clear {
+  margin-top: 42rpx;
+  text-align: center;
+  color: #999999;
+  line-height: 1;
+  font-size: 34rpx;
+  margin-bottom: 42rpx;
+}
+.icon-remove {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: bottom;
+  padding-right: 14rpx;
+}
+.remove-name {
+  font-size: 28rpx;
+  color: #999999;
+}
+/** 搜索历史 end **/
+
+
+
+/** 搜索列表 start **/
+.empty-panel {
+  margin-top: 164rpx;
+}
+.list-panel {
+  margin-bottom: 132rpx;
+}
+.list-sep {
+  height: 20rpx;
+  background-color: #F5F5F5;
+}
+
+.search-item {
+}
+.search-name {
+  width: calc(100% - 60rpx);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.msg-highlight {
+  color: #3B87FF;
+}
+.search-icon-empty {
+  width: 28rpx;
+  height: 28rpx;
+  border: solid 4rpx #DDDDDD;
+  border-radius: 18px;
+}
+.opt-submit {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  border-top: solid 1rpx #EEEEEE;
+}
+.btn-submit {
+  margin: 21rpx 42rpx;
+}
+
+/** 搜索列表 end **/
+.history-keyword {
+  color: #3B87FF;
+}
+.no-more-data {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.no-more-data.hide {
+  display: none;
+}

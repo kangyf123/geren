@@ -1,0 +1,162 @@
+/* pages/internal-recruitment/index.wxss */
+page {
+  background: #F5F5F5;
+  padding-bottom: 50rpx;
+}
+.internal__wrap {
+  color: #333;
+  margin-top: 590rpx;
+}
+.internal__video {
+  width: 750rpx;
+  height: 500rpx;
+  position: fixed;
+  top: 0;
+  z-index: 1
+}
+.internal__compList_item {
+  padding: 0 30rpx;
+  background: #fff;
+  margin-bottom: 20rpx;
+}
+
+.internal__compList_item--compinfo{
+  padding-top: 30rpx;
+  display: flex;
+  width: 100%;
+}
+.internal__compList_item--detailinfo {
+  padding: 16rpx 0;
+}
+.internal__compinfo_img {
+  display: inline-block;
+  width: 220rpx;
+  height: 165rpx;
+}
+.internal__compinfo_img--el {
+  width: 100%;
+  height: 100%;
+  border-radius: 8rpx;
+}
+.internal__compinfo_info {
+  display: inline-block;
+  width: 460rpx;
+  height: 165rpx;
+  padding-left: 30rpx;
+  padding-top: 4rpx;
+  box-sizing: border-box;
+}
+.internal__info_title {
+  font-weight: 600;
+  font-size: 36rpx;
+  color: #333
+}
+.internal__module_item {
+  display: inline-block;
+  font-size: 24rpx;
+  color: #999;
+  padding: 4rpx 10rpx;
+  background: #F7F7F7;
+  border-radius:4rpx;
+  margin: 14rpx 10rpx 0 0;
+}
+.heart__img {
+  width: 32rpx;
+  height: 32rpx;
+  transform: translateY(8rpx)
+}
+.heart__text {
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.internal__heart_wrap {
+  display: table-cell
+}
+.internal__compList_item--detailinfo {
+  display: table;
+  width: 100%;
+}
+.internal__job_wrap {
+  display: table-cell
+}
+.internal__job_wrap {
+  text-align: right
+}
+.icon__arrow {
+  width: 12rpx;
+  height: 22rpx;
+  margin-bottom: -2rpx;
+  margin-left: 20rpx;
+}
+.internal__job_text {
+  font-size: 28rpx;
+  margin-left: 10rpx;
+}
+.internal__job_text--26 {
+  font-size: 26rpx;
+  margin-left: 10rpx;
+}
+.selector__wrap {
+  position: fixed;
+  top: 500rpx;
+  z-index: 11;
+  width: 750rpx;
+}
+
+.tipModal {
+  position: fixed;
+  z-index: 20;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0,0,0,.5)
+}
+.tipModal__tip {
+  position: relative;
+  text-align: center;
+  margin-top: 320rpx;
+  font-size: 0;
+}
+.tipModal__tip_img {
+  width: 520rpx;
+  height: 520rpx;
+  display: inline-block;
+  border-radius: 4rpx;
+}
+.tipModal__footer {
+  margin: 0 auto;
+  width: 520rpx;
+  background: #fff;
+  padding: 30rpx 0;
+  position: relative;
+  top: -34rpx;
+  border-bottom-left-radius: 4rpx;
+  border-bottom-right-radius: 4rpx;
+}
+.tipModal__footer_btn {
+  margin: 0 auto;
+  width: 360rpx;
+  height: 60rpx;
+  border-radius: 60rpx;
+  background: #FF8800;
+  color: #fff;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center
+}
+.tipModal__controls {
+  text-align: center;
+}
+.tipModal__controls_close {
+  margin-top: 30rpx;
+  width: 52rpx;
+  height: 52rpx;
+}
+.tipModal__tip_logo {
+  position: absolute;
+  top: 11rpx;
+  left: 140rpx;
+  width: 100rpx;
+  height: 34rpx;
+}

@@ -1,0 +1,9 @@
+.sep {
+  height: 20rpx;
+  background-color: #F5F5F5;
+}
+.empty-panel {
+  background-color: #fff;
+  padding-top: 50px;
+  padding-bottom: 100rpx;
+}

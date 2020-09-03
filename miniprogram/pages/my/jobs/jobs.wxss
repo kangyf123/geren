@@ -1,0 +1,57 @@
+page {
+  min-height: 100%;
+  height: 100%;
+  max-height: fit-content;
+}
+.page {
+  min-height: 100%;
+  background-color: #F5F5F5;
+}
+.page.white {
+  background-color: #FFF;
+}
+.recommend-panel {
+  display: block;
+}
+/** 职位推荐头部的推荐职位类别 start **/
+.job-type-panel {
+  position: fixed;
+  top: 0;
+  background-color: #FFF;
+  margin-bottom: 20rpx;
+}
+.job-type-placeholder {
+  height: 120rpx;
+}
+.job-type-item {
+  padding: 30rpx 28rpx;
+  position: relative;
+  color: #666666;
+  font-size: 28rpx;
+}
+.job-type-item:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 35%;
+  left: 30%;
+  height: 4rpx;
+  background-color: transparent;
+}
+.job-type-item.selected {
+  color: #333;
+  font-weight: bold;
+}
+.job-type-item.selected:after {
+  background-color: #3B87FF;
+}
+/** 职位推荐头部的推荐职位类别 end **/
+
+/** 职位列表 start **/
+.job-item {
+  padding: 0 0 10rpx;
+}
+.empty-panel {
+  margin-top: 200rpx;
+}
+/** 职位列表 end **/

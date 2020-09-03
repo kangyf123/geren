@@ -1,0 +1,23 @@
+<view class="input-panel" wx:if="{{ isPageShow }}">
+  <view wx:if="{{ inputType === 'number' }}">
+    <view class="input-wrapper number">
+      <input type="number" class="input-input" value="{{ keywords }}" placeholder="{{ placeholder }}" bindinput="bindInput" maxlength="{{ limit ? limit : 20 }}" auto-focus/>
+      <text class="input-unit">{{ unit }}</text>
+    </view>
+  </view>
+
+  <view wx:else>
+    <view class="input-wrapper {{ limit < 140 && counter > 0 ? 'with-remove-icon': '' }}" >
+      <input wx:if="{{ limit < 140 }}" class="input-input" value="{{ keywords }}" bindinput="bindInput" maxlength="{{ limit }}" placeholder="{{ placeholder }}" auto-focus/>
+      
+
+
+      <textarea wx:elif="{{ limit >= 140 }}" class="input-textarea {{ limit > 400 ? 'large': '' }}" bindinput="bindInput" maxlength="{{ limit }}" value="{{ keywords }}" placeholder="{{ placeholder }}" style="padding: 1rpx;" auto-focus/>
+      <image class="icon-remove" mode="aspectFit" src="/imgs/icon-delete.png" bindtap="clearInput"></image>
+    </view>
+    <view class="input-counter">
+      {{ counter }}/{{ limit }}
+    </view>
+  </view>
+
+</view>

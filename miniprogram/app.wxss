@@ -1,0 +1,568 @@
+@import "common/style/common.wxss";
+
+/** 重置全局样式 start **/
+view, text {
+  color: #333;
+  padding-bottom: 2px;
+ 
+}
+/** 重置全局样式 end **/
+
+/** 全局变量 start **/
+Page {
+ --color-blue: #3B87FF;
+}
+button::after {
+  border-color: transparent;
+}
+
+/** 全局变量 end **/
+
+
+/** 标题样式 start **/
+.h1 {
+  font-weight: bold;
+  font-size: 48rpx;
+  color: #000;
+}
+/** 标题样式 end **/
+
+
+
+/** 通用边距 start **/
+.layout-mlr-40 {
+  margin: 0px 40rpx;
+}
+.layout-m-40 {
+  margin: 40rpx;
+}
+.layout-mb-20 {
+  margin-bottom: 20rpx;
+}
+/** 通用边距 end **/
+
+/** 公用按钮样式 button start **/
+.btn {
+  margin-left: 60rpx;
+  margin-right: 60rpx;
+  font-size: 34rpx;
+}
+.btn-blue {
+  background-color: #3B87FF;
+  color: #fff;
+}
+.btn-blue.disabled {
+  background-color: #A4C8FF;
+}
+.btn-white {
+  background-color: #fff;
+  color: #3B87FF;
+  border: solid 1rpx #3B87FF;
+}
+.btn-gray {
+  background-color: #DDDDDD;
+  color: #fff;
+  
+}
+.btn-gray:after {
+  border-color: #DDDDDD;
+}
+.btn-light-gray {
+  background-color: #F9F9F9;
+  border: solid 1rpx #3B87FF;
+}
+.btn-light-gray:after {
+  border-color: transparent;
+}
+.btn-light-blue {
+  background-color: #F1F7FF;
+  color: #3B87FF;
+  border: solid 1rpx #3B87FF;
+}
+.font-lighter {
+  color: #999999;
+}
+.font-light {
+  color: #666666;
+}
+.font-blue {
+  color: #3B87FF;
+}
+/** 公用按钮样式 button end **/
+
+/** 公用搜索框样式 start **/
+.search-panel {
+  background-color: #F5F5F5;
+  height: 62rpx;
+  border-radius: 31rpx;
+  line-height: 62rpx;
+  vertical-align: baseline;
+}
+.search-panel .search-icon {
+  width: 22rpx;
+  height: 22rpx;
+  padding-right: 13rpx;
+}
+.search-panel .search-name {
+  color: #999999;
+  font-size: 24rpx;
+}
+.search-panel .search-input {
+  font-size: 24rpx;
+  display: inline-block;
+  vertical-align: text-bottom;
+  width: calc(100% - 90rpx);
+}
+.search-panel .delete-icon {
+  width: 24rpx;
+  height: 24rpx;
+  padding-left: 13rpx;
+  margin-top: 15rpx;
+}
+.search-panel.show {
+  text-align: center;
+}
+.search-panel.input {
+  padding-left: 33rpx;
+}
+/** 公用搜索框样式 end **/
+
+/** 带着图标的文字 start **/
+.text-with-icon {
+  display: flex;
+  align-items: center;
+}
+.text-with-icon .text {
+  color: #333;
+  letter-spacing: 2rpx;
+}
+.text-with-icon .icon {
+  margin-left: 14rpx;
+}
+
+.icon {
+  width: 32rpx;
+  height: 32rpx;
+  vertical-align: middle;
+}
+.text-with-icon.reverse .icon {
+  margin-left: 0;
+  margin-right: 14rpx;
+}
+/** 带着图标的文字 end **/
+
+.overflow-dot {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/** 布局相关 start **/
+.flex-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+/** 布局相关 end **/
+
+/** 菜单列表项 start **/
+.panel-set-list {
+  background-color: #fff;
+  margin-top: 21rpx;
+}
+.panel-set-item {
+  display: flex;
+  justify-content: space-between;
+  margin-left: 29rpx;
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-top: 28rpx;
+  padding-bottom: 27rpx;
+  align-items: center;
+  font-size: 30rpx;
+}
+.panel-set-item:last-child {
+  border-bottom-color: transparent;
+}
+.panel-set-data {
+  display: flex;
+  justify-content: space-between;
+  width: calc(100% - 70rpx);
+  flex-shrink: 1;
+  color: #333333;
+}
+.panel-set-title {
+  flex-shrink: 0;
+  padding-right: 29rpx;
+}
+.panel-set-title-icon {
+  width: 34rpx;
+  height: 34rpx;
+}
+.panel-set-val {
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.panel-set-val.empty {
+  color: #999999;
+}
+.panel-set-val .empty {
+  color: #999999;
+}
+.panel-set-icon {
+  color: #BDBDBD;
+  padding-right: 29rpx;
+  padding-left: 16rpx;
+  flex-shrink: 0;
+}
+.panel-set-list .text-with-icon .icon {
+  margin-left: 0;
+  margin-right: 14rpx;
+}
+.panel-set-icon .icon-opt {
+  height: 28rpx;
+  width: 12rpx;
+}
+/** 菜单列表项 end **/
+
+/** 突出显示数量的列表 start **/
+.highlight-list-panel {
+  display: flex;
+  padding-top: 22rpx;
+  padding-bottom: 31rpx;
+}
+.highlight-list-item {
+  width: calc(25% - 1rpx);
+  text-align: center;
+}
+.highlight-item-num {
+  font-size: 36rpx;
+  color: #333;
+  margin-bottom: 8rpx;
+  font-weight: bold;
+}
+.highlight-item-unit {
+  font-size: 22rpx;
+}
+.highlight-item-name {
+  font-size: 22rpx;
+  color: #666;
+}
+.highlight-item-sep {
+  width: 1rpx;
+  height: 56rpx;
+  background-color: #DDDDDD;
+  margin-top: 20rpx;
+}
+/** 突出显示数量的列表 end **/
+
+
+/** 职位列表 start **/
+.job-item {
+  background-color: #FFFFFF;
+  padding: 30rpx 39rpx;
+  margin-bottom: 21rpx;
+}
+.job-item.without-padding {
+  padding: 0;
+}
+.job-item-head {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-top: 22rpx;
+  padding-bottom: 20rpx;
+  margin-bottom: 33rpx;  
+}
+.job-item-item {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 19rpx;
+  align-items: flex-start;
+}
+.job-item-title {
+  font-weight: bold;
+  color: #333;
+  font-size: 32rpx;
+}
+.job-item-salary {
+  color: #FF7452;
+  font-weight: bold;
+  font-size: 32rpx;
+  white-space: nowrap;
+}
+.job-item-company, .job-item-time {
+  font-size: 24rpx;
+  color: #666;
+}
+.label {
+  font-size: 24rpx;
+  padding: 8rpx 15rpx;
+  background-color: #F7F7F7;
+  color: #999;
+}
+.label-item {
+  margin-right: 9rpx;
+  margin-bottom: 10rpx;
+}
+.job-item-label {
+  justify-content: start;
+  flex-shrink: 0;
+  flex-wrap: wrap;
+}
+.job-item-headhunter {
+  justify-content: start;
+
+}
+.job-item-headhunter-img {
+  width: 46rpx;
+  height: 46rpx;
+  border-radius: 46rpx;
+}
+.job-item-headhunter-info {
+  font-size: 24rpx;
+  color: #333;
+  margin-left: 20rpx;
+}
+.job-item-desc {
+  color: #999999;
+  font-size: 24rpx;
+}
+.icon-item-title-icon {
+  width: 60rpx;
+  height: 30rpx;
+  flex-shrink: 0;
+}
+.no-more-data {
+  text-align: center;
+  font-size: 24rpx;
+  color: #999;
+  padding-bottom: 20rpx;
+}
+.no-more-data.with-padding-top {
+  padding-top: 20rpx;
+}
+.no-more-data.no-padding {
+  padding: 0;
+}
+.no-more-data.hide {
+  display: none;
+}
+/** 职位列表 end **/
+
+/** 浮动在最下面的面板 start **/
+.fixed-bottom-panel {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+  border-top: solid 1rpx #EEEEEE;
+  z-index: 2;
+}
+.fix-bottom-btn {
+  margin: 21rpx 42rpx;
+  font-size: 34rpx;
+}
+.fixed-bottom-placeholder {
+  height: 114rpx;
+}
+.fix-bottom-btn.has-round-bottom, .fixed-bottom-panel .has-round-bottom {
+  margin-bottom: 42rpx;
+}
+.fixed-bottom-placeholder.has-round-bottom {
+  height: 135rpx;
+}
+
+/** 浮动在最下面的面板 end **/
+
+/** 卡片面板 start **/
+.head-card {
+  margin: 30rpx;
+  box-shadow:0px 3rpx 15rpx 0 rgba(217,217,217,0.5);
+  border-radius:8rpx;
+  padding: 30rpx;
+
+}
+.headhunter-profile {
+  display: flex;
+}
+/** 卡片面板 end **/
+
+/** 中间有横线的模块标题 start **/
+.module-title {
+  position: relative;
+  font-size: 38rpx;
+  padding-left: 30rpx;
+  padding-right: 30rpx;
+}
+.module-title:after {
+  content: '';
+  position: absolute;
+  top: 26rpx;
+  left: 30rpx;
+  width: calc(100% - 30rpx);
+  background-color: #EEEEEE;
+  height: 1rpx;
+  z-index: 0;
+}
+.module-title-name {
+  background-color: #fff;
+  padding-right: 30rpx;
+  position: relative;
+  z-index: 1;
+  font-size: 38rpx;
+}
+/** 中间有横线的模块标题 end **/
+
+/** 弹出框样式 start **/
+.popup-panel {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+.popup-panel .popup-mask {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #000;
+  opacity: 0.5;
+}
+.popup-panel .popup-wrapper {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 0;
+}
+.popup-panel .popup-content {
+  width: 80%;
+  background-color: #FFFFFF;
+  border-radius: 8rpx;
+}
+.popup-panel .popup-head {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-top: 25rpx;
+  padding-bottom: 23rpx;
+  position: relative;
+}
+.popup-panel .popup-title {
+  text-align: center;
+  font-size: 34rpx;
+}
+.popup-panel .popup-close-icon {
+  position: absolute;
+  right: 30rpx;
+  top: 10rpx;
+  font-size: 50rpx;
+}
+.popup-panel .popup-body {
+  padding: 40rpx;
+}
+.popup-footer {
+  border-top: solid 1rpx #EEEEEE;
+  font-size: 32rpx;
+  display: flex;
+}
+.popup-opt-item {
+  width: calc(50% - 1rpx);
+  text-align: center;
+  padding-top: 29rpx;
+  padding-bottom: 29rpx;
+}
+.popup-cancel {
+  border-right: solid 1rpx #EEEEEE;
+}
+.popup-submit {
+  color: #3B87FF;
+  width: 50%;
+}
+
+.popup-wrapper.popup-bottom {
+  align-items: flex-end;
+}
+.popup-wrapper.popup-bottom .popup-content {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0;
+}
+
+.popup-wrapper.popup-top {
+  align-items: flex-start;
+}
+.popup-wrapper.popup-top .popup-content {
+  width: 100%;
+  background-color: #FFFFFF;
+  border-radius: 0;
+}
+
+/** 弹出框样式 end **/
+
+/** 横向滚动列表 start **/
+.scroll-horizontal-list {
+  display: flex;
+  overflow: scroll;
+  margin-right: 0;
+}
+.scroll-horizontal-item {
+  flex-shrink: 0;
+  text-align: center;
+  color: #333;
+}
+/** 横向滚动列表 end **/
+
+/** 输入框 start **/
+.form-input-item {
+  border-bottom: solid 1rpx #EEEEEE;
+  padding-bottom: 35rpx;
+  padding-top: 35rpx;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.form-input-item.with-opt {
+  display: flex;
+  justify-content: space-between;
+}
+.form-input-item.with-opt .form-input-input {
+  flex-grow: 1;
+}
+.form-input-item.with-opt .form-input-btn {
+  color: var(--color-blue);
+  margin-top: 4rpx;
+  display: inline-block;
+}
+.form-input-item .form-input-icon-remove {
+  position: absolute;
+  width: 26rpx;
+  height: 26rpx;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  z-index: 2;
+}
+
+/** 输入框 end **/
+
+.empty-panel {
+  margin-top: 180rpx;
+}
+.icon-right-arrow {
+  height: 28rpx;
+  width: 12rpx; 
+}
+
+.reset_selector {
+  height:74rpx !important;color: #666;line-height:74xpx;padding-top: 18rpx;box-sizing:border-box ;
+}

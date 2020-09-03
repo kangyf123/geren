@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "SimilarJobs": "../../components/similar-jobs/similar-jobs",
+    "navBar": "../../components/navBar/navBar"
+  }
+}

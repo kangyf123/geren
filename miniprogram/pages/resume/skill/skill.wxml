@@ -1,0 +1,10 @@
+<view class="panel-set-list">
+  <SettingItem title="技能名称" emptyText="请填写" value="{{ name }}" 
+    data-url="/pages/input/input?keywords={{ name }}&title=技能名称&field=name&limit=30"
+    bindtap="_navigateTo"></SettingItem>
+  <picker bindchange="bindSelectChange" data-type="edu" value="{{index}}" range="{{ skilledConf }}">
+    <SettingItem title="掌握程度"></SettingItem>
+  </picker>
+</view>
+
+<button class="btn btn-blue save-btn">保存</button>

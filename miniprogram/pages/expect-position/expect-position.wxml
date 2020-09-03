@@ -1,0 +1,62 @@
+<wxs module="filter" src="./expect-position.wxs"></wxs>
+<wxs module="strFilter" src="../../wxs/str.wxs"></wxs>
+<view class="page">
+  <navBar page-name="{{searchInprogressTitle}}" showNavBut='{{showNavBut}}' is-edited="{{ _dataList._isEdited }}"></navBar>
+  <view class="panel-head">
+    <view class="search-panel input">
+      <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+      <input class="search-input" placeholder="搜索地址" value="{{ _dataList._kwd }}" bindinput="searchPosByKwd" />
+      <image class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png" wx:if="{{ _dataList._kwd }}" bindtap="_removeKwd"></image>
+    </view>
+  </view>
+  <view class="panel-head-placeholder"></view>
+  <view class="panel-sep"></view>
+  <view class="flex-between selected-panel" wx:if="{{ !_dataList._kwd }}">
+    <view class="selected-label-list">
+      <view class="selected-label-item" wx:for="{{ selectedArr }}" data-id="{{ item.id }}" 
+        bindtap="_removeSelected"  wx:key="id">
+        <view class="selected-label-wrapper">
+          <view class="selected-name overflow-dot">{{ item.name }}</view>
+          <image class="selected-remove-img" mode="aspectFit" src="/imgs/icon-delete-blue.png"></image>
+        </view>
+      </view>
+    </view>
+    <view class="selected-text">
+      <text class="selected-num">{{ _dataList._selectedCount }}</text>/{{ _dataList._maxSelectedCount }}
+    </view>
+  </view>
+  <view wx:if="{{ _dataList._kwd }}">
+    <view class="search-gray-panel"></view>
+    <view class="search-list">
+      <view class="search-item {{ _dataList._selected[item.id] ? 'selected' : '' }}" wx:for="{{ _dataList._list }}" wx:key="index" data-index="{{ index }}" bindtap="_addToSelected" >
+        <view class="search-name" wx:if="{{ _dataList._kwd !== '' }}">
+          <text wx:for="{{ strFilter.split( filter.formatSearchName(item, menuObj), _dataList._kwd) }}" wx:for-item="strPart" class="{{ _dataList._kwd === strPart ? 'font-blue' : '' }}">{{ strPart }}</text>
+        </view>
+        <view class="search-name" wx:else>
+          {{ filter.formatSearchName(item, menuObj) }}
+        </view>
+        <image class="search-icon search-icon-empty" mode="aspectFit" src="/imgs/icon-circle.png"></image>
+        <icon class="search-icon selected" type="success" color="#3B87FF" size="36rpx" />
+      </view>
+      <view class="empty-panel" wx:if="{{ _dataList._list.length === 0 }}">
+        <EmptyPanel msg="搜索结果为空"></EmptyPanel>
+      </view>
+    </view>
+  </view>
+  <view class="cities-panel" wx:else>
+    <view class="menu-list">
+      <view class="menu-item overflow-dot {{ curMenuIndex == index ? 'selected' : '' }}" wx:for="{{ menuList }}" wx:key="index" data-index="{{ index }}" bindtap="changeMenu">{{ item.id==='00'?'热门':item.name }}</view>
+    </view>
+    <view class="city-wrapper">
+      <view class="city-list">
+        <view class="city-item {{ _dataList._selected[item.id] ? 'selected': '' }}" wx:for="{{ _dataList._list }}" wx:key="index" data-index="{{ index }}" bindtap="_addToSelected" wx:if="{{item.id!=='00'}}">
+          <view class="city-name">{{ item.name }}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="fixed-bottom-placeholder {{ _isScreenBottomRound ? 'has-round-bottom' : '' }}"></view>
+  <view class="fixed-bottom-panel">
+    <button class="fix-bottom-btn btn-blue  {{ _isScreenBottomRound ? 'has-round-bottom' : '' }} {{ _dataList._selectedCount > 0 ? '' : 'disabled' }}" bindtap="_dataSubmit" data-fieldType="localfiled">确定</button>
+  </view>
+</view>

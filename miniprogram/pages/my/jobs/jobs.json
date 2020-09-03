@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "ItemJob": "../../../components/item-job/item-job",
+    "EmptyPanel": "../../../components/empty-panel/empty-panel",
+    "navBar": "/components/navBar/navBar"
+  }
+}

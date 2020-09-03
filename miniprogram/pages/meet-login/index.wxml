@@ -1,0 +1,13 @@
+<!--index.wxml-->
+<navBar page-name="视频面试" showNavBut='{{true}}'></navBar>  
+<view class="meeting_login">
+  <view class="meeting_login__title" style="margin-top: 20rpx">
+    <text class="Common_font_size--48 Common_font__blod">锐仕精英线上面试系统</text>
+  </view>
+  <view class="meeting_login__body">
+    <input type="number" maxlength="6" auto-focus placeholder-style='color:#999999' class="meeting_login__input" placeholder='请填写面试间号码' bindinput="onInputChannel" bindconfirm="onInputChannel" bindblur="onInputChannel"></input>
+  </view>
+  <view class="meeting_login__btn">
+    <button focus="{{focus}}"  bindtap="onGotUserInfo" disabled="{{disableJoin}}" class="joinBtn  {{isLonger? 'access': ''}}">进入面试间</button>
+  </view>
+</view>

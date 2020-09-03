@@ -1,0 +1,15 @@
+.empty-panel {
+  text-align: center;
+}
+.empty-wrapper {
+  display: inline-block;
+}
+.logo-empty {
+  width: 140rpx;
+  height: 140rpx;
+}
+.empty-msg {
+  color: #999999;
+  margin-top: 20rpx;
+  font-size: 28rpx;
+}

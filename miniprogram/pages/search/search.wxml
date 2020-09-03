@@ -1,0 +1,103 @@
+<view class="head-panel">
+  <view class="search-panel input">
+    <image class="search-icon" mode="aspectFit" src="/imgs/icon-search.png"></image>
+    <input class="search-input" auto-focus placeholder="搜索地区"/>
+    <image class="delete-icon" mode="aspectFit" src="/imgs/icon-delete.png"></image>
+  </view>
+</view>
+<view class="head-sep"></view>
+<view class="history-panel">
+  <view class="history-title">搜索历史</view>
+  <view class="history-list">
+    <view class="history-item">
+      <image class="icon-time" mode="aspectFit" src="/imgs/icon-time.png"></image>
+      北京
+    </view>  
+    <view class="history-item">
+      <image class="icon-time" mode="aspectFit" src="/imgs/icon-time.png"></image>
+      上海
+    </view> 
+    <view class="history-item">
+      <image class="icon-time" mode="aspectFit" src="/imgs/icon-time.png"></image>
+      杭州
+    </view> 
+  </view>
+  <view class="history-clear">
+    <image class="icon-remove" mode="aspectFit" src="/imgs/icon-remove.png"></image>
+    <text class="remove-name">清除历史纪录</text>
+  </view>
+</view>
+<view class="empty-panel">
+  <view class="empty-wrapper">
+    <image class="logo-empty" mode="aspectFit" src="/imgs/logo-empty.png"></image>
+    <view class="empty-msg">暂无历史搜索</view>
+  </view>
+</view>
+<view class="list-panel">
+  <view class="list-sep"></view>
+  <view class="search-list">
+    <view class="search-item">
+      <view class="search-name">计算机/<text class="msg-highlight">互联网</text>/IT计算机/互联网/IT计算机/互联网/IT计算机/互联网/IT计算机/互联网/IT计算机/互联网/IT</view>
+      <icon class="search-icon" type="success" color="#3B87FF" size="36rpx"/>
+    </view>
+    <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+    <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+    <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+        <view class="search-item">
+      <view class="search-name">IT</view>
+      <view class="search-icon-empty"></view>
+    </view>
+  </view>
+  <view class="opt-submit">
+    <button class="btn-blue btn-submit">确定</button>
+  </view>
+</view>

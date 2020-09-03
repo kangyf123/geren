@@ -1,0 +1,10 @@
+<view class="common_h5">
+  <navBar page-name="{{title}}" showNavBut='{{true}}'></navBar>
+  <web-view bindmessage="messageFromH5" src="{{url}}">
+     <cover-view class="common__jump" wx:if="{{showNav}}">
+         <cover-view class="share-txt">
+          分享
+         </cover-view>
+      </cover-view>
+  </web-view>
+</view>
