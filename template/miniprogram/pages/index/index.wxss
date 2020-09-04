@@ -1,0 +1,95 @@
+/**index.wxss**/
+
+page {
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.page-section-spacing{
+  background-color: #e28b8e;
+  width: 100%;
+ color: #ffffff;
+ font-size: 32rpx;
+}
+.scroll-view-item_H{
+  display: inline-block;
+  padding-left: 85rpx;
+  padding-bottom: 20rpx;
+  position: relative;
+}
+.scroll-view-item_sep {
+  position: absolute;
+  height: 34rpx;
+  width: 1px;
+  background-color: #fff;
+  top: 6rpx;
+  right: -40rpx;
+}
+.navbar {
+  position: absolute;
+  width: 680rpx;
+  height: 60rpx;
+  background:rgba(245,245,245,1);
+  border-radius:30rpx; 
+  line-height: 60rpx;
+  padding-left: 30rpx;
+  font-size: 24rpx;
+  box-sizing: border-box;
+  margin-top: 35rpx;
+  margin-bottom: 35rpx;
+}
+.icon-search {
+  display: inline-block;
+  width: 24rpx;
+  height: 24rpx;
+  margin-bottom: -2rpx;
+}
+.navbar-text {
+  margin-left: 10rpx;
+  color: #999;
+  display: inline-block;
+  width: calc(100% - 100rpx);
+  text-align: center; 
+}
+.img-tile{
+  width: 70rpx;
+  height: 70rpx;
+  margin-top: 5rpx;
+  margin-left: 5rpx;
+}
+.img-wenzi{
+  font-size: 27rpx;
+  color: #b3b3b3;
+}
+.pro{
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 12rpx;
+}
+.kuang{
+  width: 25%;
+  text-align: center;
+}
+.im{
+  width: 97%;
+  height: 182rpx;
+}
+.new{
+  width: 100%;
+  height:250rpx;
+}
+.ms{
+  color: #797676;
+  font-size: 28rpx;
+}
+.pri{
+  color: red;
+  font-size: 33rpx;
+}
+.gw{
+   width: 55rpx;
+   height: 55rpx;
+  
+   
+}

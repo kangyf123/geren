@@ -1,0 +1,50 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/userConsole/userConsole",
+    "pages/storageConsole/storageConsole",
+    "pages/databaseGuide/databaseGuide",
+    "pages/addFunction/addFunction",
+    "pages/deployFunctions/deployFunctions",
+    "pages/chooseLib/chooseLib",
+    "pages/openapi/openapi",
+    "pages/openapi/serverapi/serverapi",
+    "pages/openapi/callback/callback",
+    "pages/openapi/cloudid/cloudid",
+    "pages/im/im",
+    "pages/im/room/room"
+  ],
+  "window": {
+    "backgroundColor": "#ffffff",
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e28b8e",
+    "navigationBarTitleText": "多买海购",
+    "navigationBarTextStyle": "black",
+    
+  "tabBar": {
+    "selectedColor": "#ff5555",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "text": "首页",
+      "iconPath": "images/首页.png",
+      "selectedIconPath": "images/首页.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "分类",
+      "iconPath": "images/分类.png",
+      "selectedIconPath": "images/分类.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "购物车",
+      "iconPath": "images/购物车.png",
+      "selectedIconPath": "images/购物车.png"
+    },{
+      "pagePath": "pages/index/index",
+      "text": "个人中心",
+      "iconPath": "images/个人中心.png",
+      "selectedIconPath": "images/个人中心.png"
+    }]
+    }
+  }
+}
+
